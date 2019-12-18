@@ -74,15 +74,15 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
-|image2|text|null: false|
-|image3|text|null: false|
-|image4|text|null: false|
-|image5|text|null: false|
-|image6|text|null: false|
-|image7|text|null: false|
-|image8|text|null: false|
-|image9|text|null: false|
-|image10|text|null: false|
+|image2|text|
+|image3|text|
+|image4|text|
+|image5|text|
+|image6|text|
+|image7|text|
+|image8|text|
+|image9|text|
+|image10|text|
 |product_id|references|null: false, foreign_key: true|
 
 ### Association
