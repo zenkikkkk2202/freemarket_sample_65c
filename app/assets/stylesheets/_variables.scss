@@ -1,0 +1,63 @@
+@mixin font14{
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
+}
+
+@mixin font14__weight400{
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
+}
+
+@mixin font12__weight400{
+  font-size: 12px;
+  font-weight: 400;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
+}
+
+// font-sizeはtitleに合わせて指定して下さい。
+@mixin font__title{
+  font-weight: 700;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+@mixin required{
+  background-color:#EA342D;
+  border-radius: 2px;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  color:#ffffff;
+  font-weight: 700;
+  font-size: 11px;
+  font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
+  vertical-align: top;
+}
+
+@mixin any{
+  background-color:#ffffff;
+  border-radius: 2px;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  color:#ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
+}
+
+@mixin important{
+  font-size: 14px;
+  font-weight: 400;
+  font-family:"Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
+  color: #0099e8;
+  text-decoration: none;
+}
+
+@mixin important_hover{
+  opacity: 50%;
+  border-bottom:#0099e8 solid 1px;
+}
