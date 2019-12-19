@@ -13,7 +13,7 @@
 ### Association
 - has_many   :products
 - has_many   :credit_cards
-- belongs_to :addres
+- has_many :addresses
 - belongs_to :facebook
 - belongs_to  :google
 
@@ -22,7 +22,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|image|string|null: false|
 |description|text|null: false|
 |category|string|null: false|
 |condition|string|null: false|
@@ -49,7 +48,7 @@
 ### Association
 - belongs_to  :user 
 
-## addresesテーブル
+## addressesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -74,15 +73,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
-|image2|text|
-|image3|text|
-|image4|text|
-|image5|text|
-|image6|text|
-|image7|text|
-|image8|text|
-|image9|text|
-|image10|text|
 |product_id|references|null: false, foreign_key: true|
 
 ### Association
