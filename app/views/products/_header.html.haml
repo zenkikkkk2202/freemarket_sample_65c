@@ -3,7 +3,7 @@
     .mheader__main__upper
       .mheader__main__upper__logo
         .mheader__main__upper__logo__image
-          = link_to image_tag("http://www.w3.org/2000/svg"),size:"134x36"
+          = link_to image_tag("fmarket_logo_red.svg"),size:"134x36"
       = form_with(url: root_path, local: true,method: :get, class: "mheader__main__upper__search") do |f|
         = f.text_field :keyword, placeholder: " 何かお探しですか？", class: "mheader__main__upper__search__blank"
         %button.mheader__main__upper__search__button
