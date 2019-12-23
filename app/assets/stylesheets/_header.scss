@@ -1,0 +1,1010 @@
+.mheader{
+  width: 100vw;
+  height: 100px;
+  background-color: white;
+  box-shadow: rgba(0,0,0,0.18) 0px 2px 4px;
+  position: ralative;
+  z-index: 3;
+  box-sizing: border-box;
+  &__main{
+    width: 1020px;
+    margin: 0px auto;
+    padding: 8px 0px 0px;
+    height: 90px;
+    &__upper{
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      &__search{
+        position: relative;
+        width: 100%;
+        
+        &__blank{
+          position: relative;
+          width: 100%;
+          background-color: rgb(245,245,245);
+          font-size: 16px;
+          height: 40px;
+          line-height: 1.4em;
+          border-width: 1px;
+          border-style: solid;
+          border-color: rgb(204,204,204);
+          border-image: initial;
+          border-radius: 4px;
+          outline: none;
+          padding: 0px 0px 0px 10px;
+          transition: all 0.3s ease-out 0s;
+        }
+        &__button{
+          position: absolute;
+          right: 0;
+          top: 0;  
+          background-color: transparent;
+          cursor: pointer;
+          height: 40px;
+          width: 40px;
+          border-width: initial;
+          border-style: none;
+          border-color: initial;
+          border-image: initial;
+          border-radius: 0px 4px 4px 0px;
+          padding: 0px;
+        }  
+      }
+      &__logo{
+        -webkit-box-align: center;
+        align-items: center;
+        display: flex;
+        height: 40px;
+        margin-right: 45px;
+        &__image{
+          color: inherit;
+          text-decoration: none;
+          height: 36px;
+          width: 134px;
+        }
+      }
+    }
+    &__bottom{
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      margin-top: 8px;
+      &__left{
+        display: flex;
+        margin-left: -3px;
+        // position: absolute;
+        &__category{
+          &:hover + .mheader__main__bottom__left__category__submenu{
+            display: block;
+          }
+          position: relative;
+          &__inside{
+            color: red;
+            display: block;
+            position: relative;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+          }
+          &__submenu{
+            z-index: 1000;
+            display: none;
+            position: absolute;
+            top: 90px;
+            width: 224px;
+            background-color: white;
+            &:hover{
+              display: block;
+            }
+            &__child{
+              padding: 10px;
+              width: 100%;
+              font-size: 14px;
+              text-decoration: none;
+              color: black;
+              padding-left: 5px;
+              position: relative;
+              display: block;
+              &:hover{
+                width: 100%;
+                // padding-right:130px;
+                padding-top: 10px;
+                color: white;
+                background-color: red;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__ladies{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__mens{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__baby{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__interia{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__book{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__toy{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__cos{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__appliance{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__sports{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__handmade{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__ticket{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__bike{
+                display: block;
+              }
+              &:hover + .mheader__main__bottom__left__category__submenu__child__other{
+                display: block;
+              }              
+
+
+          
+              &__ladies{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  padding: 10px;
+                  &:hover{
+                   
+                    width: 100%;
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__tops{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__jacket{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__pants{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__skart{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__onepiece{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__shoes{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__room{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__leg{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__cap{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__bag{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__accessory{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__hair{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__goods{
+                    display: block;
+                  }
+                  &:hover + .mheader__main__bottom__left__category__submenu__child__ladies__child__watch{
+                    display: block;
+                  }
+                  &__tops{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      padding: 10px;
+                      display: block;
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        // padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color:lightgray;
+                      }
+                    }
+                  }
+                  &__jacket{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      display: block;
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        // padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__pants{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__skart{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                   &__onepiece{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                   }
+                   &__shoes{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__room{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__leg{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__cap{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__bag{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__accessory{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__hair{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__goods{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                  &__watch{
+                    background-color: white;
+                    bottom: 0px;
+                    display:  none;
+                    position: absolute;
+                    top: -4px;
+                    left: 224px;
+                    width: 100%;
+                    &:hover{
+                      display: block;
+                    }
+                    &__child{
+                      font-size: 14px;
+                      text-decoration: none;
+                      color: black;
+                      padding-left: 5px;
+                      position: relative;
+                      &:hover{
+                        padding-right:70px;
+                        padding-top: 10px;
+                        color: white;
+                        background-color: red;
+                      }
+                    }
+                  }
+                }
+              
+              }
+              &__mens{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 100%;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  padding: 10px;
+                  display: block;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+
+              }
+              &__baby{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 100%;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__interia{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color:lightgray;
+                  }
+                }
+              }
+              &__book{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__toy{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__cos{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__appliance{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__sports{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__handmade{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__ticket{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__bike{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+              &__other{
+                background-color: white;
+                bottom: 0px;
+                display:  none;
+                position: absolute;
+                top: -4px;
+                left: 224px;
+                width: 224px;
+                &:hover{
+                  display: block;
+                }
+                &__child{
+                  display: block;
+                  padding: 10px;
+                  font-size: 14px;
+                  text-decoration: none;
+                  color: black;
+                  padding-left: 5px;
+                  position: relative;
+                  &:hover{
+                    
+                    padding-top: 10px;
+                    color: white;
+                    background-color: lightgray;
+                  }
+                }
+              }
+
+              }
+            }
+          }
+        
+        &__bland{
+          &:hover + .mheader__main__bottom__left__bland__submenu{
+            display: block;
+          }
+          position: relative;
+          &__inside{
+            
+            color: red;
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 36px;
+            white-space: nowrap;
+            }
+          
+          
+          &__submenu{
+            display: none;
+            z-index: 1;
+            position: absolute;
+            left: 320px;
+            top: 90px;
+            background-color: white;
+            width: 224px;
+            &:hover{
+              display: block;
+            }
+            &__child{
+              padding: 10px;
+              display: block;
+              font-size: 14px;
+              text-decoration: none;
+              color: black;
+              padding-left: 5px;
+              &:hover{
+                padding-top: 10px;
+                color: white;
+                background-color: red;
+              }
+            }
+          }
+        }
+      }
+    
+      &__right{
+        display: flex;
+        position: relative;
+        
+        &__list{
+          padding: 0px 24px;
+          
+          &__good{
+            color: rgb(204,204,204);
+            text-decoration: none;
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            transition: all 0.3s ease-out 0s;
+          }
+          &__notice{
+            color: rgb(204,204,204);
+            text-decoration: none;
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            transition: all 0.3s ease-out 0s;
+          }
+          &__todo{
+            color:rgb(204,204,204);
+            text-decoration: none;
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            transition: all 0.3s ease-out 0s;
+          }
+          &__person{
+            color: rgb(204,204,204);
+            text-decoration: none;
+            -webkit-box-align: center;
+            align-items: center;
+            display: flex;
+            font-size: 14px;
+            height: 32px;
+            transform: scale(1);
+            transition: all 0.3s ease-out 0s;
+            
+            }
+          }
+        }
+      }
+    }
+}
