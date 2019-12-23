@@ -1,0 +1,167 @@
+.footer{
+  
+  background-color: rgb(34,34,34);
+  color: rgb(255,255,255);
+  font-size: 12px;
+  padding: 0px 20px 10px;
+  box-sizing: border-box;
+  &__top{
+    width: 1020px;
+    margin: 0 auto;
+    &__about{
+      padding-left: 0px;
+      display: inline-block;
+      margin-top: 18px;
+      vertical-align: top;
+      width: auto;
+      list-style: none;
+      // padding: 0px 40px 0px 0px;
+      &__text{
+        font-weight: 600;
+        line-height: 1.4em;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      &__list{
+        &__icon{
+          margin-top: 30px;
+          display: inline-block;
+          height: 30px;
+          &__fa{
+            max-width: 100%;
+            height: auto;
+            max-height: 100%;
+            width: 30px;
+            margin-right: 20x;
+          }
+        }
+        &__child{
+          line-height: 1.4em;
+          margin: 16px 0px 0px;
+          &__link{
+            text-decoration: none;
+            color: white;
+            opacity: 0.7;
+          }
+        }
+
+      }
+    }
+    &__help{
+      padding-left: 0px;
+      display: inline-block;
+      margin-top: 18px;
+      vertical-align: top;
+      width: auto;
+      padding: 0px 40px 0px 0px;
+      &__text{
+        font-weight: 600;
+        line-height: 1.4em;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      &__list{
+        &__child{
+          line-height: 1.4em;
+          margin: 16px 0px 0px;
+          &__link{
+            text-decoration: none;
+            color: white;
+            opacity: 0.7;
+          }
+        }
+      }
+    } 
+    &__privacy{
+      display: flex;
+      margin-top: 18px;
+      // padding: 0px 40px 0px 0px;
+      width: 43%;
+      display: inline-block;
+      vertical-align: top;
+      &__text{
+        font-weight: 600;
+        line-height: 1.4em;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      &__list{
+        display: flex;
+        &__left{
+          width: 50%;
+          padding: 0px 10px 0px 0px;
+          &__child{
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            &__link{
+              text-decoration: none;
+              color: white;
+              opacity: 0.7;
+            }
+          }
+
+        }
+        &__right{
+          width: 50%;
+          padding: 0px 10px 0px 0px;
+          &__child{
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            &__link{
+              text-decoration: none;
+              color: white;
+              opacity: 0.7;
+            }
+          }
+        }
+      }
+    }
+    &__country{
+      margin-top: 18px;
+      width: auto;
+      padding: 0px 40px 0px 0px;
+      display: inline-block;
+      &__text{
+        font-weight: 600;
+        line-height: 1.4em;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+      }
+      &__list{
+          &__child{
+            line-height: 1.4em;
+            margin: 16px 0px 0px;
+            &__link{
+              text-decoration: none;
+              color: white;
+              opacity: 0.7;
+            }
+          }
+        }
+      
+    }
+  }
+  &__bottom{
+    width: 1020px;
+    margin: 55px auto 10px;
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    &__a{
+      &__image{
+        text-align: center;
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+    &__text{
+      text-align: center;
+      padding-left: 15px;
+      width: 75%;
+    }
+  }
+}
