@@ -24,6 +24,6 @@
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
+Gemfile
+Gemfile
 /config/master.key
-Gemfile
-Gemfile
