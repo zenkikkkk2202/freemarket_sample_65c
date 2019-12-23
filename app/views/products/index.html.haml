@@ -1,2 +1,212 @@
+.main
+  .imain
+    .imain__main
+      .imain__main__link
+        = link_to ""
+        .imain__main__link__image{id: "icon"}
+          %ul.imain__main__link__image__ulist
+            %li
+              = link_to "" do
+                = image_tag "6cbf10cdf0a7a15ce0c0615f66a499bb_m.jpg",class: "imain__main__link__image__ulist__gazo",id: "gazo1"
+            %li
+              = link_to "" do
+                = image_tag "https://mail.google.com/mail/u/0?ui=2&ik=33ce5707ad&attid=0.1&permmsgid=msg-f:1653688456250162859&th=16f314e3abf47eab&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ_gcfNksvXJz7L0FKeATDoH-563flltkXmkRymdoqxwBaSRoNXiD7egaE2W0SaNY0hd4sPyApwn-Hib0wjklCwcX-_iaBe3M2GSUSIn1Mg4HO7elw70AgPl0SQ&disp=emb&realattid=16f314d8a1f49b7262f1",class: "imain__main__link__image__ulist__gazo",id: "gazo1"
+                .imain__main__link__image__ulist__text
+                  .imain__main__link__image__ulist__text__1
+                    スマホで簡単
+                    %br
+                    フリマアプリ
+                  .imain__main__link__image__ulist__text__2
+                    メルカリはスマホカメラからすぐに出品できる
+                    %br
+                    購入時も安心な独自システムのアプリです
+          .imain__main__link__image__left 
+            .imain__main__link__image__left__a{id: "btn1"}
+          .imain__main__link__image__right
+            .imain__main__link__image__right__a{id: "btn2"}
+          .imain__main__link__image__bottom 
+
+
+    .imain__main__content
+      .imain__main__content__text 人気のカテゴリー
+      .imain__main__content__menu
+        %ul.imain__main__content__menu__list
+          %li.imain__main__content__menu__list__category
+            %a.imain__main__content__menu__list__category__a レディース
+            %a.imain__main__content__menu__list__category__b レディース
+            %a.imain__main__content__menu__list__category__a メンズ
+            %a.imain__main__content__menu__list__category__b メンズ
+            %a.imain__main__content__menu__list__category__a 家電・スマホ・カメラ
+            %a.imain__main__content__menu__list__category__b 家電・スマホ・カメラ
+            %a.imain__main__content__menu__list__category__a おもちゃ・ホビー・グッズ
+            %a.imain__main__content__menu__list__category__b おもちゃ・ホビー・グッズ
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム2
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム3
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム4
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム5
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム6
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム7
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text アイテム8
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -# -if @products
+            -#   - @products.each do |p|
+            %li.imain__main__product__box__item__list__data
+              .imain__main__product__box__item__list__data__size
+                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                  %figure.imain__main__product__box__item__list__data__size__link__figure
+                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                      harry_styles
+                    .imain__main__product__box__item__list__data__size__link__figure__information
+                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                        ¥
+                        9,799
+                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+
 .banner
   = render "banner"
