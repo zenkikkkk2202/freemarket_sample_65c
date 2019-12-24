@@ -34,3 +34,9 @@ app/views/products/_header.html.haml
 app/views/products/_header.html.haml
 app/views/products/_header.html.haml
 app/views/products/_footer.html.haml
+app/assets/stylesheets/application.scss
+app/assets/stylesheets/buy_confirm.scss
+app/controllers/products_controller.rb
+app/views/products/buy_confirm.html.haml
+config/routes.rb
+app/assets/stylesheets/application.scss
