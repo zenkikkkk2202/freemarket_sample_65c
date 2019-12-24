@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_115853) do
     t.string "name_kana_f", null: false
     t.string "name_kana_l", null: false
     t.integer "post_code", null: false
-    t.string "prefecture", null: false
+    t.integer "prefecture_id", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "build"
@@ -76,12 +76,15 @@ ActiveRecord::Schema.define(version: 2019_12_23_115853) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.string "category", null: false
-    t.string "condition", null: false
-    t.string "charge", null: false
-    t.string "area", null: false
-    t.string "day", null: false
+    t.integer "category", default: 0, null: false
+    t.integer "condition", default: 0, null: false
+    t.integer "charge", default: 0, null: false
+    t.integer "prefecture_id", default: 0, null: false
+    t.string "city", null: false
+    t.integer "day", default: 0, null: false
     t.integer "price", null: false
+    t.integer "fee", null: false
+    t.integer "profit", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
