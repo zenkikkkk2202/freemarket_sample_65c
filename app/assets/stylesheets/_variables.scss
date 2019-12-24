@@ -61,3 +61,47 @@
   opacity: 50%;
   border-bottom:#0099e8 solid 1px;
 }
+
+//  轟が追加したmixin
+
+@mixin font4_u1{
+  line-height: 17px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+@mixin font4_u2{
+  line-height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  padding: 16px;
+}
+
+@mixin u-heading{
+  margin: 40px 0 5px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+@mixin icon-hover{
+  position: absolute;
+  right: 10px;
+  color: #333;
+  font-size: 25px;
+  top: 30%;
+}
+
+@mixin u-icon{
+  position: absolute;
+  right: 16px;
+  color: #ccc;
+  font-size: 20px;
+}
+
+
