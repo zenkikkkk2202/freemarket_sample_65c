@@ -1,0 +1,136 @@
+// ユーザマイページの固定部分（ヘッダーとサイドバー）のscss
+*{
+  text-decoration: none;
+  display: block;
+}
+.u-main {
+  .u-header{
+    height: 17px;
+    line-height: 17px;
+    display: flex;
+    background-color: #ffffff;
+    font-size: 14px;
+    padding: 16px 210px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    &__list{
+      color: #333333;
+    }
+    &__list-icon{
+      margin: 0 8px;
+      font-size: 10px;
+      color: #888888;
+    }
+  }
+  .u-container{
+    background-color: #F5F5F5;
+    .container-center{
+      margin: 0 auto;
+      padding: 40px 0px;
+      width: 1020px;
+      display: flex;
+      .side{
+        width: 280px;
+        margin: 0 40px 0 0;
+        font-size: 14px;
+        line-height: 14px;
+        .mypage-ul{
+          background-color: #ffffff;
+          &__list{
+            position: relative;
+            color: #333333;
+            border-top: solid 1px #F5F5F5;
+            font-weight: 400;
+            padding: 14px;
+            font-size: 14px;
+            &:hover{
+              background-color: #eee;
+            }
+            &__icon{
+              position: absolute;
+              right: 16px;
+              color: #ccc;
+              font-size: 20px;
+              &:hover{
+                position: absolute;
+                right: 10px;
+                color: #333;
+                font-size: 25px;
+                top: 30%;
+              }
+            }
+
+          }
+        }
+        .merupay-heading{
+          margin-top: 40px;
+          font-size: 16px;
+          font-weight: 700;
+        }
+        .merupay-ul{
+          background-color: #ffffff;
+          &__list{
+            position: relative;
+            display: block;
+            color: #333333;
+            font-weight: 400;
+            padding: 14px;
+            font-size: 14px;
+            border-top: solid 1px #F5F5F5;  
+            &:hover{
+              background-color: #eee;
+            }
+            &__icon{
+              position: absolute;
+              right: 16px;
+              color: #ccc;
+              font-size: 20px;
+              &:hover{
+                position: absolute;
+                right: 10px;
+                color: #333;
+                font-size: 25px;
+                top: 30%;
+              }
+            }
+          }
+        }
+        .setting-heading{
+          margin-top: 40px;
+          font-size: 16px;
+          font-weight: 700;
+        }
+        .setting-ul{
+          background-color:#ffffff;
+          &__list{
+            position: relative;
+            display: block;
+            color: #333333;
+            font-weight: 400;
+            padding: 14px;
+            font-size: 14px;
+            border-top: solid 1px #F5F5F5;              
+            &:hover{
+              background-color: #eee;
+            }
+            &__icon{
+              position: absolute;
+              right: 16px;
+              color: #ccc;
+              font-size: 20px;
+              &:hover{
+                position: absolute;
+                right: 10px;
+                color: #333;
+                font-size: 25px;
+                top: 30%;
+              }
+            }
+          }
+        }
+      }
+      .contents{
+        width: 700px;
+      }
+    }
+  }
+}
