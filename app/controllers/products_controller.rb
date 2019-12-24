@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def show
   end
 
-  def my_page
+  def user_page
     
   end
 
