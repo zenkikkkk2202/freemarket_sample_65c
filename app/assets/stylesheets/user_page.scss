@@ -1,0 +1,171 @@
+// メルカリ>　マイページ>　ニュース一覧のsass
+// クラス名変更
+.content{
+  width: 700px;
+  &__user {
+    height: 200px;
+    background-image: url(images.png);
+    background-size:cover;        
+    position: relative;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    cursor: pointer;
+    &__icon {
+      text-decoration: none;
+      position: absolute;
+      top: 25px;
+      left: 0;
+      right: 0;
+      bottom: 25px;
+      text-align: center;
+      margin-top: 20px;
+      &:hover {
+        opacity: 0.5;
+      }
+      &__figure {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto;
+        border-radius: 50%;
+      }
+      &__name {
+        margin: 10px 0 10px 0;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      &__numbers {
+        margin: 8px 0 0;
+        display: flex;
+        color: #333;
+        &__number {
+          display: inline-block;
+          font-size: 14px;
+          line-height: 14px;
+          margin-right: 16px;
+          font-weight: 400;
+          &__count {
+            display: inline-block;
+            font-size: 16px;
+            line-height: 16px;
+            font-weight: 600;
+            margin-left: 8px;
+          }
+        }
+      }
+    }
+  }
+  &__tabs {
+    margin-top: 50px;
+    background-color: #fff;
+    margin: 0 auto;
+    &__tab_item {
+      width: calc(100%/2);
+      height: 74px;
+      background-color: #eee;
+      line-height: 72px;
+      font-size: 16px;
+      text-align: center;
+      color: #565656;
+      display: block;
+      float: left;
+      text-align: center;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    &__tab_mains {
+      display: none;
+      clear: both;
+      overflow: hidden;
+      cursor: pointer;
+      &__main {
+        padding: 16px;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        &:hover {
+          background-color: #F5F5F5 ;
+        }
+        &__figure {
+          width: 48px;
+          height: 48px;
+          float: left;
+        }
+        &__body {
+          margin: 0 40px 0 68px;
+          &__text {
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+            font-size: 14px;
+            line-height: 21px;
+            color: #333;
+          }
+          &__time-icon {
+            float: left;
+            margin: 0 8px 0 0;
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;;
+            color: #888888;
+          }
+          &__time {
+            font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;;
+            color: #888888;
+            font-size: 14px;
+          }
+          &__angle {
+            position: absolute;
+            right: 20px;
+            bottom: 27px;
+          }
+        }
+      }
+      &__button {
+        padding: 16px;
+        &__go {
+          height: 56px;
+          text-align: center;
+          line-height: 56px;
+          font-size: 14px;
+          font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+          &__list {
+            background-color: #eee;
+          }
+          &__list:hover {
+            background-color: #fafafa;
+          }
+        }
+      }
+      &__box {
+        &__bottom{
+          background-color: #ffffff;
+          color: #cccccc;
+          text-align: center;
+          &-img{
+            text-align: center;
+            margin: auto;
+            padding: 40px 0 15px 0;
+          }
+          &-text{
+            padding-bottom: 60px;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+        
+      }
+    }
+    input[name="tab_item"] {
+      display: none;
+    }
+  }
+  #news:checked ~ #news_main,
+  #todo:checked ~ #todo_main{
+    display: block;
+  }
+  .content__tabs input:checked + .content__tabs__tab_item {
+    background-color: #fff;
+    border-top: 2px solid #ea352d;
+    height: 72px;
+    line-height: 72px;
+  }
+}

@@ -1,17 +1,20 @@
 // ユーザマイページの固定部分（ヘッダーとサイドバー）のscss
 .u-main {
   text-decoration: none;
-  display: block;
   .u-header{
-    height: 17px;
-    line-height: 17px;
-    display: flex;
+    @include font4_u1;
+    border-top: solid 1px #eee;
+    position: relative;
+    display: block;
     background-color: #ffffff;
-    font-size: 14px;
     padding: 16px 210px;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
     &__list{
       color: #333333;
+      padding: 16px 0px;
+      &:hover {
+        text-decoration: underline;
+      }
     }
     &__list-icon{
       margin: 0 8px;
@@ -34,93 +37,59 @@
         .mypage-ul{
           background-color: #ffffff;
           &__list{
+            @include font4_u2;
+            display: block;
             position: relative;
-            color: #333333;
             border-top: solid 1px #F5F5F5;
-            font-weight: 400;
-            padding: 14px;
-            font-size: 14px;
             &:hover{
               background-color: #eee;
             }
             &__icon{
-              position: absolute;
-              right: 16px;
-              color: #ccc;
-              font-size: 20px;
+              @include u-icon;
               &:hover{
-                position: absolute;
-                right: 10px;
-                color: #333;
-                font-size: 25px;
-                top: 30%;
+                @include icon-hover;
               }
             }
-
           }
         }
         .merupay-heading{
-          margin-top: 40px;
-          font-size: 16px;
-          font-weight: 700;
+          @include u-heading;
         }
         .merupay-ul{
           background-color: #ffffff;
           &__list{
+            @include font4_u2;
             position: relative;
             display: block;
-            color: #333333;
-            font-weight: 400;
-            padding: 14px;
-            font-size: 14px;
             border-top: solid 1px #F5F5F5;  
             &:hover{
               background-color: #eee;
             }
             &__icon{
-              position: absolute;
-              right: 16px;
-              color: #ccc;
-              font-size: 20px;
+              @include u-icon;
               &:hover{
-                position: absolute;
-                right: 10px;
-                color: #333;
-                font-size: 25px;
-                top: 30%;
+                @include icon-hover;
               }
             }
           }
         }
         .setting-heading{
-          margin-top: 40px;
-          font-size: 16px;
-          font-weight: 700;
+          @include u-heading;
         }
         .setting-ul{
           background-color:#ffffff;
           &__list{
+            @include font4_u2;
             position: relative;
             display: block;
-            color: #333333;
-            font-weight: 400;
-            padding: 14px;
-            font-size: 14px;
-            border-top: solid 1px #F5F5F5;              
+            border-top: solid 1px #F5F5F5;
             &:hover{
               background-color: #eee;
             }
             &__icon{
-              position: absolute;
-              right: 16px;
-              color: #ccc;
-              font-size: 20px;
+              @include u-icon;
               &:hover{
-                position: absolute;
-                right: 10px;
-                color: #333;
-                font-size: 25px;
-                top: 30%;
+                @include icon-hover;
               }
             }
           }
