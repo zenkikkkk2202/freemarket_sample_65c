@@ -1,0 +1,54 @@
+-# ユーザマイページの右の部分 メルカリ>マイページ
+
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+
+.content__mypage-user
+  .content__mypage-user__icon
+    = link_to "" 
+    .content__mypage-user__icon__figures
+      = link_to image_tag"https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "content__mypage-user__icon__figure"
+    .content__mypage-user__icon__name
+      人間
+    .content__mypage-user__icon-numbers
+      .content__mypage-user__icon__numbers__number
+        評価
+        .content__mypage-user__icon__numbers__number__count
+          0
+      .content__mypage-user__icon__numbers__number
+        出品数
+        .content__mypage-user__icon__numbers__number__count
+          0
+.content__mypage-todos
+  .content__mypage-todos__tabs
+    .content__mypage-todos__tabs__news
+      = link_to ""
+      お知らせ
+    .content__mypage-todos__tabs__todo
+      = link_to ""
+      やることリスト
+  .content__mypage-todos__list
+    .content__mypage-todos__list__link
+    = link_to ""
+    .content__mypage-todos__list__icon
+    = image_tag "logo_red.svg", class: "content__mypage-todos__list__figure"
+    .content__mypage-todos__list__body
+      = link_to ""
+      .content__mypage-todos__list__body__text
+        <<新規登録者限定>>"最大1,000円分のポイントがもらえる"出品キャンペーン開催中！
+      .content__mypage-todos__list__body__time-icon
+        = icon 'far', 'clock'
+      .content__mypage-todos__list__body__time
+        1日前
+    .content__mypage-todos__list__body__angle-icon
+      = icon 'fas', 'angle-right', class: "content__mypage-todos__list__body__angle"
+  .content__mypage-todos__go
+    .content__mypage-todos__go__list
+      = link_to ""
+      一覧を見る
+      .u-products
+
+= render 'purchased_goods' # 全体の購入した商品の部分テンプレートの呼び出し
+
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
