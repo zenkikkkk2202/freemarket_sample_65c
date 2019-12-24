@@ -17,7 +17,6 @@ Rails.application.routes.draw do
       get 'evaluation'
       get 'contact'
       get 'guide'
-      get 'buy_confirm'
     end
   end
 end
