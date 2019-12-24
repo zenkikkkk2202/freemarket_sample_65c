@@ -40,10 +40,10 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                top: -70px;
-                left: -140px;
+                top: -160px;
+                left: -290px;
                 width: 100%;
-                height: 100%;
+                height: 550px;
                 font-size: 60px;
                 font-weight: 600;
                 line-height: 1.4;
@@ -56,11 +56,25 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                top: -10px;
-                left: -140px;
+                top: -130px;
+                left: -290px;
                 width: 100%;
-                height: 130%;
+                height: 750px;
                 color: white;
+                &__app{
+                  &__image{
+                    position: absolute;
+                    height: 100px;
+                    width: 300px;
+                    left: -290px;
+                    top: -130px;
+                    display: flex;
+                    &__appstore1{
+                    }
+                    &__appstore2{
+                    }
+                  }
+                }
               }
             }
           }
