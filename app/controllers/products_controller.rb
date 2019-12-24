@@ -55,6 +55,9 @@ class ProductsController < ApplicationController
   def contact
   end
 
+  def buy_confirm
+  end
+
   private
 
   def prefecture_params
