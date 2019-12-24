@@ -1,9 +1,7 @@
 // ユーザマイページの固定部分（ヘッダーとサイドバー）のscss
-*{
+.u-main {
   text-decoration: none;
   display: block;
-}
-.u-main {
   .u-header{
     height: 17px;
     line-height: 17px;

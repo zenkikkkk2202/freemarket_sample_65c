@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "products#index"
 
-  resources :products, only: [:index,:show] do
+  resources :products, only: [:index,:new,:create,:show] do
     collection do
       get 'my_page'
       get 'notice'
