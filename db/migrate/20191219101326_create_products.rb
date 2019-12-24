@@ -4,12 +4,14 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :description, null: false
       t.integer :category, null: false, default: 0
-      t.string :condition, null: false
-      t.string :charge, null: false
-      t.integer :prefecture_id, null: false
+      t.integer :condition, null: false, default: 0
+      t.integer :charge, null: false, default: 0
+      t.integer :prefecture_id, null: false, default: 0
       t.string :city, null: false
-      t.string :day, null: false
+      t.integer :day, null: false, default: 0
       t.integer :price, null: false
+      t.integer :fee, null: false
+      t.integer :profit, null: false
       t.references :user, foreign_key: true
       t.timestamps
     end

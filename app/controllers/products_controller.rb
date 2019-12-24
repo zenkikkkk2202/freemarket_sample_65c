@@ -3,8 +3,15 @@ class ProductsController < ApplicationController
     
   end
 
-  def show
+  def new
+    @product = Product.new
+  end
+
+  def create
     
+  end
+  
+  def show
   end
 
   def my_page
@@ -46,5 +53,11 @@ class ProductsController < ApplicationController
   end
 
   def contact
+  end
+
+  private
+
+  def prefecture_params
+    params.require(:product).permit(:prefecture)
   end
 end

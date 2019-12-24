@@ -1,0 +1,132 @@
+.exhibitcontent
+  = render "show_header"
+  
+  .exhibitcontent_main
+    .exhibitcontent_main__title
+      商品の情報を入力
+    .exhibitcontent_main__first
+      .exhibitcontent_main__first__head
+        .exhibitcontent_main__first__head--img
+          出品画像
+        .exhibitcontent_main__first__head--required
+          必須
+      .exhibitcontent_main__first--description
+        最大10枚までアップロードできます。
+      .exhibitcontent_main__first--image
+        %label
+          %input.exhibitcontent_main__first--image{type: "file",multiple:"multiple",class:"exhibitcontent_main__first--image--hide"}
+          %pre
+            ドロッグアンドドロップ
+            またはクリックしてファイルをアップロード
+  
+    .exhibitcontent_main__second
+      .exhibitcontent_main__second__top
+        .exhibitcontent_main__second__top--pr_name
+          商品名
+        .exhibitcontent_main__second__top--required2
+          必須
+      .exhibitcontent_main__second--string
+        %input.exhibitcontent_main__second--string--set{type:"text",placeholder:"商品名  (必須40文字まで)"}
+      .exhibitcontent_main__second__middle
+        .exhibitcontent_main__second__middle__top
+          .exhibitcontent_main__second__middle__top--description2
+            商品名の説明
+          .exhibitcontent_main__second__middle__top--required3
+            必須
+        .exhibitcontent_main__second__middle--text
+          %textarea.exhibitcontent_main__second__middle--text--set2{placeholder:"商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
+ 
+    .exhibitcontent_main__third
+      .exhibitcontent_main__third--left
+        商品の詳細
+      .exhibitcontent_main__third__right
+        .exhibitcontent_main__third__right__top
+          .exhibitcontent_main__third__right__top--cate
+            カテゴリー
+          .exhibitcontent_main__third__right__top--required4
+            必須
+        = form_with model: @product, local: true,class:"exhibitcontent_main__third__right--string2--set2" do |f|
+          = f.select :category, [["---", 0],["レディース", 1],["メンズ", 2],["ベビー・キッズ",3],[" インテリア・住まい・小物",4],["本・音楽・ゲーム",5],["おもちゃ・ホビー・グッズ",6],["コスメ・香水・美容",7],["家電・スマホ・カメラ",8],["スポーツ・レジャー",9],["ハンドメイド",10],["チケット",11],["自動車・オートバイ",12],["その他",13]]
+          = icon 'fa', 'chevron-down', class: "exhibitcontent_main__third__right--string2--set2--icon"
+        .exhibitcontent_main__third__right__bottom
+          .exhibitcontent_main__third__right__bottom--status 
+            商品の状態
+          .exhibitcontent_main__third__right__bottom--required5
+            必須
+        = form_with model: @product, local: true,class:"exhibitcontent_main__third__right--string3--set3" do |f|
+          = f.select :condition, [["---", 0],["新品、未使用", 1],["未使用に近い", 2],["目立った傷や汚れなし",3],[" やや傷や汚れあり",4],["汚れや傷あり",5],["全体的に状態が悪い",6]]
+          = icon 'fa', 'chevron-down', class: "exhibitcontent_main__third__right--string3--set3--icon"
+    .exhibitcontent_main__fourth
+      .exhibitcontent_main__fourth__left
+        .exhibitcontent_main__fourth__left--shipping
+          配達について
+          = link_to "?","#",class:"exhibitcontent_main__fourth__left--q"
+      .exhibitcontent_main__fourth__right
+        .exhibitcontent_main__fourth__right__top
+          .exhibitcontent_main__fourth__right__top--burden
+            配達料の負担
+          .exhibitcontent_main__fourth__right__top--required6
+            必須
+        = form_with model: @product, local: true,class:"exhibitcontent_main__third__right--string4--set4" do |f|
+          = f.select :charge, [["---", 0],["送料込み（出品者負担）", 1],["着払い（購入者負担）", 2]]
+          = icon 'fa', 'chevron-down', class: "exhibitcontent_main__third__right--string4--set4--icon"
+        .exhibitcontent_main__fourth__right__middle
+          .exhibitcontent_main__fourth__right__middle--region
+            発送元の地域
+          .exhibitcontent_main__fourth__right__middle--required7
+            必須
+        = form_with model: @product, local: true,class:"exhibitcontent_main__third__right--string5--set" do |f|
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+          = icon 'fa', 'chevron-down', class: "exhibitcontent_main__third__right--string5--set5--icon"
+        .exhibitcontent_main__fourth__right__bottom
+          .exhibitcontent_main__fourth__right__bottom--days
+            発送までの日数
+          .exhibitcontent_main__fourth__right__bottom--required8
+            必須
+        = form_with model: @product, local: true,class:"exhibitcontent_main__third__right--string6--set6" do |f|
+          = f.select :day, [["---", 0],["１〜2日で発送", 1],["２〜3日で発送", 2],["４〜7日で発送", 3]]
+          = icon 'fa', 'chevron-down', class: "exhibitcontent_main__third__right--string5--set5--icon"
+    
+    .exhibitcontent_main__fifth
+      .exhibitcontent_main__fifth__left
+        .exhibitcontent_main__fifth__left--price
+          販売価格(300〜9,999,999)
+          = link_to "?","#",class:"exhibitcontent_main__fifth__left--q2"
+      .exhibitcontent_main__fifth__right
+        .exhibitcontent_main__fifth__right__top
+          .exhibitcontent_main__fifth__right__top__left
+            .exhibitcontent_main__fifth__right__top__left--price2
+              価格
+            .exhibitcontent_main__fifth__right__top__left--required9
+              必須
+          .exhibitcontent_main__fifth__right__top__right
+            ¥
+            = form_with model: @product, local: true,class:"exhibitcontent_main__fifth__right__top__right--input" do |f|
+              = f.text_field :price, id: "price"
+        .exhibitcontent_main__fifth__right--middle 
+          販売手数料(10％)
+          = form_with model: @product, local: true,class:"exhibitcontent_main__fifth__right__top__right--input" do |f|
+            = f.text_field :fee, id: "fee"
+        .exhibitcontent_main__fifth__right--bottom
+          販売利益
+          = form_with model: @product, local: true,class:"exhibitcontent_main__fifth__right__top__right--input" do |f|
+            = f.text_field :profit, id: "profit"
+    .exhibitcontent_main__sixth
+      .exhibitcontent_main__sixth__important
+        = link_to "禁止されている出品","#",class: 'exhibitcontent_main__sixth__important--btn'
+        、
+        = link_to "行為","#",class: 'exhibitcontent_main__sixth__important--btn'
+        を必ずご確認ください。
+        %br
+        またブランド品でシリアルナンバー等がある場合はご記載ください。
+        = link_to "偽ブランドの販売","#",class: 'exhibitcontent_main__sixth__important--btn'
+        は犯罪であり処罰される可能性があります。
+        %br
+        また、出品をもちまして
+        = link_to "加盟店規約","#",class: 'exhibitcontent_main__sixth__important--btn'
+        に同意したことになります。
+      %input.exhibitcontent_main__sixth--submit{type:"submit",value:"出品する"}
+      = link_to "もどる","#",class: 'exhibitcontent_main__sixth--back'
+  
+  .exhibitcontent_down
+    = render 'show_footer'

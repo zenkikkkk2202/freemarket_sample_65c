@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_115853) do
   end
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -76,12 +77,14 @@ ActiveRecord::Schema.define(version: 2019_12_23_115853) do
     t.string "name", null: false
     t.text "description", null: false
     t.integer "category", default: 0, null: false
-    t.string "condition", null: false
-    t.string "charge", null: false
-    t.integer "prefecture_id", null: false
+    t.integer "condition", default: 0, null: false
+    t.integer "charge", default: 0, null: false
+    t.integer "prefecture_id", default: 0, null: false
     t.string "city", null: false
-    t.string "day", null: false
+    t.integer "day", default: 0, null: false
     t.integer "price", null: false
+    t.integer "fee", null: false
+    t.integer "profit", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
