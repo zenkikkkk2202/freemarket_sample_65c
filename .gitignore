@@ -30,3 +30,7 @@ Gemfile
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+app/views/products/_header.html.haml
+app/views/products/_header.html.haml
+app/views/products/_header.html.haml
+app/views/products/_footer.html.haml
