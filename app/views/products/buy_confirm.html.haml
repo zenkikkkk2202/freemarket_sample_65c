@@ -1,0 +1,46 @@
+.exhibitcontent
+  = render "show_header"
+  .confirm
+    .confirm__main
+      %h2.confirm__main__title 購入内容の確認
+      .confirm__main__image
+        .confirm__main__image__box
+          .confirm__main__image__box__gazo
+            .confirm__main__image__box__gazo__file
+              =image_tag"37efefdc5861611849e8a26e53bedb8f_m.jpg",class:"confirm__main__image__box__gazo__file__product"
+            .confirm__main__image__box__gazo__item
+              %p.confirm__main__image__box__gazo__item__name 中村まさき
+              %p.confirm__main__image__box__gazo__item__price 
+                %span
+                ¥.5600
+                %span.confirm__main__image__box__gazo__item__price__send
+                (税込み)送料込み
+      .confirm__main__fee
+        .confirm__main__fee__box
+          .confirm__main__fee__box__form
+            %ul.confirm__main__fee__box__form__table
+              %li.confirm__main__fee__box__form__table__money
+                .confirm__main__fee__box__form__table__money__text 支払い金額
+                .confirm__main__fee__box__form__table__money__price
+                  %span
+                  ¥.5600
+            %ul.confirm__main__fee__box__form__point
+              %li.confirm__main__fee__box__form__point__have
+                .confirm__main__fee__box__form__point__have__box
+                  = check_box_tag :check_box 
+                    
+            .confirm__main__fee__box__form__pattern
+              .confirm__main__fee__box__form__pattern__text
+                %h3 
+                お支払い方法
+                = link_to "登録して下さい","#"
+                %p.confirm__main__fee__box__form__pattern__text__link
+                  %i.fa.icon-plus-circle.fa-spin
+                  %span.confirm__main__fee__box__form__pattern__text__link__message 
+                    登録してください
+
+
+
+  .exhibitcontent_down
+    = render "show_footer"
+
