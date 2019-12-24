@@ -47,4 +47,7 @@ class ProductsController < ApplicationController
 
   def contact
   end
+
+  def buy_confirm
+  end
 end
