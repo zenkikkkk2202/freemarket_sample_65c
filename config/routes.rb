@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :products, only: [:index,:new,:create,:show] do
     collection do
-      get 'my_page'
+      get 'user-page'
       get 'notice'
       get 'things_to_do'
       get 'like'
