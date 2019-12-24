@@ -1,6 +1,6 @@
 .exhibitcontent
-  .exhibitcontent_logo
-    = link_to image_tag('fmarket_logo_red.svg',size:"185x49",class:"exhibitcontent_logo__image"), '#'
+  = render "show_header"
+  
   .exhibitcontent_main
     .exhibitcontent_main__title
       商品の情報を入力
@@ -45,8 +45,7 @@
             カテゴリー
           .exhibitcontent_main__third__right__top--required4
             必須
-        .exhibitcontent_main__third__right--string2
-          %input.exhibitcontent_main__third__right--string2--set2{type:"text"}
+        = select :category, options_for_select(Product.categories),{class:"exhibitcontent_main__third__right--string2--set2"}
         .exhibitcontent_main__third__right__bottom
           .exhibitcontent_main__third__right__bottom--status 
             商品の状態
@@ -120,11 +119,4 @@
       = link_to "もどる","#",class: 'exhibitcontent_main__sixth--back'
   
   .exhibitcontent_down
-    .exhibitcontent_down__terms
-      = link_to "プライバシーポリシー","#",class: 'exhibitcontent_down__terms--left'
-      = link_to "Fmarket利用規約","#",class: 'exhibitcontent_down__terms--center'
-      = link_to "特定商取引に関する表記","#",class: 'exhibitcontent_down__terms--right'
-    .exhibitcontent_down__middle
-      = link_to image_tag('logo_gray.svg',size:"80x65",class:"exhibitcontent_down__middle--image"), '#'
-    .exhibitcontent_down__bottom
-      @Fmarket,lnc.
+    = render 'show_footer'
