@@ -1,3 +1,5 @@
+.header
+  = render "header"
 .main
   .imain
     .imain__main
@@ -6,20 +8,23 @@
         .imain__main__link__image{id: "icon"}
           %ul.imain__main__link__image__ulist
             %li
-              = link_to "" do
-                = image_tag "6cbf10cdf0a7a15ce0c0615f66a499bb_m.jpg",class: "imain__main__link__image__ulist__gazo",id: "gazo1"
+              = image_tag "6cbf10cdf0a7a15ce0c0615f66a499bb_m.jpg",class: "imain__main__link__image__ulist__gazo",id: "gazo1"
             %li
-              = link_to "" do
-                = image_tag "https://mail.google.com/mail/u/0?ui=2&ik=33ce5707ad&attid=0.1&permmsgid=msg-f:1653688456250162859&th=16f314e3abf47eab&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ_gcfNksvXJz7L0FKeATDoH-563flltkXmkRymdoqxwBaSRoNXiD7egaE2W0SaNY0hd4sPyApwn-Hib0wjklCwcX-_iaBe3M2GSUSIn1Mg4HO7elw70AgPl0SQ&disp=emb&realattid=16f314d8a1f49b7262f1",class: "imain__main__link__image__ulist__gazo",id: "gazo1"
-                .imain__main__link__image__ulist__text
-                  .imain__main__link__image__ulist__text__1
-                    スマホで簡単
-                    %br
-                    フリマアプリ
-                  .imain__main__link__image__ulist__text__2
-                    メルカリはスマホカメラからすぐに出品できる
-                    %br
-                    購入時も安心な独自システムのアプリです
+              = image_tag "https://mail.google.com/mail/u/0?ui=2&ik=33ce5707ad&attid=0.1&permmsgid=msg-f:1653688456250162859&th=16f314e3abf47eab&view=fimg&sz=s0-l75-ft&attbid=ANGjdJ_gcfNksvXJz7L0FKeATDoH-563flltkXmkRymdoqxwBaSRoNXiD7egaE2W0SaNY0hd4sPyApwn-Hib0wjklCwcX-_iaBe3M2GSUSIn1Mg4HO7elw70AgPl0SQ&disp=emb&realattid=16f314d8a1f49b7262f1",class: "imain__main__link__image__ulist__gazo",id: "gazo1"
+              .imain__main__link__image__ulist__text
+                .imain__main__link__image__ulist__text__1
+                  スマホで簡単
+                  %br
+                  フリマアプリ
+                .imain__main__link__image__ulist__text__2
+                  メルカリはスマホカメラからすぐに出品できる
+                  %br
+                  購入時も安心な独自システムのアプリです
+                  .imain__main__link__image__ulist__text__2__app
+                    =link_to "#",class: "imain__main__link__image__ulist__text__2__app__image" do
+                      =image_tag"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",size: "170x50",class:"imain__main__link__image__ulist__text__2__app__image__appstore1"
+                    =link_to "#",class: "imain__main__link__image__ulist__text__app__image" do
+                      =image_tag"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",size: "170x50",class:"imain__main__link__image__ulist__text__2__app__image__appstore2"
           .imain__main__link__image__left 
             .imain__main__link__image__left__a{id: "btn1"}
           .imain__main__link__image__right
@@ -32,14 +37,14 @@
       .imain__main__content__menu
         %ul.imain__main__content__menu__list
           %li.imain__main__content__menu__list__category
-            %a.imain__main__content__menu__list__category__a レディース
-            %a.imain__main__content__menu__list__category__b レディース
-            %a.imain__main__content__menu__list__category__a メンズ
-            %a.imain__main__content__menu__list__category__b メンズ
-            %a.imain__main__content__menu__list__category__a 家電・スマホ・カメラ
-            %a.imain__main__content__menu__list__category__b 家電・スマホ・カメラ
-            %a.imain__main__content__menu__list__category__a おもちゃ・ホビー・グッズ
-            %a.imain__main__content__menu__list__category__b おもちゃ・ホビー・グッズ
+            =link_to"レディース","",class:"imain__main__content__menu__list__category__a" 
+            =link_to"レディース","",class:"imain__main__content__menu__list__category__b" 
+            =link_to"メンズ","",class:"imain__main__content__menu__list__category__a" 
+            =link_to"メンズ","",class:"imain__main__content__menu__list__category__b" 
+            =link_to"家電・スマホ・カメラ","",class:"imain__main__content__menu__list__category__a"  
+            =link_to"家電・スマホ・カメラ","",class:"imain__main__content__menu__list__category__b" 
+            =link_to"おもちゃ・ホビー・グッズ","",class:"imain__main__content__menu__list__category__a"  
+            =link_to"おもちゃ・ホビー・グッズ","",class:"imain__main__content__menu__list__category__b"
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
@@ -51,7 +56,8 @@
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
+                
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -72,7 +78,7 @@
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -93,7 +99,7 @@
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -114,7 +120,7 @@
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -135,7 +141,7 @@
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -156,7 +162,7 @@
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -170,14 +176,14 @@
       .imain__main__product__box
         .imain__main__product__box__menu
           .imain__main__product__box__menu__text アイテム7
-          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link" 
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
             -# -if @products
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -198,7 +204,7 @@
             -#   - @products.each do |p|
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
-                %a{href:"",class: "imain__main__product__box__item__list__data__size__link"}
+                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
                   %figure.imain__main__product__box__item__list__data__size__link__figure
                     %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                       harry_styles
@@ -210,3 +216,5 @@
 
 .banner
   = render "banner"
+.footer
+  = render "footer"
