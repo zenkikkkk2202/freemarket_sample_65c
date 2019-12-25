@@ -1,0 +1,18 @@
+// メルカリ>マイページ>ログアウトのログアウトページのsass
+
+.setting-logout {
+  background-color: #fff;
+  padding: 64px;
+  border-top: 1px solid #f5f5f5;
+  &__content {
+    max-width: 320px;
+    margin: 0 auto;
+    &__btn {
+      @include font16_u3;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
