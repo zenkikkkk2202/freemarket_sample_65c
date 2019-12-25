@@ -1,10 +1,10 @@
 // メルカリ>マイページ>のsass
 // クラス名変更
-.content{
+.contents{
   width: 700px;
   &__user {
     height: 200px;
-    background-image: url(images.png);
+    background-image: url(mypage-background.png);
     background-size:cover;        
     position: relative;
     font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -19,7 +19,7 @@
       text-align: center;
       margin-top: 20px;
       &:hover {
-        opacity: 0.5;
+        opacity: 0.7;
       }
       &__figure {
         width: 60px;
@@ -61,6 +61,7 @@
     margin-top: 50px;
     background-color: #fff;
     margin: 0 auto;
+    margin-bottom: 30px;
     &__tab_item {
       width: calc(100%/2);
       height: 74px;
@@ -140,18 +141,18 @@
           background-color: #ffffff;
           color: #cccccc;
           text-align: center;
-          &-img{
+          &--img{
             text-align: center;
-            margin: auto;
-            padding: 40px 0 15px 0;
+            margin: 40px 0 15px 0;
+            height: 100px;
+            width: 100px;
           }
-          &-text{
+          &--text{
             padding-bottom: 60px;
             font-weight: 600;
             font-size: 16px;
           }
         }
-        
       }
     }
     input[name="tab_item"] {
@@ -159,10 +160,97 @@
     }
   }
   #news:checked ~ #news_main,
-  #todo:checked ~ #todo_main{
+  #todo:checked ~ #todo_box{
     display: block;
   }
-  .content__tabs input:checked + .content__tabs__tab_item {
+  .contents__tabs input:checked + .contents__tabs__tab_item {
+    background-color: #fff;
+    border-top: 2px solid #ea352d;
+    height: 72px;
+    line-height: 72px;
+  }
+  &__top {
+    padding: 0 16px;
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
+  }
+  &__trading {
+    margin-top: 50px;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    &__tab_item2 {
+      width: calc(100%/2);
+      height: 74px;
+      background-color: #eee;
+      line-height: 72px;
+      font-size: 16px;
+      text-align: center;
+      color: #565656;
+      display: block;
+      float: left;
+      text-align: center;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+    &__tab_mains {
+      display: none;
+      clear: both;
+      overflow: hidden;
+      cursor: pointer;
+      &__main {
+        border-bottom: 1px solid #eee;
+        position: relative;
+        &:hover {
+          background-color: #F5F5F5 ;
+        }
+        &__bottom{
+          background-color: #ffffff;
+          color: #cccccc;
+          text-align: center;
+          &--img{
+            text-align: center;
+            margin: 40px 0 15px 0;
+            height: 100px;
+            width: 100px;
+          }
+          &--text{
+            padding-bottom: 60px;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+      }
+      &__box {
+        &__bottom{
+          background-color: #ffffff;
+          color: #cccccc;
+          text-align: center;
+          &--img{
+            text-align: center;
+            margin: 40px 0 15px 0;
+            height: 100px;
+            width: 100px;
+          }
+          &--text{
+            padding-bottom: 60px;
+            font-weight: 600;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    input[name="tab_item2"] {
+      display: none;
+    }
+  }
+  #now-trading:checked ~ #now-trading_main,
+  #past-trading:checked ~ #past-trading_box{
+    display: block;
+  }
+  .contents__trading input:checked + .contents__trading__tab_item2 {
     background-color: #fff;
     border-top: 2px solid #ea352d;
     height: 72px;
