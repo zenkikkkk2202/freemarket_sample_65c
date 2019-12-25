@@ -1,0 +1,35 @@
+// メルカリ>マイページ>支払い方法のhaml クレジットカード編集
+
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  = render 'user_header'  # ユーザマイページのヘッダー部分テンプレートの呼び出し
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      .contents
+        .chapter-container
+          .chapter-container__head
+            支払い方法
+          .chapter-container__form
+            .chapter-container__form__credit
+              クレジットカード一覧
+            %ul.chapter-container__form__payment
+              %li.chapter-container__form__payment__list
+                = icon 'fab', 'cc-visa', class: "chapter-container__form__payment__list__icon"
+                .chapter-container__form__payment__list__num
+                  ************1234
+                .chapter-container__form__payment__list__data
+                  12 / 12
+                %button.chapter-container__form__payment__list__button{type: "submit"} 
+                  削除する
+                  = link_to ""
+            .chapter-container__form__regist
+              支払い方法について
+              = icon 'fas', 'angle-right', class: "chapter-container__form__regists"
+              = link_to ""
+
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
