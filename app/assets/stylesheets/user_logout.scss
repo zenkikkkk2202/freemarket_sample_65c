@@ -8,15 +8,11 @@
     max-width: 320px;
     margin: 0 auto;
     &__btn {
+      @include font16_u3;
       background: #ea352d;
       border: 1px solid #ea352d;
-      color: #fff;
       text-align: center;
       width: 100%;
-      line-height: 48px;
-      font-size: 14px;
-      line-height: 48px;
-      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
     }
   }
 }
