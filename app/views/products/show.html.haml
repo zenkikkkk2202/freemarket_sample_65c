@@ -106,11 +106,12 @@
   %ul.list__scroll
     %li.list__scroll__prev
       = link_to root_path, class:"list__scroll__prev__left" do
-        %i.fas.fa-chevron-left 前
+        =icon("fas","chevron-left") 
+        前
     %li.list__scroll__next
       = link_to root_path, class:"list__scroll__next__right" do
         後ろ
-        %i.fas.fa-chevron-right 
+        =icon("fas","chevron-right")
   .social__media
     .social__media__text
     %ul.social__media__box
