@@ -40,3 +40,4 @@ app/controllers/products_controller.rb
 
 config/routes.rb
 app/assets/stylesheets/application.scss
+app/assets/stylesheets/application.scss
