@@ -1,0 +1,19 @@
+// メルカリ>マイページ>ログアウトのログアウトページのhaml
+
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  = render 'user_header'  # ユーザマイページのヘッダー部分テンプレートの呼び出し
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      .contents
+        .setting-logout
+          .setting-logout__content
+            %button.setting-logout__content__btn{type: "submit"}
+              ログアウト
+              = link_to ""
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
