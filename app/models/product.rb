@@ -3,5 +3,5 @@ class Product < ApplicationRecord
   
   belongs_to_active_hash :prefecture
   belongs_to :user, optional: true
-  has_many :products_images, optional: true
+  has_many :products_images
 end
