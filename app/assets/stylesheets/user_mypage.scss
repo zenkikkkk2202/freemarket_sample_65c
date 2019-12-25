@@ -1,0 +1,103 @@
+// ユーザマイページの固定部分（ヘッダーとサイドバー）のscss
+.u-main {
+  text-decoration: none;
+  .u-header{
+    @include font4_u1;
+    border-top: solid 1px #eee;
+    position: relative;
+    display: block;
+    background-color: #ffffff;
+    padding: 16px 210px;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    &__list{
+      color: #333333;
+      padding: 16px 0px;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &__list-icon{
+      margin: 0 8px;
+      font-size: 10px;
+      color: #888888;
+    }
+  }
+  .u-container{
+    background-color: #F5F5F5;
+    .container-center{
+      margin: 0 auto;
+      padding: 40px 0px;
+      width: 1020px;
+      display: flex;
+      .side{
+        width: 280px;
+        margin: 0 40px 0 0;
+        font-size: 14px;
+        line-height: 14px;
+        .mypage-ul{
+          background-color: #ffffff;
+          &__list{
+            @include font4_u2;
+            display: block;
+            position: relative;
+            border-top: solid 2px #F5F5F5;
+            padding: 16px;
+            &:hover{
+              background-color: #eee;
+            }
+            &__icon{
+              @include u-icon;
+              &:hover{
+                @include icon-hover;
+              }
+            }
+          }
+        }
+        .merupay-heading{
+          @include u-heading;
+        }
+        .merupay-ul{
+          background-color: #ffffff;
+          &__list{
+            @include font4_u2;
+            position: relative;
+            display: block;
+            border-top: solid 2px #F5F5F5; 
+            padding: 16px; 
+            &:hover{
+              background-color: #eee;
+            }
+            &__icon{
+              @include u-icon;
+              &:hover{
+                @include icon-hover;
+              }
+            }
+          }
+        }
+        .setting-heading{
+          @include u-heading;
+        }
+        .setting-ul{
+          background-color:#ffffff;
+          &__list{
+            @include font4_u2;
+            position: relative;
+            display: block;
+            border-top: solid 2px #F5F5F5;
+            padding: 16px;
+            &:hover{
+              background-color: #eee;
+            }
+            &__icon{
+              @include u-icon;
+              &:hover{
+                @include icon-hover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
