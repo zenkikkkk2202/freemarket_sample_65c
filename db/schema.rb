@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_23_115853) do
+ActiveRecord::Schema.define(version: 2019_12_25_075650) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name_family", null: false
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 2019_12_23_115853) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
+  create_table "cellphones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "cellphone_number", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cellphones_on_user_id"
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -93,7 +101,6 @@ ActiveRecord::Schema.define(version: 2019_12_23_115853) do
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
-    t.integer "cellphone_number", null: false
     t.text "image"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -107,6 +114,7 @@ ActiveRecord::Schema.define(version: 2019_12_23_115853) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cellphones", "users"
   add_foreign_key "credit_cards", "users"
   add_foreign_key "facebooks", "users"
   add_foreign_key "googles", "users"
