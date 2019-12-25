@@ -79,6 +79,13 @@
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
+@mixin font14_u2_color{
+  line-height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
 @mixin u-heading{
   margin-top: 40px;
   font-size: 16px;
@@ -148,6 +155,14 @@
   color: #333333;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
   
+}
+
+@mixin font16_u5{
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
 @mixin u-icon{
