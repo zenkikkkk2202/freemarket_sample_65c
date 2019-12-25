@@ -117,6 +117,7 @@
       margin-right: 150px;
     }
     &__right{
+      position: relative;
       &__top{
         display: flex;
         &--cate{
@@ -126,15 +127,17 @@
           @include required;
         }
       }
-      &--string2{
-        &--set2{
-          width: 345px;
-          height: 40px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          margin-top: 8px;
-          margin-bottom:35px;
-        }
+      &--icon{
+        position: absolute;
+        right: 5px;
+        top: 24%;
+        z-index: 2;
+        color: #888;
+        font-size: 20px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        background-color: white;
+        cursor: pointer;
       }
       &__bottom{
         display: flex;
@@ -145,18 +148,42 @@
           @include required;
         }
       }
-      &--string3{
-        &--set3{
-          width: 345px;
-          height: 40px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          margin-top: 8px;
-          margin-bottom:35px;
-        }
+      &--icon2{
+        position: absolute;
+        right: 5px;
+        top: 74%;
+        z-index: 2;
+        color: #888;
+        font-size: 20px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        background-color: white;
+        cursor: pointer;
       }
     }
   }
+  #product_category{
+    width: 345px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    margin-bottom:35px;
+    cursor: pointer;
+  }
+
+  #product_condition{
+    width: 345px;
+    height: 40px;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    margin-bottom:35px;
+    cursor: pointer;
+  }
+
   &__fourth{
     display: flex;
     padding: 40px;
@@ -186,6 +213,7 @@
       }
     }
     &__right{
+      position: relative;
       &__top{
         display: flex;
         &--burden{
@@ -195,15 +223,41 @@
           @include required;
         }
       }
-      &__string4{
-        &--set4{
-          width: 339px;
-          height: 40px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          margin-top: 8px;
-          margin-bottom:35px;
-        }
+      &--icon3{
+        position: absolute;
+        right: 5px;
+        top: 16%;
+        z-index: 2;
+        color: #888;
+        font-size: 20px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        background-color: white;
+        cursor: pointer;
+      }
+      &--icon4{
+        position: absolute;
+        right: 5px;
+        top: 49%;
+        z-index: 2;
+        color: #888;
+        font-size: 20px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        background-color: white;
+        cursor: pointer;
+      }
+      &--icon5{
+        position: absolute;
+        right: 5px;
+        top: 83%;
+        z-index: 2;
+        color: #888;
+        font-size: 20px;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        background-color: white;
+        cursor: pointer;
       }
       &__middle{
         display: flex;
@@ -212,16 +266,6 @@
         }
         &--required7{
           @include required;
-        }
-      }
-      &__string5{
-        &--set5{
-          width: 339px;
-          height: 40px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          margin-top: 8px;
-          margin-bottom:35px;
         }
       }
       &__bottom{
@@ -233,17 +277,40 @@
           @include required;
         }
       }
-      &__string6{
-        &--set6{
-          width: 339px;
-          height: 40px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          margin-top: 8px;
-          margin-bottom:35px;
-        }
-      }
     }
+  }
+
+  #product_charge{
+    width: 339px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    margin-bottom:35px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  #product_prefecture_id{
+    width: 339px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    margin-bottom:35px;
+    background-color: #FFFFFF;
+    cursor: pointer;
+  }
+
+  #product_day{
+    width: 339px;
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    margin-bottom:35px;
+    background-color: #FFFFFF;
+    cursor: pointer;
   }
 
   &__fifth{
@@ -298,31 +365,55 @@
           font-size: 14px;
           font-weight: 400;
           color: #333;
-          &--input{
-            width: 160px;
-            height: 40px;
-            text-align: right;
-            padding: 10px 16px 8px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+          display: flex;
+          position: relative;
+          &--1{
+            position: absolute;
+            top:13px;
+            left: -10px;
           }
         }
+      }
+      &--input{
+        width: 150px;
+        height: 40px;
+        text-align: right;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
       }
       &--middle {
         font-size: 14px;
         font-weight: 400;
         color: #333333;
+        display: flex;
+        justify-content: space-between;
         font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
         border-top:1px solid #ccc;
         border-bottom:1px solid #ccc;
         padding: 24px 0;
       }
+      &--input2{
+        height: 40px;
+        text-align: right;
+        padding: 10px 16px 8px;
+        border: none;
+      }
       &--bottom{
         font-size: 16px;
         font-weight: 600;
+        display: flex;
+        justify-content: space-between;
         font-family:"Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
         color: #333333;
         padding:24px 0px;
+      }
+      &--input3{
+        height: 40px;
+        text-align: right;
+        padding: 10px 16px 8px;
+        border-radius: 4px;
+        border: none;
       }
     }
   }
