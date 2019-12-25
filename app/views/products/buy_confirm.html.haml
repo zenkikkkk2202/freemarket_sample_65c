@@ -11,33 +11,45 @@
             .confirm__main__image__box__gazo__item
               %p.confirm__main__image__box__gazo__item__name 中村まさき
               %p.confirm__main__image__box__gazo__item__price 
-                %span
-                ¥.5600
-                %span.confirm__main__image__box__gazo__item__price__send
-                (税込み)送料込み
-      .confirm__main__fee
-        .confirm__main__fee__box
-          .confirm__main__fee__box__form
-            %ul.confirm__main__fee__box__form__table
-              %li.confirm__main__fee__box__form__table__money
-                .confirm__main__fee__box__form__table__money__text 支払い金額
-                .confirm__main__fee__box__form__table__money__price
-                  %span
-                  ¥.5600
-            %ul.confirm__main__fee__box__form__point
-              %li.confirm__main__fee__box__form__point__have
-                .confirm__main__fee__box__form__point__have__box
-                  = check_box_tag :check_box 
+                %span ¥.5600
+                %span.confirm__main__image__box__gazo__item__price__send (税込み)送料込み
+                
+      .confirm__main__image
+        .confirm__main__image__box
+          .confirm__main__image__box__form
+            %ul.confirm__main__image__box__form__table
+              %li.confirm__main__image__box__form__table__money
+                .confirm__main__image__box__form__table__money__text 支払い金額
+                .confirm__main__image__box__form__table__money__price
+                  %span ¥.5600
+                  
+            %ul.confirm__main__image__box__form__point
+              %li.confirm__main__image__box__form__point__have
+                .confirm__main__image__box__form__point__have__box
+                  = check_box_tag :check_box
+                  %i.confirm__main__image__box__form__point__have__box__icon
+                  %label.confirm__main__image__box__form__point__have__box__text ポイントを使用 (所持ポイント: P0)
                     
-            .confirm__main__fee__box__form__pattern
-              .confirm__main__fee__box__form__pattern__text
-                %h3 
-                お支払い方法
-                = link_to "登録して下さい","#"
-                %p.confirm__main__fee__box__form__pattern__text__link
-                  %i.fa.icon-plus-circle.fa-spin
-                  %span.confirm__main__fee__box__form__pattern__text__link__message 
-                    登録してください
+            .confirm__main__image__box__form__pattern
+              .confirm__main__image__box__form__pattern__text
+                %h3 お支払い方法
+                = link_to "",id:"link" do
+                  %p.confirm__main__image__box__form__pattern__text__link
+                    %i.icon-plus-circle
+                    %span.confirm__main__image__box__form__pattern__text__link__message 登録してください
+            
+            .confirm__main__image__box__form__pattern
+              .confirm__main__image__box__form__pattern__text
+                %h3 配送先
+                = link_to "",id:"link" do
+                  %p.confirm__main__image__box__form__pattern__text__link
+                    %i.icon-plus-circle
+                    %span.confirm__main__image__box__form__pattern__text__link__message 登録してください
+
+            .confirm__main__image__box__form__pattern
+              %button.confirm__main__image__box__form__pattern__button{type: "button"}
+                =submit_tag "購入する"
+              %input.confirm__main__image__box__form__pattern__hidden{type: "hidden"}
 
 
 
