@@ -14,6 +14,12 @@ class ProductsController < ApplicationController
   def show
   end
 
+  def user_profile_edit
+  end
+
+  def user_logout
+  end
+
   def user_page
     
   end
