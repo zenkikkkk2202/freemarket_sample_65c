@@ -11,7 +11,14 @@ class ProductsController < ApplicationController
     
   end
   
+  
   def show
+  end
+
+  def user_credit
+  end
+
+  def user_profile_information
   end
 
   def user_profile_edit
