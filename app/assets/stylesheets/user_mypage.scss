@@ -40,7 +40,8 @@
             @include font4_u2;
             display: block;
             position: relative;
-            border-top: solid 1px #F5F5F5;
+            border-top: solid 2px #F5F5F5;
+            padding: 16px;
             &:hover{
               background-color: #eee;
             }
@@ -61,7 +62,8 @@
             @include font4_u2;
             position: relative;
             display: block;
-            border-top: solid 1px #F5F5F5;  
+            border-top: solid 2px #F5F5F5; 
+            padding: 16px; 
             &:hover{
               background-color: #eee;
             }
@@ -82,7 +84,8 @@
             @include font4_u2;
             position: relative;
             display: block;
-            border-top: solid 1px #F5F5F5;
+            border-top: solid 2px #F5F5F5;
+            padding: 16px;
             &:hover{
               background-color: #eee;
             }
@@ -94,9 +97,6 @@
             }
           }
         }
-      }
-      .contents{
-        width: 700px;
       }
     }
   }
