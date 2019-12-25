@@ -62,9 +62,8 @@
   border-bottom:#0099e8 solid 1px;
 }
 
-//  轟が追加したmixin
-
-@mixin font4_u1{
+//  轟が追加のmixin
+@mixin font14_u1{
   line-height: 17px;
   font-size: 14px;
   font-weight: 400;
@@ -72,29 +71,75 @@
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
-@mixin font4_u2{
+@mixin font14_u2{
   line-height: 14px;
   font-size: 14px;
   font-weight: 400;
   color: #333333;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  padding: 16px;
 }
 
 @mixin u-heading{
-  margin: 40px 0 5px;
+  margin-top: 40px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@mixin icon-hover{
+  position: absolute;
+  right: 10px;
+  color: #333333;
+  font-size: 25px;
+  top: 30%;
+}
+
+@mixin list4-1{
+  background-color: #EEEEEE;
+  color: #333333;
+  width : calc(100% / 4);
+}
+
+@mixin list4-2{
+  background-color: #ffffff;
+  color: #333333;
+  width : calc(100% / 4);
+}
+
+@mixin list3{
+  background-color: #EEEEEE;
+  width : calc(100% / 3);
+}
+
+@mixin font14_u3{
+  line-height: 34px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+@mixin font16_u1{
+  line-height: 72px;
   font-size: 16px;
   font-weight: 700;
   color: #333333;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
-@mixin icon-hover{
-  position: absolute;
-  right: 10px;
-  color: #333;
-  font-size: 25px;
-  top: 30%;
+@mixin font16_u2{
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+@mixin font16_u3{
+  line-height: 48px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ffffff;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
 @mixin u-icon{
@@ -103,5 +148,4 @@
   color: #ccc;
   font-size: 20px;
 }
-
 

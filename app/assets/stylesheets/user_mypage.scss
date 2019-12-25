@@ -2,7 +2,7 @@
 .u-main {
   text-decoration: none;
   .u-header{
-    @include font4_u1;
+    @include font14_u1;
     border-top: solid 1px #eee;
     position: relative;
     display: block;
@@ -37,7 +37,7 @@
         .mypage-ul{
           background-color: #ffffff;
           &__list{
-            @include font4_u2;
+            @include font14_u2;
             display: block;
             position: relative;
             border-top: solid 2px #F5F5F5;
@@ -59,7 +59,7 @@
         .merupay-ul{
           background-color: #ffffff;
           &__list{
-            @include font4_u2;
+            @include font14_u2;
             position: relative;
             display: block;
             border-top: solid 2px #F5F5F5; 
@@ -81,7 +81,7 @@
         .setting-ul{
           background-color:#ffffff;
           &__list{
-            @include font4_u2;
+            @include font14_u2;
             position: relative;
             display: block;
             border-top: solid 2px #F5F5F5;
