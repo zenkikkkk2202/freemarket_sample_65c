@@ -2,18 +2,22 @@
   .exhibitcontent__header
     .exhibitcontent__header--logo
       = link_to image_tag('fmarket_logo_red.svg',size:"185x49",class:"exhibitcontent_logo__image"), '#'
-    .exhibitcontent__header--right
-      %ul
-      %li
-        会員登録
-      %li
+    %ul.exhibitcontent__header__right
+      %li.exhibitcontent__header__right__1
+        会員情報
+        .exhibitcontent__header__right__1--line
+      %li.exhibitcontent__header__right__2
         電話番号認証
-      %li
+        .exhibitcontent__header__right__2--line2
+      %li.exhibitcontent__header__right__3
         お届け先住所入力
-      %li
+        .exhibitcontent__header__right__3--line3
+      %li.exhibitcontent__header__right__4
         支払い方法
-      %li
+        .exhibitcontent__header__right__4--line4
+      %li.exhibitcontent__header__right__5
         完了
+        .exhibitcontent__header__right__5--line5
   .member_main
     .member_main--title
       会員情報入力
@@ -65,8 +69,8 @@
           .member_main__content__single__top2--right
             必須
         = form_with model: @users, local: true,class:"member_main__content__single__top2__from" do |f|
-          = f.text_field :nickname, placeholder: "例）山田", class: 'member_main__content__single__top2__from--1'
-          = f.text_field :nickname, placeholder: "例）太郎", class: 'member_main__content__single__top2__from--2'
+          = f.text_field :name_family, placeholder: "例）山田", class: 'member_main__content__single__top2__from--1'
+          = f.text_field :name_last, placeholder: "例）太郎", class: 'member_main__content__single__top2__from--2'
 
         .member_main__content__single__top2
           .member_main__content__single__top2--left
@@ -74,8 +78,8 @@
           .member_main__content__single__top2--right
             必須
         = form_with model: @users, local: true,class:"member_main__content__single__top2__from" do |f|
-          = f.text_field :nickname, placeholder: "例）ヤマダ", class: 'member_main__content__single__top2__from--1'
-          = f.text_field :nickname, placeholder: "例）タロウ", class: 'member_main__content__single__top2__from--2'
+          = f.text_field :name_kana_f, placeholder: "例）ヤマダ", class: 'member_main__content__single__top2__from--1'
+          = f.text_field :name_kana_l, placeholder: "例）タロウ", class: 'member_main__content__single__top2__from--2'
 
         .member_main__content__single__top3
           .member_main__content__single__top3--left
@@ -84,20 +88,20 @@
             必須
         = form_with model: @users, local: true,class:"member_main__content__single__top3__from" do |f|
           %label
-            = f.select :nickname, [["--", 0],["2019", 1],["2018", 2],["2017",3],["2016", 4],["2015", 5],["2014",6],["2013", 7],["2012", 8],["2011",9],["2010",10 ],["2009",11],["2008", 12],["2007", 13],["2006",14],["2005", 15],["2004", 16],["2003",17],["2002", 18],["2001", 19],["2000",20],["1999", 21],["1998", 22],["1997", 23],["1996", 24],["1995",25],["1994",26],["1993", 27],["1992", 28],["1991",29],["1990", 30],["1989", 31],["1988", 32],["1987", 33],["1986", 34],["1985", 35],["1984", 36],["1983", 37],["1982", 38],["1981", 39],["1980", 40],["1979", 41],["1978", 42],["1977", 43],["1976", 44],["1975", 45],["1974", 46],["1973", 47],["1972", 48],["1971", 49],["1970", 50],["1969", 51],["1968", 52],["1967", 53],["1966", 54],["1967", 55],["1966", 56],["1965", 57],["1964", 58],["1963", 59],["1962", 60],["1961", 61],["1960", 62],["1959", 63],["1958", 64],["1957", 65],["1956", 66],["1955", 67],["1954", 68],["1953", 69],["1952", 70],["1951", 71],["1950", 72]],{}, {class: 'member_main__content__single__top3__from--1'}
+            = f.select :birthday_y, [["--", 0],["2019", 1],["2018", 2],["2017",3],["2016", 4],["2015", 5],["2014",6],["2013", 7],["2012", 8],["2011",9],["2010",10 ],["2009",11],["2008", 12],["2007", 13],["2006",14],["2005", 15],["2004", 16],["2003",17],["2002", 18],["2001", 19],["2000",20],["1999", 21],["1998", 22],["1997", 23],["1996", 24],["1995",25],["1994",26],["1993", 27],["1992", 28],["1991",29],["1990", 30],["1989", 31],["1988", 32],["1987", 33],["1986", 34],["1985", 35],["1984", 36],["1983", 37],["1982", 38],["1981", 39],["1980", 40],["1979", 41],["1978", 42],["1977", 43],["1976", 44],["1975", 45],["1974", 46],["1973", 47],["1972", 48],["1971", 49],["1970", 50],["1969", 51],["1968", 52],["1967", 53],["1966", 54],["1967", 55],["1966", 56],["1965", 57],["1964", 58],["1963", 59],["1962", 60],["1961", 61],["1960", 62],["1959", 63],["1958", 64],["1957", 65],["1956", 66],["1955", 67],["1954", 68],["1953", 69],["1952", 70],["1951", 71],["1950", 72]],{}, {class: 'member_main__content__single__top3__from--1'}
             = icon 'fa', 'chevron-down', class:"member_main__content__single__top3__from--down"
           %br
           .member_main__content__single__top3__from--time
             年
           %label
-          = f.select :nickname, [["--", 0],["1", 1],["2", 2],["3",3],["4", 4],["5", 5],["6",6],["7", 7],["8", 8],["9",9],["10",10 ],["11",11],["12", 12]],{},{class: 'member_main__content__single__top3__from--1'}
-          = icon 'fa', 'chevron-down', class:"member_main__content__single__top3__from--down2"
+            = f.select :birthday_m, [["--", 0],["1", 1],["2", 2],["3",3],["4", 4],["5", 5],["6",6],["7", 7],["8", 8],["9",9],["10",10 ],["11",11],["12", 12]],{},{class: 'member_main__content__single__top3__from--2'}
+            = icon 'fa', 'chevron-down', class:"member_main__content__single__top3__from--down2"
           %br
           .member_main__content__single__top3__from--time
             月
           %label
-          = f.select :nickname, [["--", 0],["1", 1],["2", 2],["3",3],["4", 4],["5", 5],["6",6],["7", 7],["8", 8],["9",9],["10",10 ],["11",11],["12", 12],["13", 13],["14", 14],["15",15],["16",16 ],["17",17],["18", 18],["19", 19],["20", 20],["21",21],["22",22 ],["23",23],["24", 24],["25", 25],["26", 26],["27",27],["28",28 ],["29",29],["30", 30],["31", 31]],{}, {class: 'member_main__content__single__top3__from--1'}
-          = icon 'fa', 'chevron-down', class:"member_main__content__single__top3__from--down3"
+            = f.select :birthday_d, [["--", 0],["1", 1],["2", 2],["3",3],["4", 4],["5", 5],["6",6],["7", 7],["8", 8],["9",9],["10",10 ],["11",11],["12", 12],["13", 13],["14", 14],["15",15],["16",16 ],["17",17],["18", 18],["19", 19],["20", 20],["21",21],["22",22 ],["23",23],["24", 24],["25", 25],["26", 26],["27",27],["28",28 ],["29",29],["30", 30],["31", 31]],{}, {class: 'member_main__content__single__top3__from--2'}
+            = icon 'fa', 'chevron-down', class:"member_main__content__single__top3__from--down3"
           %br
           .member_main__content__single__top3__from--time
             日
