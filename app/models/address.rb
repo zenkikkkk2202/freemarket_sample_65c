@@ -8,12 +8,9 @@ class Address < ApplicationRecord
 
   POST_CODE_VALID = /\A\d{3}-\d{4}\z/i
   # バリデーション
-  validates :birthyear,               presence: true
-  validates :birthmonth,              presence: true
-  validates :birthday,                presence: true
   validates :post_code,               presence: true, length: {maximum: 30}, format: { with: POST_CODE_VALID }
   validates :prefecture_id,           presence: true,
   validates :city,                    presence: true, length: {maximum: 50}
   validates :address,                 presence: true, length: {maximum: 50}
-  validates :phone_number,            presence: true, length: {maximum: 30}, uniqueness: { case_sensitive: false }
+  validates :phone_number,            length: {maximum: 30}, uniqueness: { case_sensitive: false }
 end
