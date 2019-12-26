@@ -13,10 +13,6 @@
 ActiveRecord::Schema.define(version: 2019_12_25_075650) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name_family", null: false
-    t.string "name_last", null: false
-    t.string "name_kana_f", null: false
-    t.string "name_kana_l", null: false
     t.integer "post_code", null: false
     t.integer "prefecture_id", null: false
     t.string "city", null: false
@@ -102,6 +98,13 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.text "image"
+    t.string "name_family", null: false
+    t.string "name_last", null: false
+    t.string "name_kana_f", null: false
+    t.string "name_kana_l", null: false
+    t.integer "birthday_y", null: false
+    t.integer "birthday_m", null: false
+    t.integer "birthday_d", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
