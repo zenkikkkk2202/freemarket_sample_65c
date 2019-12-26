@@ -1,0 +1,50 @@
+.exhibitcontent
+
+  .exhibitcontent__header
+
+  .main
+    %section.main__box
+      %h2.main__box__upper 支払い方法
+      = form_with model: @user_session, class: "main__box__form",local:true do |f|
+        .main__box__form__blank
+          .main__box__form__blank__list
+            %label.main__box__form__blank__list__label カード番号
+            .main__box__form__blank__list__must 必須
+          %input.main__box__form__blank__input{placeholder:"半角数字のみ"}
+          .credit__card__icon
+            %i.fab.fa-cc-visa
+            %i.fab.fa-cc-mastercard
+            %i.fab.fa-cc-jcb
+            %i.fab.fa-cc-amex
+            %i.fab.fa-cc-dinars-club
+            %i.fab.fa-cc-discover
+        
+        .main__box__form__limit
+          .main__box__form__limit__list
+            %label.main__box__form__limit__list__label 有効期限
+            .main__box__form__limit__list__must 必須
+          .main__box__form__limit__month
+            = f.select :month, [["01", 0],["02", 1],["03", 2],["04",3],["05",4],["06",5],["07",6],["08",7],["09",8],["10",9],["11",10],["12",11]],{},{class:"main__box__form__limit__form"}
+            = icon 'fa', 'chevron-down', class:"main__box__form__limit__month__icon"
+            .main__box__form__limit__month__text 月
+          .main__box__form__limit__year
+            = f.select :year, [["19", 0],["20", 1],["21", 2],["22",3],["23",4],["24",5],["25",6],["26",7],["27",8]],{},{class:"main__box__form__limit__form"}
+            = icon 'fa', 'chevron-down', class:"main__box__form__limit__year__icon"
+            .main__box__form__limit__year__text 年
+        .main__box__form__sequrity
+          .main__box__form__sequrity__list
+            %label.main__box__form__sequrity__list__label セキュリティコード
+            .main__box__form__sequrity__list__must 必須
+          %input.main__box__form__blank__input{placeholder:"カード背面4桁もしくは3桁の番号"}
+          .main__box__form__sequrity__blue
+            %i.fas.fa-question-circle
+            .main__box__form__sequrity__blue__text
+              カード裏面の番号とは？
+        
+        %button.main__box__form__btn
+          .main__box__form__btn__inside
+            次へ進む
+
+
+  .exhibitcontent_down
+    = render 'products/show_footer'
