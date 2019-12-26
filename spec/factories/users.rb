@@ -4,8 +4,8 @@ FactoryBot.define do
     id                    {"1"}
     nickname              {"abe"}
     sequence(:email) { |n| "hiro#{n}@example.com"}
-    password              {"00000000"}
-    password_confirmation {"00000000"}
+    password              {"abcdefg"}
+    password_confirmation {"abcdefg"}
     image                 {"hhhddddd"}
     name_family           {"tanaka"}
     name_last             {"jiiiii"}
