@@ -9,4 +9,25 @@ class User < ApplicationRecord
   has_many :addresses
   belongs_to :facebook
   belongs_to :google
+  has_one :address, dependent: :destroy
+  has_one  :credit_card, dependent: :destroy
+
+
+
+  # 各項目のバリデーション
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  PASSWORD_VALIDATION = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
+
+  validates :nickname,              presence: true, length: {maximum: 20}
+  validates :email,                 presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
+  validates :password,              presence: true, length: {minimum: 7, maximum: 128},    format: { with: PASSWORD_VALIDATION }
+  validates :password_confirmation, presence: true, length: {minimum: 7, maximum: 128}
+  validates :name_family,           presence: true, length: {maximum: 35}
+  validates :name_last,             presence: true, length: {maximum: 35}
+  validates :name_kana_f,           presence: true, length: {maximum: 35}
+  validates :name_kana_l,           presence: true, length: {maximum: 35}
+  validates :birthday_y,            presence: true
+  validates :birthday_m,            presence: true
+  validates :birthday_d,            presence: true
+  validates :encrypted_password,    presence: true
 end
