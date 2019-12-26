@@ -1,0 +1,90 @@
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  = render 'user_header'  # ユーザマイページのヘッダー部分テンプレートの呼び出し
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      .contents
+        -# メルカリ＜マイページ＜本人情報の登録のhaml
+        .chapter-container
+          .chapter-container__head
+            本人情報の登録
+          .chapter-container__form
+            .chapter-container__form__titles
+              .chapter-container__form__titles__title1
+                お客さまの本人情報をご登録ください。
+              .chapter-container__form__titles__title2
+                登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            .chapter-container__form__right
+              本人確認書類のアップロードについて
+              = icon 'fas', 'angle-right'
+              = link_to ""
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                お名前
+              .chapter-container__form__group__register
+                日本 太郎
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                お名前カナ
+              .chapter-container__form__group__register
+                ニホン タロウ
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                生年月日
+              .chapter-container__form__group__register
+                1999/12/30
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                郵便番号
+              .chapter-container__form__group__any
+                任意
+              %input{type: "text", placeholder: "例)1234567", class: "chapter-container__form__group__answer"}
+
+
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                都道府県
+              .chapter-container__form__group__any
+                任意
+              = form_with model: @product, class: "chapter-container__form__group__wrap", local: true do |f|
+                = icon 'fa', 'chevron-down', class: "chapter-container__form__group__wrap__icon"
+                = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, {class: "chapter-container__form__group__wrap__select"}
+                
+
+
+
+
+
+
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                市区町村  
+              .chapter-container__form__group__any
+                任意
+              %input{type: "text", placeholder: "例) 横浜市緑区", class: "chapter-container__form__group__answer"}
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                番地  
+              .chapter-container__form__group__any
+                任意
+              %input{type: "text", placeholder: "例) 青山1−1−1", class: "chapter-container__form__group__answer"}
+            .chapter-container__form__group
+              .chapter-container__form__group__question
+                建物名  
+              .chapter-container__form__group__any
+                任意
+              %input{type: "text", placeholder: "例) 柳ビル103", class: "chapter-container__form__group__answer"}
+            %button.chapter-container__form__button{type: "submit"} 
+              変更する
+            .chapter-container__form__rights
+              本人情報の登録について
+              = icon 'fas', 'angle-right'
+              = link_to ""
+
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
+
