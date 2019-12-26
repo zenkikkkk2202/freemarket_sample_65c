@@ -398,6 +398,10 @@
         text-align: right;
         padding: 10px 16px 8px;
         border: none;
+        &:focus{
+          border:none;
+          outline: 0;
+        }
       }
       &--bottom{
         font-size: 16px;
@@ -414,6 +418,10 @@
         padding: 10px 16px 8px;
         border-radius: 4px;
         border: none;
+        &:focus{
+          border:none;
+          outline: 0;
+        }
       }
     }
   }
