@@ -30,7 +30,7 @@ describe User do
   end
 
   # 5. passwordが存在してもpassword_confirmationが空では登録できないこと
-  it "passwordが存在してもpassword_confirmationがからでは登録できないこと" do
+  it "passwordが存在してもpassword_confirmationが空では登録できないこと" do
     user = build(:user, password_confirmation: "")
     user.valid?
     expect(user.errors[:password_confirmation]).to include("doesn't match Password")
@@ -45,7 +45,7 @@ describe User do
 
   #7. passwordが6文字以下であれば登録できないこと
   it "passwordが6文字以下であれば登録できないこと" do
-    user = build(:user, password:"123456", password_confirmation:"123456")
+    user = build(:user, password:"123e56", password_confirmation:"123e56")
     user.valid?
     expect(user.errors[:password]).to include("is too short (minimum is 7 characters)")
   end
@@ -56,6 +56,56 @@ describe User do
     user.valid?
     expect(user.errors[:name_family]).to include("can't be blank")
   end
+
+  #9. 名前がなければ登録できない
+  it "名前がなければ登録できない" do
+    user = build(:user, name_last: nil)
+    user.valid?
+    expect(user.errors[:name_last]).to include("can't be blank")
+  end
+
+  #10. カナ名字がなければ登録できない
+  it "カナ名字がなければ登録できない" do
+    user = build(:user, name_kana_f: nil)
+    user.valid?
+    expect(user.errors[:name_kana_f]).to include("can't be blank")
+  end
+
+  #11. カナ名前がなければ登録できない
+  it "カナ名前がなければ登録できない" do
+    user = build(:user, name_kana_l: nil)
+    user.valid?
+    expect(user.errors[:name_kana_l]).to include("can't be blank")
+  end
+
+  #12. 西暦を選択しなければ登録できない
+  it "西暦を選択しなければ登録できない" do
+    user = build(:user, birthday_y: nil)
+    user.valid?
+    expect(user.errors[:birthday_y]).to include("can't be blank")
+  end
+
+  #13. 月を選択しなければ登録できない
+  it "月を選択しなければ登録できない" do 
+    user = build(:user, birthday_m: nil)
+    user.valid?
+    expect(user.errors[:birthday_m]).to include("can't be blank")
+  end
+
+  #14. 日にちを選択しなければ登録できない
+  it "日にちを選択しなければ登録できない" do
+    user = build(:user, birthday_d: nil) 
+    user.valid?
+    expect(user.errors[:birthday_d]).to include("can't be blank")
+  end
+
+  #15. パスワードの暗号キーがなければ登録できない
+  it "パスワードの暗号キーがなければ登録できない" do
+    user = build(:user, encrypted_password: nil)
+    user.valid?
+    expect(user.errors[:encrypted_password]).to include("can't be blank")
+  end
+
 
 end
 
