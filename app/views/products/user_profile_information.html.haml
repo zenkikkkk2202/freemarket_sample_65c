@@ -40,8 +40,6 @@
               .chapter-container__form__group__any
                 任意
               %input{type: "text", placeholder: "例)1234567", class: "chapter-container__form__group__answer"}
-
-
             .chapter-container__form__group
               .chapter-container__form__group__question
                 都道府県
@@ -50,13 +48,6 @@
               = form_with model: @product, class: "chapter-container__form__group__wrap", local: true do |f|
                 = icon 'fa', 'chevron-down', class: "chapter-container__form__group__wrap__icon"
                 = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, {class: "chapter-container__form__group__wrap__select"}
-                
-
-
-
-
-
-
             .chapter-container__form__group
               .chapter-container__form__group__question
                 市区町村  
