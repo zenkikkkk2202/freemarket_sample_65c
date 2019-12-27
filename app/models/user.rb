@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+  has_secure_password
   has_many :products
   has_many :credit_cards, dependent: :destroy
   has_one :address, dependent: :destroy
@@ -18,7 +19,7 @@ class User < ApplicationRecord
 
   validates :nickname,              presence: true, length: {maximum: 20}
   validates :email,                 presence: true, uniqueness: { case_sensitive: false }, format: { with: VALID_EMAIL_REGEX }
-  validates :password,              presence: true, length: {minimum: 7, maximum: 128},    format: { with: PASSWORD_VALIDATION }
+  validates :password_digest,              presence: true, length: {minimum: 7, maximum: 128},    format: { with: PASSWORD_VALIDATION }
   validates :name_family,           presence: true, length: {maximum: 35}
   validates :name_last,             presence: true, length: {maximum: 35}
   validates :name_kana_f,           presence: true, length: {maximum: 35}
