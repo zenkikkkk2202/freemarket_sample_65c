@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
     t.integer "birthday_m", null: false
     t.integer "birthday_d", null: false
     t.string "email", default: "", null: false
+    t.string "password_digest", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"

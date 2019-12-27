@@ -44,7 +44,7 @@
             パスワード
           .member_main__content__single__top--right
             必須
-        = f.text_field :encrypted_password, placeholder: "7文字以上の半角英数字", class: 'member_main__content__single--input2'
+        = f.password_field :password, placeholder: "7文字以上の半角英数字", class: 'member_main__content__single--input2'
 
         .member_main__content__single--middle
           ※ 英字と数字の両方を含めて設定してください
