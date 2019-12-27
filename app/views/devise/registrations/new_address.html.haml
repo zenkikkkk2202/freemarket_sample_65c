@@ -1,7 +1,7 @@
 .exhibitcontent
   .exhibitcontent__header
     .exhibitcontent__header--logo
-      = link_to image_tag('fmarket_logo_red.svg',size:"185x49",class:"exhibitcontent_logo__image"), '#'
+      = link_to image_tag('fmarket_logo_red.svg',size:"185x49",class:"exhibitcontent_logo__image"), root_path
     %ul.exhibitcontent__header__right
       %li.exhibitcontent__header__right__red
         会員情報
@@ -9,9 +9,9 @@
       %li.exhibitcontent__header__right__red
         電話番号認証
         .exhibitcontent__header__right__red--line2
-      %li.exhibitcontent__header__right__3
+      %li.exhibitcontent__header__right__red
         お届け先住所入力
-        .exhibitcontent__header__right__3--line3
+        .exhibitcontent__header__right__red--line3
       %li.exhibitcontent__header__right__4
         支払い方法
         .exhibitcontent__header__right__4--line4
@@ -77,11 +77,6 @@
 
         = form_with model: @addresses, local: true do |f|
           = f.submit "次へ進む", class: 'address_main__content__single--submit'
-
-
-
-
-
 
   .exhibitcontent_down
     = render 'products/show_footer'
