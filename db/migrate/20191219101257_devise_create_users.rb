@@ -14,7 +14,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :birthday_m, null: false
       t.integer :birthday_d, null: false
       t.string :email,              null: false, default: ""
-      t.string :password_digest,null: false   #user_newでのパスワード
       t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable

@@ -8,8 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
-    binding.pry
-    session[:password_digest] = user_params[:password_digest] 
+    session[:password] = user_params[:password] 
     session[:name_family] = user_params[:name_family]
     session[:name_last] = user_params[:name_last]
     session[:name_kana_f] = user_params[:name_kana_f]
@@ -17,11 +16,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birth_y] = user_params[:birth_y]
     session[:birth_m] = user_params[:birth_m]
     session[:birth_d] = user_params[:birth_d]
+   
     #バリデーション判定用にuserをnewします
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
-      password_digest: session[:password_digest],
+      password: session[:password],
       name_family: session[:name_family],
       name_last: session[:name_last],
       name_kana_f: session[:name_kana_f],

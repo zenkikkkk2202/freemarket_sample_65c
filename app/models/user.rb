@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
-  has_secure_password
   has_many :products
   has_many :credit_cards, dependent: :destroy
   has_one :address, dependent: :destroy
