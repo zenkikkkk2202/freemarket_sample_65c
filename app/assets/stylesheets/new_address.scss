@@ -32,10 +32,7 @@
       }
     }
     &__4{
-      font-size: 12px;
-      font-weight: 400;
-      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-      color: #888888;
+      @include font12_gray;
       margin-right: 40px;
       position: relative;
       &::before{
@@ -57,27 +54,8 @@
         margin-left: 43px;
       }
     }
-    &__4{
-      font-size: 12px;
-      font-weight: 400;
-      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-      color: #888888;
-      margin-right: 40px;
-      &::after{
-        content: "";
-        background-color:#ccc;
-        border-radius: 50%;
-        display: inline-block;
-        padding: 5px;
-        margin-top: 5px;
-        margin-left: 25px;
-      }
-    }
     &__5{
-      font-size: 12px;
-      font-weight: 400;
-      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-      color: #888888;
+      @include font12_gray;
       &::after{
         content: "";
         background-color:#ccc;
