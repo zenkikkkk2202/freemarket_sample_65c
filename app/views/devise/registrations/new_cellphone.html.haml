@@ -24,7 +24,7 @@
   .main
     %section.main__box
       %h2.main__box__upper 電話番号の確認
-      = form_with model: @user_session, class: "main__box__form",local:true do |f|
+      = form_with model: @user_session,url: {controller: 'registrations', action: 'create_cellphone' }, class: "main__box__form",local:true do |f|
         .main__box__form__blank
           %label 携帯電話の番号
           %input.main__box__form__blank__input{placeholder:"携帯電話の番号を入力"}
