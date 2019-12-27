@@ -62,6 +62,38 @@
   border-bottom:#0099e8 solid 1px;
 }
 
+@mixin input{
+  height: 48px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@mixin input_focus{
+  border: solid 1px #0299e8;
+  outline: 0;
+}
+
+@mixin submit{
+  width: 100%;
+  display: block;
+  line-height: 48px;
+  background-color: #EA342D;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  border: 1px solid #ea352d;  
+  cursor: pointer;  
+}
+
 //  轟が追加のmixin
 @mixin font14_u1{
   line-height: 17px;

@@ -15,7 +15,7 @@
       &::before{
         content: "";
         display: inline-block;
-        width: 80px;
+        width: 250px;
         border-bottom: solid 2px #ea352d;
         position: absolute;
         left: 74px;
@@ -31,7 +31,7 @@
         margin-left: 20px;
       }
     }
-    &__3{
+    &__4{
       font-size: 12px;
       font-weight: 400;
       font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -41,10 +41,10 @@
       &::before{
         content: "";
         display: inline-block;
-        width: 330px;
+        width: 220px;
         border-bottom: solid 2px #ccc;
         position: absolute;
-        left: -82px;
+        left: -106px;
         top: 32%;
       }
       &::after{
@@ -123,44 +123,24 @@
       }
 
       &--input{
-        height: 48px;
-        width: 100%;
+        @include input;
         padding: 10px 16px 8px;
-        border-radius: 4px;
-        border: 1px solid #ccc;
-        background: #fff;
-        line-height: 1.5;
-        font-size: 16px;
         margin-top: 8px;
         margin-bottom: 32px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
         &:focus{
-          border: solid 1px #0299e8;
-          outline: 0;
+          @include input_focus;
         }
       }
 
       &__pre{
         position: relative;
         &--input{
-          height: 48px;
-          width: 100%;
+          @include input;
           padding: 10px 16px 8px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
           margin-top: 8px;
           margin-bottom: 32px;
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
           &:focus{
-            border: solid 1px #0299e8;
-            outline: 0;
+            @include input_focus;
           }
         }
         &--icon{
@@ -176,18 +156,8 @@
 
 
       &--submit{
-        width: 100%;
-        display: block;
-        line-height: 48px;
-        background-color: #EA342D;
-        font-size: 14px;
-        font-weight: 400;
-        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-        color: #FFFFFF;
-        text-align: center;
-        border: 1px solid #ea352d;
+        @include submit;
         margin-top: 32px;
-        cursor: pointer;
       }
     }
   }  
