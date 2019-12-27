@@ -19,6 +19,20 @@
   font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
 }
 
+@mixin font12_red{
+  font-size: 12px;
+  font-weight: 600;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: #ea352d;
+}
+
+@mixin font12_gray{
+  font-size: 12px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: #888888;
+}
+
 // font-sizeはtitleに合わせて指定して下さい。
 @mixin font__title{
   font-weight: 700;
@@ -26,6 +40,7 @@
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
+// 必須
 @mixin required{
   background-color:#EA342D;
   border-radius: 2px;
@@ -38,6 +53,7 @@
   vertical-align: top;
 }
 
+// 任意
 @mixin any{
   background-color:#ccc;
   border-radius: 2px;
@@ -92,6 +108,23 @@
   text-align: center;
   border: 1px solid #ea352d;  
   cursor: pointer;  
+}
+
+// marginは設定してください
+@mixin btn_red {
+  content: "";
+  background-color:#ea352d;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 5px;
+}
+
+@mixin btn_gray{
+  content: "";
+  background-color:#ccc;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 5px;
 }
 
 //  轟が追加のmixin

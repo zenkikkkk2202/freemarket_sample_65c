@@ -1,3 +1,90 @@
+.exhibitcontent__header{
+  display: flex;
+  justify-content: center;
+  height:128px;
+  &__right2{
+    display: flex;
+    padding:40px 0 0 44px;
+    position: relative;
+    &__red{
+      @include font12_gray;
+      margin-right: 40px;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 200px;
+        border-bottom: solid 2px #ea352d;
+        position: absolute;
+        left: 80px;
+        bottom: 45%;
+      }
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 20px;
+      }
+    }
+
+    &__red2{
+    @include font12_red;
+      margin-right: 40px;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 80px;
+        border-bottom: solid 2px #ea352d;
+        position: absolute;
+        left: 74px;
+        bottom: 45%;
+      }
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 31px;
+      }
+    }
+
+    &__3{
+      @include font12_gray;
+      margin-right: 40px;
+      position: relative;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 316px;
+        border-bottom: solid 2px #ccc;
+        position: absolute;
+        left: -71px;
+        top: 32%;
+      }
+      &::after{
+        @include btn_gray;
+        margin-top: 5px;
+        margin-left: 43px;
+      }
+    }
+
+    &__4{
+      @include font12_gray;
+      margin-right: 40px;
+      &::after{
+        @include btn_gray;
+        margin-top: 5px;
+        margin-left: 25px;
+      }
+    }
+    
+    &__5{
+      @include font12_gray;
+      &::after{
+        @include btn_gray;
+        margin-top: 5px;
+        margin-left: 9px;
+      }
+    }
+  }
+}
+
 .main{
   
   width: 700px;
@@ -26,28 +113,17 @@
         max-width: 343px;
         margin: 0 auto;
         &__input{
-          width: 100%;
+          @include input;
           margin: 8px 0 0;
-          height: 48px;
           padding: 10px 16px 8px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background-color: #fff;
-          font-size: 16px;
-          line-height: 1.5;
           display: block;
+          &:focus{
+            @include input_focus;
+          }
         }
         &__btn{
           margin-top: 32px;
-          display: block;
-          background-color: red;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          transition: all ease-out .3s;
-          text-align: center;
-          cursor: pointer;
-          color: white;
+          @include submit;
         }
         &__text{
           margin-top: 32px;
@@ -58,7 +134,6 @@
               @include important_hover;
             }
           }
-          
           
         }
 
