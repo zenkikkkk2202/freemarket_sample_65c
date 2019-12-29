@@ -2,8 +2,8 @@ class Address < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   
   belongs_to_active_hash :prefecture
-  has_one :user, optional: true
-  has_one :user
+  belongs_to :user, optional: true
+  # has_one :user
 
 
   POST_CODE_VALID = /\A\d{3}-\d{4}\z/i
