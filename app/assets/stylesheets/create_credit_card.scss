@@ -1,0 +1,83 @@
+.cellphone__main{
+  display: block;
+  &__container{
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+  
+    h2{
+      font-size: 22px;
+      padding: 32px;
+      line-height: 1.5;
+      text-align: center;
+      font-weight: bold;
+    }
+    &__form{
+      padding: 40px 40px 64px;
+      border-top: 1px solid #f5f5f5;
+      &__inside{
+        max-width: 343px;
+        margin: 0 auto;
+        &__btn{
+          color: #fff;
+          background-color: #ea352d;
+          border-radius: 4px;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          text-align: center;
+          position: relative;
+          &__envelope{
+            position: absolute;
+            top: 30%;
+            left: 16px;
+            bottom: 15px;
+            font-size: 24px;  
+          }
+        }
+        
+      }
+      &__facebook{
+        position: relative;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        background-color: #385185;
+        color: #fff;
+        &__icon{
+          position: absolute;
+          top: 30%;
+          left: 16px;
+          bottom: 15px;
+          font-size: 24px;
+        }
+      }
+      &__google{
+        position: relative;
+        display: block;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        border: #979797 solid 1px;
+        border-radius: 4px;
+        margin: 16px 0 0;
+        background-color: white;
+        color: black;
+        &__icon{
+          position: absolute;
+          top: 30%;
+          left: 16px;
+          bottom: 15px;
+          font-size: 24px;
+        }
+      }
+    }
+  }  
+}
+
+
