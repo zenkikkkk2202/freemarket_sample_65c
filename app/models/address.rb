@@ -3,7 +3,6 @@ class Address < ApplicationRecord
   
   belongs_to_active_hash :prefecture
   belongs_to :user, optional: true
-  # has_one :user
 
 
   POST_CODE_VALID = /\A\d{3}-\d{4}\z/i
