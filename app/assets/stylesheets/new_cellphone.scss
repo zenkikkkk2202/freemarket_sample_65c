@@ -1,0 +1,144 @@
+.exhibitcontent__header{
+  display: flex;
+  justify-content: center;
+  height:128px;
+  &__right2{
+    display: flex;
+    padding:40px 0 0 44px;
+    position: relative;
+    &__red{
+      @include font12_gray;
+      margin-right: 40px;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 200px;
+        position: absolute;
+        left: 80px;
+        bottom: 45%;
+      }
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 20px;
+      }
+    }
+
+    &__red2{
+    @include font12_red;
+      margin-right: 40px;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 80px;
+        border-bottom: solid 2px #ea352d;
+        position: absolute;
+        left: 74px;
+        bottom: 45%;
+      }
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 31px;
+      }
+    }
+
+    &__3{
+      @include font12_gray;
+      margin-right: 40px;
+      position: relative;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 316px;
+        border-bottom: solid 2px #ccc;
+        position: absolute;
+        left: -71px;
+        top: 32%;
+      }
+      &::after{
+        @include btn_gray;
+        margin-top: 5px;
+        margin-left: 43px;
+      }
+    }
+
+    &__4{
+      @include font12_gray;
+      margin-right: 40px;
+      &::after{
+        @include btn_gray;
+        margin-top: 5px;
+        margin-left: 25px;
+      }
+    }
+    
+    &__5{
+      @include font12_gray;
+      &::after{
+        @include btn_gray;
+        margin-top: 5px;
+        margin-left: 9px;
+      }
+    }
+  }
+}
+
+.main{
+  
+  width: 700px;
+  display: block;
+  margin: 0 auto;
+  &__box{
+    
+    
+    background-color: #fff;
+    &__upper{
+      @include font__title;
+      font-size: 22px;
+      padding: 32px;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center;
+    }
+    &__form{
+      margin: 0 auto;
+      @include font14;
+      padding: 40px 40px 64px;
+      p{
+        @include font14__weight400;
+        margin: 8px 0 0;
+      }
+      &__blank{
+        max-width: 343px;
+        margin: 0 auto;
+        &__input{
+          @include input;
+          margin: 8px 0 0;
+          padding: 10px 16px 8px;
+          display: block;
+          &:focus{
+            @include input_focus;
+          }
+        }
+        &__btn{
+          margin-top: 32px;
+          @include submit;
+        }
+        &__text{
+          margin-top: 32px;
+          text-align: right;
+          &__inside{
+            @include important;
+            &:hover{
+              @include important_hover;
+            }
+          }
+          
+        }
+
+      }
+    }
+  }
+}
+
+
