@@ -1,48 +1,5 @@
 
-.exhibitcontent
 
-  .exhibitcontent__header
-    .exhibitcontent__header--logo
-      = link_to image_tag('fmarket_logo_red.svg',size:"185x49",class:"exhibitcontent_logo__image"), root_path
-    %ul.exhibitcontent__header__right2
-      %li.exhibitcontent__header__right2__red
-        会員情報
-        .exhibitcontent__header__right2__red--line
-      %li.exhibitcontent__header__right2__red2
-        電話番号認証
-        .exhibitcontent__header__right2__red2--line2
-      %li.exhibitcontent__header__right2__3
-        お届け先住所入力
-        .exhibitcontent__header__right2__3--line3
-      %li.exhibitcontent__header__right2__4
-        支払い方法
-        .exhibitcontent__header__right2__4--line4
-      %li.exhibitcontent__header__right2__5
-        完了
-        .exhibitcontent__header__right2__5--line5
-
-  .main
-    %section.main__box
-      %h2.main__box__upper 電話番号の確認
-      = form_with model: @user_session,url: {controller: 'registrations', action: 'create_cellphone' }, class: "main__box__form",local:true do |f|
-        .main__box__form__blank
-          %label 携帯電話の番号
-          %input.main__box__form__blank__input{placeholder:"携帯電話の番号を入力"}
-          %p 本人確認のため携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います
-          %button.main__box__form__blank__btn
-            SMSを送信する
-          %p ※電話番号は本人確認や不正防止のために利用します。他のユーザに公開されることはありません。
-          .main__box__form__blank__text
-            = link_to root_path, class:"main__box__form__blank__text__inside" do
-              電話番号の確認が必要な理由
-              =icon("fas","chevron-right")
-
-
-
-
-
-  .exhibitcontent_down
-    = render 'products/show_footer'
 
 
 
