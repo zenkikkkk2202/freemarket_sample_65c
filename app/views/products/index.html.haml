@@ -1,6 +1,6 @@
 .header
   = render "header"
-.main
+.amain
   .imain
     .imain__main
       .imain__main__link
@@ -20,11 +20,11 @@
                   メルカリはスマホカメラからすぐに出品できる
                   %br
                   購入時も安心な独自システムのアプリです
-                  .imain__main__link__image__ulist__text__2__app
-                    =link_to "#",class: "imain__main__link__image__ulist__text__2__app__image" do
-                      =image_tag"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",size: "170x50",class:"imain__main__link__image__ulist__text__2__app__image__appstore1"
-                    =link_to "#",class: "imain__main__link__image__ulist__text__app__image" do
-                      =image_tag"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",size: "170x50",class:"imain__main__link__image__ulist__text__2__app__image__appstore2"
+                .imain__main__link__image__ulist__text__app
+                  =link_to "#" do
+                    =image_tag"https://web-jp-assets.mercdn.net/_next/static/images/app-store-a5c17948c6fd6d5b60b13d421cd60b35.svg",size: "170x50",class:"imain__main__link__image__ulist__text__app__appstore"
+                  =link_to "#"do
+                    =image_tag"https://web-jp-assets.mercdn.net/_next/static/images/google-play-495575abb895b405aa6336b2a4304958.svg",size: "170x50",class:"imain__main__link__image__ulist__text__app__googlestore"
           .imain__main__link__image__left 
             .imain__main__link__image__left__a{id: "btn1"}
           .imain__main__link__image__right
