@@ -1,5 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  before_action :redirect_to_index_from_sms,only: :sms_authentication
+
+  def index
+  end
 
   def new
     @user = User.new
@@ -16,7 +19,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:birth_y] = user_params[:birth_y]
     session[:birth_m] = user_params[:birth_m]
     session[:birth_d] = user_params[:birth_d]
-   
+    binding.pry
     #バリデーション判定用にuserをnewします
     @user = User.new(
       nickname: session[:nickname],
@@ -31,18 +34,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
       birth_d: session[:birth_d]
     )
     check_user_valid = @user.valid?
-    #reCAPTCHA（私はロボットではありませんのアレ）とユーザー、プロフィールのバリデーション判定
     unless check_user_valid
       render 'registrations/new.html.haml' 
     else
       # 問題がなければsession[:through_first_valid]を宣言して次のページへリダイレクト
       session[:through_first_valid] = "through_first_valid"
-      redirect_to 
+      redirect_to "cellphones"
     end
-  end
-
-  def create
-    
   end
 
   def new_cellphone
@@ -69,9 +67,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
     
   end
 
-  protected
+  private
+   
+  def user_params
+    params.require(:user).permit(:nickname, :email, :password, :name_family, :name_last, :name_kana_f, :name_kana_l, :birth_y, :birth_m, :birth_d)
+  end
 
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  def profile_params
+    params.require(:address).permit()
+  end
+
+   # 前のpostアクションで定義されたsessionがなかった場合登録ページトップへリダイレクト
+  def redirect_to_index_from_sms
+    redirect_to signup_index_path unless session[:through_first_valid].present? && session[:through_first_valid] == "through_first_valid"
   end
 end
