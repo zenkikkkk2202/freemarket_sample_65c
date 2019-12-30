@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    
+    @products = Product.all.includes(:product_image)
   end
 
   def new
