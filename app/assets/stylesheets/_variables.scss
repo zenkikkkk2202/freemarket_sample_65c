@@ -230,6 +230,13 @@
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 }
 
+@mixin font16_u6{
+  line-height: 48px;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
 @mixin u-icon{
   position: absolute;
   right: 16px;
