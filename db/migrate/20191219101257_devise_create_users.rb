@@ -5,7 +5,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
     create_table :users do |t|
       ## Database authenticatable
       t.string :nickname,null: false
-      t.text :image
       t.string :name_family, null: false
       t.string :name_last, null: false
       t.string :name_kana_f, null: false
