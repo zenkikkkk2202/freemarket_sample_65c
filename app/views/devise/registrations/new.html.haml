@@ -24,7 +24,7 @@
       会員情報入力
     
     .member_main__content
-      = form_with model: @users,url: {controller: 'registrations', action: 'create' },class:"member_main__content__single",local: true do |f|
+      = form_with model: @user,url: {controller: 'registrations', action: 'create' },class:"member_main__content__single",local: true do |f|
         .member_main__content__single__top
           .member_main__content__single__top--left
             ニックネーム
