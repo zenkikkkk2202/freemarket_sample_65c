@@ -24,7 +24,7 @@
       住所入力
     
     .address_main__content
-      = form_with model: @addresses,url: {controller: 'registrations', action: 'create_address' },class:"address_main__content__single", local: true do |f|
+      = form_with model: @address,url: {controller: 'registrations', action: 'create_address' },class:"address_main__content__single", local: true do |f|
         .address_main__content__single__top
           .address_main__content__single__top--left
             郵便番号
