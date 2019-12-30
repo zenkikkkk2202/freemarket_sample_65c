@@ -1,5 +1,5 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :redirect_to_index_from_sms,only: :sms_authentication
+  # before_action :redirect_to_index_from_sms, only: :create, :create_cellphone, :create_address, :create_credit_cards
 
   def index
   end
@@ -16,11 +16,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:name_last] = user_params[:name_last]
     session[:name_kana_f] = user_params[:name_kana_f]
     session[:name_kana_l] = user_params[:name_kana_l]
-    session[:birth_y] = user_params[:birth_y]
-    session[:birth_m] = user_params[:birth_m]
-    session[:birth_d] = user_params[:birth_d]
-    binding.pry
-    #バリデーション判定用にuserをnewします
+    session[:birthday_y] = user_params[:birthday_y]
+    session[:birthday_m] = user_params[:birthday_m]
+    session[:birthday_d] = user_params[:birthday_d]
+
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -29,34 +28,107 @@ class Users::RegistrationsController < Devise::RegistrationsController
       name_last: session[:name_last],
       name_kana_f: session[:name_kana_f],
       name_kana_l: session[:name_kana_l],
-      birth_y: session[:birth_y],
-      birth_m: session[:birth_m],
-      birth_d: session[:birth_d]
+      birthday_y: session[:birthday_y],
+      birthday_m: session[:birthday_m],
+      birthday_d: session[:birthday_d]
     )
+
     check_user_valid = @user.valid?
     unless check_user_valid
-      render 'registrations/new.html.haml' 
+      render :new
     else
-      # 問題がなければsession[:through_first_valid]を宣言して次のページへリダイレクト
       session[:through_first_valid] = "through_first_valid"
-      redirect_to "cellphones"
+      redirect_to cellphones_path
     end
   end
 
   def new_cellphone
     @user = User.new
+    @cellphone = Cellphone.new
+
   end
 
   def create_cellphone
-    
+    session[:cellphone_number] = cellphone_params[:cellphone_number]
+
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      name_family: session[:name_family],
+      name_last: session[:name_last],
+      name_kana_f: session[:name_kana_f],
+      name_kana_l: session[:name_kana_l],
+      birthday_y: session[:birthday_y],
+      birthday_m: session[:birthday_m],
+      birthday_d: session[:birthday_d]
+    )
+
+    @cellphone = Cellphone.new(
+      cellphone_number: session[:cellphone_number]
+    )
+
+    check_user_valid = @user.valid?
+    check_cellphone_valid = @cellphone.valid?
+    unless check_user_valid && check_cellphone_valid
+      render cellphones_path
+    else
+      session[:through_first_valid] = "through_first_valid"
+      redirect_to addresses_path
+    end
   end
+    
 
   def new_address
     @user = User.new
+    @cellphone = Cellphone.new
+    @address = Address.new
   end
 
   def create_address
-    
+    session[:post_code] = address_params[:post_code]
+    session[:prefecture_id] = address_params[:prefecture_id]
+    session[:city] = address_params[:city]
+    session[:address] = address_params[:address]
+    session[:build] = address_params[:build]
+    session[:phone_number] = address_params[:phone_number]
+
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      name_family: session[:name_family],
+      name_last: session[:name_last],
+      name_kana_f: session[:name_kana_f],
+      name_kana_l: session[:name_kana_l],
+      birthday_y: session[:birthday_y],
+      birthday_m: session[:birthday_m],
+      birthday_d: session[:birthday_d]
+    )
+
+    @cellphone = Cellphone.new(
+      cellphone_number: session[:cellphone_number]
+    )
+
+    @address = Address.new(
+      post_code: session[:post_code],
+      prefecture_id: session[:prefecture_id],
+      city: session[:city],
+      address: session[:address],
+      build: session[:build],
+      phone_number: session[:phone_number]
+    )
+
+    check_user_valid = @user.valid?
+    check_cellphone_valid = @cellphone.valid?
+    check_address_valid = @address.valid?
+    unless check_user_valid && check_cellphone_valid && check_address_valid
+      binding.pry
+      render addresses_path
+    else
+      session[:through_first_valid] = "through_first_valid"
+      redirect_to credit_cards_path
+    end
   end
 
   def new_credit_cards
@@ -64,18 +136,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create_credit_cards
-    
   end
 
   private
    
   def user_params
-    params.require(:user).permit(:nickname, :email, :password, :name_family, :name_last, :name_kana_f, :name_kana_l, :birth_y, :birth_m, :birth_d)
+    params.require(:user).permit(:nickname, :email, :password, :name_family, :name_last, :name_kana_f, :name_kana_l, :birthday_y, :birthday_m, :birthday_d)
   end
 
-  def profile_params
-    params.require(:address).permit()
+  def cellphone_params
+    params.require(:cellphone).permit(:cellphone_number)
   end
+
+  def address_params
+    params.require(:address).permit(:post_code, :prefecture_id, :city, :address, :build, :phone_number)
+  end
+
+  # def credit_card_params
+  #   params.require(:address).permit(:)
+  # end
+
 
    # 前のpostアクションで定義されたsessionがなかった場合登録ページトップへリダイレクト
   def redirect_to_index_from_sms
