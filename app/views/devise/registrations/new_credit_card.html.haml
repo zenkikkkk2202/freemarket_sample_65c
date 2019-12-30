@@ -23,7 +23,7 @@
   .cmain
     %section.cmain__box
       %h2.cmain__box__upper 支払い方法
-      = form_with model: @credit_cards, class: "cmain__box__form",local:true do |f|
+      = form_with model: @credit_cards,url: {controller: 'registrations', action: 'create_credit_cards' }, class: "cmain__box__form",local:true do |f|
         .cmain__box__form__blank
           .cmain__box__form__blank__list
             %label.cmain__box__form__blank__list__label カード番号
