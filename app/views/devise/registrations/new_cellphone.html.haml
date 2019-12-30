@@ -26,10 +26,9 @@
       = form_with model: @cellphone,url: {controller: 'registrations', action: 'create_cellphone' }, class: "main__box__form",local:true do |f|
         .main__box__form__blank
           %label 携帯電話の番号
-          %input.main__box__form__blank__input{placeholder:"携帯電話の番号を入力"}
+          = f.text_field :cellphone_number, placeholder: "携帯電話の番号を入力", class: "main__box__form__blank__input"
           %p 本人確認のため携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います
-          %button.main__box__form__blank__btn
-            SMSを送信する
+          = f.submit "SMSを送信する", class: "main__box__form__blank__btn"
           %p ※電話番号は本人確認や不正防止のために利用します。他のユーザに公開されることはありません。
           .main__box__form__blank__text
             = link_to root_path, class:"main__box__form__blank__text__inside" do
