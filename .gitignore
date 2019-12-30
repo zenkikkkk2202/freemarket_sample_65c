@@ -43,3 +43,9 @@ app/assets/stylesheets/application.scss
 app/assets/stylesheets/application.scss
 db/schema.rb
 db/schema.rb
+app/controllers/users/registrations_controller.rb
+app/views/devise/registrations/new.html.haml
+app/views/devise/registrations/new_address.html.haml
+app/views/devise/registrations/new_cellphone.html.haml
+app/views/devise/registrations/new_credit_card.html.haml
+db/schema.rb
