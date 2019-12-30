@@ -1,3 +1,3 @@
 class Facebook < ApplicationRecord
-  has_one :user, optional: true
+  belongs_to :user, optional: true
 end

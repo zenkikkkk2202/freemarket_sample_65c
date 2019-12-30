@@ -1,3 +1,100 @@
+.exhibitcontent__header{
+  display: flex;
+  justify-content: center;
+  height:128px;
+  &__right5{
+    display: flex;
+    padding:40px 0 0 44px;
+    position: relative;
+    &__red{
+      @include font12_gray;
+      margin-right: 40px;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 200px;
+        border-bottom: solid 2px #ea352d;
+        position: absolute;
+        left: 80px;
+        bottom: 45%;
+      }
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 20px;
+      }
+    }
+
+    &__red2{
+      @include font12_gray;
+      margin-right: 40px;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 80px;
+        border-bottom: solid 2px #ea352d;
+        position: absolute;
+        left: 74px;
+        bottom: 45%;
+      }
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 31px;
+      }
+    }
+
+    &__red3{
+      @include font12_gray;
+      margin-right: 40px;
+      position: relative;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 235px;
+        border-bottom: solid 2px #ea352d;
+        position: absolute;
+        left: -71px;
+        top: 32%;
+      }
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 43px;
+      }
+    }
+
+    &__red4{
+      @include font12_red;
+      margin-right: 40px;
+      &::after{
+        @include btn_red;
+        margin-top: 5px;
+        margin-left: 25px;
+      }
+    }
+    
+    &__red5{
+      @include font12_red;
+      position: relative;
+      &::before{
+        content: "";
+        display: inline-block;
+        width: 75px;
+        border-bottom: solid 2px #ccc;
+        position: absolute;
+        left: -65px;
+        top: 32%;
+      }
+      &::after{
+        @include btn_gray;
+        margin-top: 5px;
+        margin-left: 9px;
+      }
+    }
+  }
+}
+
 .main{
   
   width: 700px;
