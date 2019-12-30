@@ -6,15 +6,14 @@ FactoryBot.define do
     sequence(:email) { |n| "hiro#{n}@example.com"}
     password              {"abc2efg"}
     password_confirmation {"abc2efg"}
-    image                 {"hhhddddd"}
-    name_family           {"tanaka"}
-    name_last             {"jiiiii"}
-    name_kana_f           {"jjjjjj"}
-    name_kana_l           {"kdkdkd"}
+    name_family           {"田中"}
+    name_last             {"明"}
+    name_kana_f           {"タナカ"}
+    name_kana_l           {"アキラ"}
     birthday_y            {"1998"}
-    birthday_m            {"04"}
+    birthday_m            {"4"}
     birthday_d            {"23"}
-    encrypted_password    {"kjshfs"}
+    encrypted_password    {"abc2efg"}
     created_at            {"20111111"}
     updated_at            {"20111111"}
 
