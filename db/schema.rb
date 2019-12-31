@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
     t.integer "condition", default: 0, null: false
     t.integer "charge", default: 0, null: false
     t.integer "prefecture_id", default: 0, null: false
-    t.string "city", null: false
     t.integer "day", default: 0, null: false
     t.integer "price", null: false
     t.integer "fee", null: false

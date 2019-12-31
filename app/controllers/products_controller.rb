@@ -1,14 +1,20 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.includes(:product_image)
+    @products = Product.all.includes(:product_images)
   end
 
   def new
     @product = Product.new
+    @product.product_images.new
   end
 
   def create
-    
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
   
   
@@ -75,5 +81,9 @@ class ProductsController < ApplicationController
 
   def prefecture_params
     params.require(:product).permit(:prefecture)
+  end
+
+  def product_params
+    params.require(:product).permit(:name,:description,:category,:condition,:charge,:prefecture_id,:day,:price,:fee,:profit, product_images_attributes: [:image])
   end
 end

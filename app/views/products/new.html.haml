@@ -12,9 +12,12 @@
           必須
       .exhibitcontent_main__first--description
         最大10枚までアップロードできます。
-      .exhibitcontent_main__first--image
+      .exhibitcontent_main__first--image#image-box
         %label
-          %input.exhibitcontent_main__first--image{type: "file",multiple:"multiple",class:"exhibitcontent_main__first--image--hide"}
+          = f.fields_for :product_images,class:"exhibitcontent_main__first--image" do |i|
+            .js-file_group{"data-index": i.index}
+              = i.file_field :image,class:"exhibitcontent_main__first--image--hide , js-file"
+              %span.js-remove 削除
           %pre
             ドロッグアンドドロップ
             またはクリックしてファイルをアップロード
@@ -26,7 +29,7 @@
         .exhibitcontent_main__second__top--required2
           必須
       .exhibitcontent_main__second--string
-        %input.exhibitcontent_main__second--string--set{type:"text",placeholder:"商品名  (必須40文字まで)"}
+        = f.text_field :name,placeholder:"商品名  (必須40文字まで)",class:"exhibitcontent_main__second--string--set"
       .exhibitcontent_main__second__middle
         .exhibitcontent_main__second__middle__top
           .exhibitcontent_main__second__middle__top--description2
@@ -34,7 +37,7 @@
           .exhibitcontent_main__second__middle__top--required3
             必須
         .exhibitcontent_main__second__middle--text
-          %textarea.exhibitcontent_main__second__middle--text--set2{placeholder:"商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。"}
+          = f.text_area :description,placeholder:"商品の説明(必須1,000文字以内)(色、素材、重さ、定価、注意点など)例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでおすすめです。",class:"exhibitcontent_main__second__middle--text--set2"
  
     .exhibitcontent_main__third
       .exhibitcontent_main__third--left
