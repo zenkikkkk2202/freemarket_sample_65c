@@ -7,7 +7,7 @@ FactoryBot.define do
     password              {"abc2efg"}
     password_confirmation {"abc2efg"}
     name_family           {"田中"}
-    name_last             {"明"}
+    name_last             {"あきら"}
     name_kana_f           {"タナカ"}
     name_kana_l           {"アキラ"}
     birthday_y            {"1998"}
@@ -16,7 +16,6 @@ FactoryBot.define do
     encrypted_password    {"abc2efg"}
     created_at            {"20111111"}
     updated_at            {"20111111"}
-
   end
 
 end
