@@ -15,7 +15,7 @@ class User < ApplicationRecord
   # 各項目のバリデーション
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   PASSWORD_VALIDATION = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{7,128}+\z/i
-  NAME_VALIDATION = /\A[一-龥ぁ-ん]\z/
+  NAME_VALIDATION = /\A[一-龥ぁ-ん]+\z/
   KANA_VALIDATION = /\A([ァ-ン]|ー)+\z/
 
   validates :nickname,              presence: true, length: {maximum: 20}
