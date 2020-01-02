@@ -7,7 +7,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :condition, null: false, default: 0
       t.integer :charge, null: false, default: 0
       t.integer :prefecture_id, null: false, default: 0
-      t.string :city, null: false
       t.integer :day, null: false, default: 0
       t.integer :price, null: false
       t.integer :fee, null: false

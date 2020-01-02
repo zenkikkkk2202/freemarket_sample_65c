@@ -3,5 +3,6 @@ class Product < ApplicationRecord
   
   belongs_to_active_hash :prefecture
   belongs_to :user, optional: true
-  has_many :products_images
+  has_many :product_images, dependent: :destroy
+  accepts_nested_attributes_for :product_images, allow_destroy: true
 end
