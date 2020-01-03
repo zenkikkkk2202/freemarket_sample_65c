@@ -1,5 +1,10 @@
 .header
-  = render "header"
+  - if user_signed_in?
+    = render "header"
+    = render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
+  - else
+    = render "new_header"
+    = render 'new_camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
 .amain
   .imain
     .imain__main
