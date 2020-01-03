@@ -1,0 +1,22 @@
+-# 出品した商品の取引中の画面 
+
+.u-products
+  .main
+    .main__top
+      出品した商品
+    .main__center
+      = link_to "", class: "main__center--left1" do
+        出品中
+      = link_to "", class: "main__center--center1" do
+        取引中
+      = link_to "", class: "main__center--right1" do
+        売却済み
+    .main__bottom
+      = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
+      .main__bottom--text
+        取引中の商品がありません
+  .foot
+    = link_to "", class: "foot__left" do
+      = icon('fas', 'angle-left', class: 'foot__left----text')
+    = link_to "", class: "foot__right" do
+      = icon('fas', 'angle-right', class: 'foot__right--icon')

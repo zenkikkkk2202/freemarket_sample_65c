@@ -1,0 +1,23 @@
+// 出品ページの取引中ののscssです。
+.u-products{
+  .main{
+    &__center{
+      &--left1{
+        color: #333333;
+        background-color: #EEEEEE;
+        width : calc(100% / 3);
+      }
+      &--center1{
+        border-top: 2px solid #ea352d;
+        background-color: #ffffff;
+        color: #333333;
+        width : calc(100% / 3);
+      }
+      &--right1{
+        color: #333333;
+        background-color: #EEEEEE;
+        width : calc(100% / 3);
+      }
+    }
+  }
+}
