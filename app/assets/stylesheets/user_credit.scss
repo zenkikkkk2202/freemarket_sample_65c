@@ -21,35 +21,25 @@
       &__list {
         max-width: 320px;
         margin: 0 auto;
-        position: relative;
-        &__icon {
-          font-size: 25px;
-        }
-        &__num {
-          @include font16_u4;
-          margin: 8px 0 0;
-          line-height: 16px;
-        }
-        &__data {
-          @include font16_u4;
-          margin: 8px 0 0;
-          line-height: 16px;
-        }
-        &__button {
-          @include font14_u2_color;
-          color: #ea352d;
-          position: absolute;
-          top: 0;
-          right: 0;
-          padding: 4px 6px;
-          background-color: #fff;
-          border-radius: 3px;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        &__box {
+          background: #ea352d;
           border: 1px solid #ea352d;
-          color: #ea352d;
+          color: #fff;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          cursor: pointer;
+          text-align: center;
+          &__icon {
+            margin-right: 16px;
+          }
         }
-        &__button:focus {
-          outline: 0;
-        }
+      }
+      &:hover {
+        opacity: 0.7;
       }
     }
     &__regist {

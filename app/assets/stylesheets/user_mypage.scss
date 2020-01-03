@@ -1,26 +1,21 @@
 // ユーザマイページの固定部分（ヘッダーとサイドバー）のscss
 .u-main {
-  text-decoration: none;
   .u-header{
     @include font14_u1;
+    color: #333333;
     border-top: solid 1px #eee;
     position: relative;
     display: block;
     background-color: #ffffff;
-    padding: 16px 210px;
+    padding: 16px 330px;
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
     &__list{
       color: #333333;
-      padding: 16px 0px;
-      &:hover {
-        text-decoration: underline;
-      }
+      font-size: 14px;
     }
-    &__list-icon{
-      margin: 0 8px;
-      font-size: 10px;
-      color: #888888;
-    }
+  }
+  a{
+    color: #000;
   }
   .u-container{
     background-color: #F5F5F5;
