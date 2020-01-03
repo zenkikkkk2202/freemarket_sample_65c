@@ -130,16 +130,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
   end
 
-  def new_credit_cards
+  def new_credit_card
     @user = User.new
+    @cellphone = Cellphone.new
+    @address = Address.new
+    @credit_card = CreditCard.new
   end
 
-  def create_credit_cards
-    session[:card_number] = user_params[:card_number]
-    session[:exp_month] = user_params[:exp_month]
-    session[:exp_year] = user_params[:exp_year] 
-    session[:cvc] = user_params[:cvc]
-
+  def create_credit_card
+    session[:card_number] = credit_card_params[:card_number]
+    session[:exp_month] = credit_card_params[:exp_month]
+    session[:exp_year] = credit_card_params[:exp_year] 
+    session[:cvc] = credit_card_params[:cvc]
+    binding.pry
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -150,12 +153,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
       name_kana_l: session[:name_kana_l],
       birthday_y: session[:birthday_y],
       birthday_m: session[:birthday_m],
-      birthday_d: session[:birthday_d]
+      birthday_d: session[:birthday_d],
     )
+    @user.save
 
     @cellphone = Cellphone.new(
       cellphone_number: session[:cellphone_number]
     )
+    @cellphone.save
 
     @address = Address.new(
       post_code: session[:post_code],
@@ -165,6 +170,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
       build: session[:build],
       phone_number: session[:phone_number]
     )
+    @address.save
+
+    @credit_card = Credit_card.new(
+      card_number: session[:card_number],
+      exp_month: session[:exp_month],
+      exp_year: session[:exp_year],
+      cvc: session[:cvc]
+    )
+    @credit_card.save
+    
 
   end
 
@@ -183,7 +198,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def credit_card_params
-    params.require(:address).permit(:card_number, :exp_month, :exp_year, :cvc)
+    params.require(:credit_card).permit(:card_number, :exp_month, :exp_year, :cvc)
   end
 
 
