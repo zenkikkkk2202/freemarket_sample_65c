@@ -74,9 +74,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "haml-rails"
 gem 'devise'
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
 gem "font-awesome-sass"
 gem "pry-rails"
 gem 'carrierwave'
@@ -86,3 +83,6 @@ gem "jquery-rails"
 gem 'active_hash'
 gem 'payjp'
 gem "gretel"
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
