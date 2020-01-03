@@ -136,6 +136,37 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create_credit_cards
+    session[:card_number] = user_params[:card_number]
+    session[:exp_month] = user_params[:exp_month]
+    session[:exp_year] = user_params[:exp_year] 
+    session[:cvc] = user_params[:cvc]
+
+    @user = User.new(
+      nickname: session[:nickname],
+      email: session[:email],
+      password: session[:password],
+      name_family: session[:name_family],
+      name_last: session[:name_last],
+      name_kana_f: session[:name_kana_f],
+      name_kana_l: session[:name_kana_l],
+      birthday_y: session[:birthday_y],
+      birthday_m: session[:birthday_m],
+      birthday_d: session[:birthday_d]
+    )
+
+    @cellphone = Cellphone.new(
+      cellphone_number: session[:cellphone_number]
+    )
+
+    @address = Address.new(
+      post_code: session[:post_code],
+      prefecture_id: session[:prefecture_id],
+      city: session[:city],
+      address: session[:address],
+      build: session[:build],
+      phone_number: session[:phone_number]
+    )
+
   end
 
   private
@@ -152,9 +183,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:address).permit(:post_code, :prefecture_id, :city, :address, :build, :phone_number)
   end
 
-  # def credit_card_params
-  #   params.require(:address).permit(:)
-  # end
+  def credit_card_params
+    params.require(:address).permit(:card_number, :exp_month, :exp_year, :cvc)
+  end
 
 
    # 前のpostアクションで定義されたsessionがなかった場合登録ページトップへリダイレクト
