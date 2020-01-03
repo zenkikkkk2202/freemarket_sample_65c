@@ -125,7 +125,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     unless check_user_valid && check_cellphone_valid && check_address_valid
       render :new_address
     else
-      binding.pry
       session[:through_first_valid] = "through_first_valid"
       redirect_to credit_cards_path
     end
