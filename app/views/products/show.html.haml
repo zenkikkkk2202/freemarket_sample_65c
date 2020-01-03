@@ -4,12 +4,12 @@
 
   .box__container
     .item_name 
-      @product.name
+      =@product.name
     .box__container__main
       .box__container__main__photo
         .box__container__main__photo__all
           .box__container__main__photo__all__big
-            = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"300x300"
+            = image_tag @product.product_images[0].image.to_s,size:"300x300"
 
 
           .box__container__main__photo__all__small
@@ -28,7 +28,7 @@
           %tr
             %th 出品者
             %td
-              = link_to "name",root_path, class:"box__container__main__table__body__data"
+              = link_to "name",root_path, class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
               .box__container__main__table__body__list
                 .box__container__main__table__body__list__face
                   %i.far.fa-smile
@@ -44,7 +44,8 @@
             %td
               = link_to root_path,class: "box__container__main__table__body__category" do
                 .box__container__main__table__body__category__child 
-                  %span.box__container__main__table__body__category__child__ca レディース
+                  %span.box__container__main__table__body__category__child__ca 
+                  =@product.category
               = link_to root_path, class: "box__container__main__table__body__category" do
                 %p.box__container__main__table__body__category__child
                   %i.fas.fa-chevron-right
@@ -60,10 +61,12 @@
               = link_to "コーチ",root_path,class:"box__container__main__table__body__bland"
           %tr
             %th 商品の状態
-            %td やや傷や汚れあり
+            %td
+              =@product.condition
           %tr
             %th 配送料の負担
-            %td 送料込み(出品者負担)
+            %td 
+              =@product.charge
           %tr
             %th 配送の方法
             %td 未定
