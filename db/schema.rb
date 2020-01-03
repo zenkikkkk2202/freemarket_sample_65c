@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
     t.string "city", null: false
     t.string "address", null: false
     t.string "build"
-    t.integer "phone_number"
+    t.string "phone_number"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
   end
 
   create_table "cellphones", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "cellphone_number", null: false
+    t.string "cellphone_number", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
