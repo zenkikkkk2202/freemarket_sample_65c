@@ -86,8 +86,10 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
     t.integer "price", null: false
     t.integer "fee", null: false
     t.integer "profit", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -116,4 +118,5 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
   add_foreign_key "facebooks", "users"
   add_foreign_key "googles", "users"
   add_foreign_key "product_images", "products"
+  add_foreign_key "products", "users"
 end
