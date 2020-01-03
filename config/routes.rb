@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get 'credit_cards', to: 'users/registrations#new_credit_card'
     post 'credit_cards', to: 'users/registrations#create_credit_card'
+    get "done", to: "users/registrations#done"
   end
 
   root "products#index"

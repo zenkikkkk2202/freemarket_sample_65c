@@ -1,6 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :redirect_to_index_from_sms, only: :create, :create_cellphone, :create_address, :create_credit_cards
 
+  require "payjp"
+
   def index
   end
 
@@ -138,11 +140,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create_credit_card
-    session[:card_number] = credit_card_params[:card_number]
-    session[:exp_month] = credit_card_params[:exp_month]
-    session[:exp_year] = credit_card_params[:exp_year] 
-    session[:cvc] = credit_card_params[:cvc]
-    binding.pry
+    # session[:card_number] = credit_card_params[:card_number]
+    # session[:exp_month] = credit_card_params[:exp_month]
+    # session[:exp_year] = credit_card_params[:exp_year] 
+    # session[:cvc] = credit_card_params[:cvc]
+
+    
     @user = User.new(
       nickname: session[:nickname],
       email: session[:email],
@@ -153,16 +156,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
       name_kana_l: session[:name_kana_l],
       birthday_y: session[:birthday_y],
       birthday_m: session[:birthday_m],
-      birthday_d: session[:birthday_d],
+      birthday_d: session[:birthday_d]
     )
     @user.save
-
+    
     @cellphone = Cellphone.new(
+      user: @user,
       cellphone_number: session[:cellphone_number]
     )
     @cellphone.save
 
     @address = Address.new(
+      user: @user,
+      # cellphone: @cellphone,
       post_code: session[:post_code],
       prefecture_id: session[:prefecture_id],
       city: session[:city],
@@ -171,17 +177,41 @@ class Users::RegistrationsController < Devise::RegistrationsController
       phone_number: session[:phone_number]
     )
     @address.save
-
-    @credit_card = Credit_card.new(
-      card_number: session[:card_number],
-      exp_month: session[:exp_month],
-      exp_year: session[:exp_year],
-      cvc: session[:cvc]
-    )
-    @credit_card.save
     
-
+    # @credit_card = Credit_card.new(
+    #   card_number: session[:card_number],
+    #   exp_month: session[:exp_month],
+    #   exp_year: session[:exp_year],
+    #   cvc: session[:cvc]
+    # )
+    # @credit_card.save
+    Payjp.api_key = "sk_test_62cd291a7c9df2d7ce3d50f5"
+    customer = Payjp::Customer.create(card: params["payjp-token"])
+    @credit_card = CreditCard.new(user: @user,customer_id: customer.id,card_id: customer.default_card)
+    
+    # カード情報まで保存に成功したら全sessionをリセットしてユーザーidのみsessionに預け、完了画面へリダイレクト
+    if @credit_card.save
+      reset_session
+      session[:id] = @user.id
+      redirect_to done_path
+      return 
+    else
+      #失敗したらsessionを切って登録ページトップへリダイレクト
+      reset_session
+      redirect_to new_path
+    end
+    
   end
+
+  def done
+    unless session[:id]
+      redirect_to signup_index_path 
+      return
+    end
+    # deviseのメソッドを使ってログイン
+    sign_in User.find(session[:id])
+  end
+
 
   private
    
@@ -198,7 +228,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def credit_card_params
-    params.require(:credit_card).permit(:card_number, :exp_month, :exp_year, :cvc)
+    params.require(:credit_card).permit(:payjp_token, :exp_month, :exp_year, :cvc)
   end
 
 

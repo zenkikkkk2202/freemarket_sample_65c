@@ -1,10 +1,10 @@
 $(function(){
-
+  console.log("hello")
   var submit = document.getElementById("token_submit");
 
   submit.addEventListener('click', function(e){  // 追加するボタンが押されたらイベント発火
     e.preventDefault();  // ボタンを一旦無効化
-    Payjp.setPublicKey("sk_test_62cd291a7c9df2d7ce3d50f5");// 秘密鍵（テスト）
+    Payjp.setPublicKey("pk_test_4e0f1919aad9f79a0cda291d");// 秘密鍵（テスト）
     var card = {  // 入力されたカード情報を取得
       number: document.getElementById("card_number").value, // ビューのidによって指定されたcard_numberの数字を持ってきている
       exp_month: document.getElementById("exp_month").value,
@@ -23,7 +23,8 @@ $(function(){
           $("#card_token").append(
             $('<input type="hidden" name="payjp-token">').val(response.id)
           ); 
-          document.inputForm.submit();  // 生成したトークンを送信する準備を整える
+            // 生成したトークンを送信する準備を整える
+          $("#charge-form")[0].submit();
           alert("登録が完了しました");
         } else {
           alert("正しいカード情報を入力してください。");
