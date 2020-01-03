@@ -1,36 +1,36 @@
-# # ルート
-# crumb :root do
-#   link "トップページ", root_path
-# end
+# ルート
+crumb :root do
+  link "トップページ", root_path
+end
 
-# # マイページ
-# crumb :user_page do
-#   link "マイページ", "/products/user-page"
-# end
+# マイページ
+crumb :user_page do
+  link "マイページ", "/products/user-page"
+end
 
-# # プロフィール
-# crumb :user_profile_edit do
-#   link "プロフィール", "/products/user_profile_edit"
-#   parent :user_page
-# end
+# プロフィール
+crumb :user_profile_edit do
+  link "プロフィール", "/products/user_profile_edit"
+  parent :user_page
+end
 
-# # 本人情報の登録
-# crumb :user_profile_information do
-#   link "本人情報の登録", "/products/user_profile_information"
-#   parent :user_page
-# end
+# 本人情報の登録
+crumb :user_profile_information do
+  link "本人情報の登録", "/products/user_profile_information"
+  parent :user_page
+end
 
-# # ログアウト
-# crumb :user_logout do
-#   link "ログアウト", "/products/user_logout"
-#   parent :user_page
-# end
+# ログアウト
+crumb :user_logout do
+  link "ログアウト", "/products/user_logout"
+  parent :user_page
+end
 
-# # 支払い方法
-# crumb :user_credit do
-#   link "支払い方法", "/products/user_credit"
-#   parent :user_page
-# end
+# 支払い方法
+crumb :user_credit do
+  link "支払い方法", "/products/user_credit"
+  parent :user_page
+end
 
 # crumb :projects do
 #   link "Projects", projects_path
