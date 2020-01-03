@@ -5,7 +5,7 @@ FactoryBot.define do
     prefecture_id     {"1"}
     city              {"yyuuuuu"}
     address           {"protiwopi"}
-    phone_number      {"090-0000-0000"}
+    phone_number      {"090-1234-5678"}
     user_id           {"8"}
     id                {"4"}
     created_at        {"20111111"}
