@@ -27,3 +27,10 @@
 /config/master.key
 Gemfile
 Gemfile
+app/assets/javascripts/product_image.js
+app/controllers/products_controller.rb
+public/uploads/product_image/image/10/00.jpg
+public/uploads/product_image/image/11/ta.jpg
+public/uploads/product_image/image/12/00.jpg
+public/uploads/product_image/image/9/00.jpg
+public/uploads/product_image/image/8/ta.jpg
