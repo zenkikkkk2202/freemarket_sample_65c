@@ -49,4 +49,3 @@ app/views/devise/registrations/new_address.html.haml
 app/views/devise/registrations/new_cellphone.html.haml
 app/views/devise/registrations/new_credit_card.html.haml
 db/schema.rb
-db/schema.rb
