@@ -34,10 +34,8 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
   end
 
   create_table "credit_cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "card_number", null: false
-    t.integer "limit_m", null: false
-    t.integer "limit_y", null: false
-    t.integer "code", null: false
+    t.string "card_id", null: false
+    t.string "customer_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -88,10 +86,8 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
     t.integer "price", null: false
     t.integer "fee", null: false
     t.integer "profit", null: false
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,6 +99,9 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
     t.integer "birthday_y", null: false
     t.integer "birthday_m", null: false
     t.integer "birthday_d", null: false
+    t.string "saling_item"
+    t.string "sold_item"
+    t.string "auction_item"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -120,5 +119,4 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
   add_foreign_key "facebooks", "users"
   add_foreign_key "googles", "users"
   add_foreign_key "product_images", "products"
-  add_foreign_key "products", "users"
 end
