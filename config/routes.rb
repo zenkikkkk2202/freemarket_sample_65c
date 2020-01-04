@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {
     registrations: 'users/registrations',
-    omniauth_callbacks: 'users/omniauth_callbacks'
+    # omniauth_callbacks: 'users/omniauth_callbacks'
   }
   devise_scope :user do
     get 'cellphones',to:'users/registrations#new_cellphone'
