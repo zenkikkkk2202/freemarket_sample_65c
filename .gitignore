@@ -51,3 +51,4 @@ app/views/devise/registrations/new_credit_card.html.haml
 db/schema.rb
 app/models/product.rb
 db/schema.rb
+.env
