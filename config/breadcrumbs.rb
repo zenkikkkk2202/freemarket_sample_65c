@@ -32,7 +32,23 @@ crumb :user_credit do
   parent :user_page
 end
 
+# 出品中
+crumb :p_exhibiting do
+  link "出品した商品 - 出品中", "/products/notice"
+  parent :user_page
+end
 
+# 取引中
+crumb :p_transaction do
+  link "出品した商品 - 取引中", "/products/purchase_exhibit"
+  parent :user_page
+end
+
+# 売却済み
+crumb :p_soldout do
+  link "出品した商品 - 売却済み", "/products/news"
+  parent :user_page
+end
 
 # crumb :projects do
 #   link "Projects", projects_path

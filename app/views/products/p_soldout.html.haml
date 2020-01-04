@@ -1,7 +1,9 @@
--# 出品した商品の取引中の画面 
+-# 出品ページの売却済み
+
 = render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
 .u-main
-  = render 'user_header'  # ユーザマイページのヘッダー部分テンプレートの呼び出し
+  - breadcrumb :p_soldout
+  = render "layouts/breadcrumbs"
   .u-container
     .container-center
       = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
@@ -10,16 +12,16 @@
           .main__top
             出品した商品
           .main__center
-            = link_to "", class: "main__center--left1" do
+            = link_to "", class: "main__center--left2" do
               出品中
-            = link_to "", class: "main__center--center1" do
+            = link_to "", class: "main__center--center2" do
               取引中
-            = link_to "", class: "main__center--right1" do
+            = link_to "", class: "main__center--right2" do
               売却済み
           .main__bottom
             = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
             .main__bottom--text
-              取引中の商品がありません
+              売却済みの商品がありません
         .foot
           = link_to "", class: "foot__left" do
             = icon('fas', 'angle-left', class: 'foot__left----text')
