@@ -110,9 +110,6 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
     t.integer "birthday_y", null: false
     t.integer "birthday_m", null: false
     t.integer "birthday_d", null: false
-    t.string "saling_item"
-    t.string "sold_item"
-    t.string "transaction_item"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
