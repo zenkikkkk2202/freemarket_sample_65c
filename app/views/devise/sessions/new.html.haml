@@ -1,17 +1,34 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+-# 仮置き　ログイン方法　ロボット確認付き
+
+
+.exhibitcontent
+  .exhibitcontent__header
+    = render "products/show_header"
+  .log__main
+    .log__main__container
+      .log__main__container__no
+        %p アカウントをお持ちでない方はこちら
+        = link_to "新規会員登録","#",class:"log__main__container__no__btn"
+      .log__main__container__sns
+        %button.log__main__container__sns__facebook
+          = icon 'fab', 'facebook-square', class:"log__main__container__sns__facebook__icon"
+          Facebookでログイン
+        %button.log__main__container__sns__google
+          = icon 'fab', 'google', class:"log__main__container__sns__google__icon"
+          Googleでログイン
+      .log__main__container__form
+        .log__main__container__form__inner
+          .log__main__container__form__inner__blank
+            %input.log__main__container__form__inner__blank__input{placeholder:"メールアドレス"}
+          .log__main__container__form__inner__blank
+            %input.log__main__container__form__inner__blank__input{placeholder:"パスワード"}
+          .log__main__container__form__inner__robot
+            .log__main__container__form__inner__robot__inside
+              =image_tag("https://i.gyazo.com/f5f78f5492629b66f2618a42def37030.png")
+          %button.log__main__container__form__inner__red
+            ログイン
+          = link_to "パスワードをお忘れの方",root_path,class:"log__main__container__form__inner__pass"
+
+
+  .exhibitcontent_down
+    = render 'products/show_footer'
