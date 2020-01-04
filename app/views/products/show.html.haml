@@ -76,10 +76,13 @@
               = link_to "東京都",root_path,class:"box__container__main__table__body__area"
           %tr
             %th 発送日の目安
-            %td 1~2日以内
+            %td
+              =@product.day
 
     .box__container__price
-      %span.box__container__price__bold ¥12,000
+      %span.box__container__price__bold 
+        ¥
+        =@product.price
       %span.box__container__price__tax ＜税込＞
       %span.box__container__price__fee 送料込み
     = link_to "購入画面に進む",root_path,class:"box__container__price__btn"
