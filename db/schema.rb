@@ -78,18 +78,16 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.string "category", default: "0", null: false
-    t.string "condition", default: "0", null: false
-    t.string "charge", default: "0", null: false
-    t.string "prefecture_id", default: "0", null: false
-    t.string "day", default: "0", null: false
+    t.integer "category", default: 0, null: false
+    t.integer "condition", default: 0, null: false
+    t.integer "charge", default: 0, null: false
+    t.integer "prefecture_id", default: 0, null: false
+    t.integer "day", default: 0, null: false
     t.integer "price", null: false
     t.integer "fee", null: false
     t.integer "profit", null: false
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -110,6 +108,9 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
     t.integer "birthday_y", null: false
     t.integer "birthday_m", null: false
     t.integer "birthday_d", null: false
+    t.string "saling_item"
+    t.string "sold_item"
+    t.string "transaction_item"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -127,6 +128,5 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
   add_foreign_key "facebooks", "users"
   add_foreign_key "googles", "users"
   add_foreign_key "product_images", "products"
-  add_foreign_key "products", "users"
   add_foreign_key "sns_credentials", "users"
 end
