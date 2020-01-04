@@ -12,9 +12,9 @@ class CreateProducts < ActiveRecord::Migration[5.2]
       t.integer :fee, null: false
       t.integer :profit, null: false
       t.references :user, foreign_key: true
-      t.integer :saler_id, foreign_key: true, comment:"user"
-      t.integer :buyer_id, foreign_key: true, comment:"user"
-      t.integer :auction_id, foreign_key: true, comment:"user"
+      t.references :saler, foreign_key: {to_table: :users} 
+      t.references :buyer, foreign_key: {to_table: :users}
+      t.references :auction, foreign_key: {to_table: :users}
       t.timestamps
     end
   end
