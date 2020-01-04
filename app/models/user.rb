@@ -1,17 +1,19 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :sns_credentials, dependent: :destroy
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+
   has_many :products
+  
   has_many :credit_cards, dependent: :destroy
   # has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Product"
   # has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Product"
   # has_many :auction_items, -> { where("auction_id is not NULL") }, foreign_key: "saler_id", class_name: "Product"
   has_one :address, dependent: :destroy
-  has_one :facebook
-  has_one :google
 
 
 
