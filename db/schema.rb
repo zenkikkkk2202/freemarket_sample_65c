@@ -87,6 +87,9 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
     t.integer "fee", null: false
     t.integer "profit", null: false
     t.bigint "user_id"
+    t.integer "saler_id", comment: "user"
+    t.integer "buyer_id", comment: "user"
+    t.integer "auction_id", comment: "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_products_on_user_id"
@@ -110,6 +113,9 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
     t.integer "birthday_y", null: false
     t.integer "birthday_m", null: false
     t.integer "birthday_d", null: false
+    t.string "saling_item"
+    t.string "sold_item"
+    t.string "auction_item"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

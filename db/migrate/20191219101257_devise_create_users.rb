@@ -12,9 +12,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.integer :birthday_y, null: false
       t.integer :birthday_m, null: false
       t.integer :birthday_d, null: false
-      # t.string  :saling_item
-      # t.string  :sold_item
-      # t.string  :auction_item
+      t.string  :saling_item
+      t.string  :sold_item
+      t.string  :auction_item
 
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
