@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
     
   end
 
-  def notice
+  def p_transaction
   end
 
   def things_to_do
@@ -60,13 +60,13 @@ class ProductsController < ApplicationController
   def sale
   end
 
-  def purchase_exhibit
+  def p_exhibiting
   end
 
   def purchase_transaction
   end
 
-  def news
+  def p_soldout
   end
 
   def evaluation

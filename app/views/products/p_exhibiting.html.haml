@@ -1,7 +1,8 @@
 -# 出品ページの出品中
 = render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
 .u-main
-  = render 'user_header'  # ユーザマイページのヘッダー部分テンプレートの呼び出し
+  - breadcrumb :p_exhibiting
+  = render "layouts/breadcrumbs"
   .u-container
     .container-center
       = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
