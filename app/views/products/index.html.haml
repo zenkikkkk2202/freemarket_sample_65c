@@ -57,20 +57,19 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
-            %li.imain__main__product__box__item__list__data
-              .imain__main__product__box__item__list__data__size
-                =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
-                
-                  %figure.imain__main__product__box__item__list__data__size__link__figure
-                    %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
-                      harry_styles
-                    .imain__main__product__box__item__list__data__size__link__figure__information
-                      %label.imain__main__product__box__item__list__data__size__link__figure__information__label
-                        ¥
-                        9,799
-                      = image_tag "37efefdc5861611849e8a26e53bedb8f_m.jpg", class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+            -if @products
+              - @products.each do |product|
+                %li.imain__main__product__box__item__list__data
+                  .imain__main__product__box__item__list__data__size
+                    =link_to "/products/#{product.id}",class: "imain__main__product__box__item__list__data__size__link" do
+                      %figure.imain__main__product__box__item__list__data__size__link__figure
+                        %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                          =product.name
+                        .imain__main__product__box__item__list__data__size__link__figure__information
+                          %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                            ¥
+                            =product.price
+                          = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
 
     .imain__main__product
       .imain__main__product__box

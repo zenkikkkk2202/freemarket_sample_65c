@@ -78,16 +78,18 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
-    t.integer "category", default: 0, null: false
-    t.integer "condition", default: 0, null: false
-    t.integer "charge", default: 0, null: false
-    t.integer "prefecture_id", default: 0, null: false
-    t.integer "day", default: 0, null: false
+    t.string "category", default: "0", null: false
+    t.string "condition", default: "0", null: false
+    t.string "charge", default: "0", null: false
+    t.string "prefecture_id", default: "0", null: false
+    t.string "day", default: "0", null: false
     t.integer "price", null: false
     t.integer "fee", null: false
     t.integer "profit", null: false
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_products_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -119,4 +121,5 @@ ActiveRecord::Schema.define(version: 2019_12_25_075650) do
   add_foreign_key "facebooks", "users"
   add_foreign_key "googles", "users"
   add_foreign_key "product_images", "products"
+  add_foreign_key "products", "users"
 end

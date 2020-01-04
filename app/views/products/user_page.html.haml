@@ -2,10 +2,11 @@
 
 = render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
 .u-main
-  = render 'user_header'  # ユーザマイページのヘッダー部分テンプレートの呼び出し
+  - breadcrumb :user_page
+  = render "layouts/breadcrumbs"
   .u-container
     .container-center
-      = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      = render 'user_sidebar'  # ユーザマイページのサイドバーの部分テンプレートの呼び出し
       .contents
         .contents__user
           .contents__user__icon

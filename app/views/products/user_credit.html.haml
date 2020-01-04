@@ -2,7 +2,8 @@
 
 = render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
 .u-main
-  = render 'user_header'  # ユーザマイページのヘッダー部分テンプレートの呼び出し
+  - breadcrumb :user_credit
+  = render "layouts/breadcrumbs"
   .u-container
     .container-center
       = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
@@ -15,14 +16,9 @@
               クレジットカード一覧
             %ul.chapter-container__form__payment
               %li.chapter-container__form__payment__list
-                = icon 'fab', 'cc-visa', class: "chapter-container__form__payment__list__icon"
-                .chapter-container__form__payment__list__num
-                  ************1234
-                .chapter-container__form__payment__list__data
-                  12 / 12
-                %button.chapter-container__form__payment__list__button{type: "submit"} 
-                  削除する
-                  = link_to ""
+                .chapter-container__form__payment__list__box
+                  = icon 'far', 'credit-card', class: "chapter-container__form__payment__list__box__icon"
+                  クレジットカードを追加する
             .chapter-container__form__regist
               支払い方法について
               = icon 'fas', 'angle-right', class: "chapter-container__form__regists"
