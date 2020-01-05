@@ -8,12 +8,12 @@
     .log__main__container
       .log__main__container__no
         %p アカウントをお持ちでない方はこちら
-        = link_to "新規会員登録","#",class:"log__main__container__no__btn"
+        = link_to "新規会員登録", index_path, class:"log__main__container__no__btn"
       .log__main__container__sns
-        %button.log__main__container__sns__facebook
+        = link_to user_facebook_omniauth_authorize_path, class: 'log__main__container__sns__facebook' do
           = icon 'fab', 'facebook-square', class:"log__main__container__sns__facebook__icon"
           Facebookでログイン
-        %button.log__main__container__sns__google
+        = link_to user_google_oauth2_omniauth_authorize_path, class: 'log__main__container__sns__google' do
           = icon 'fab', 'google', class:"log__main__container__sns__google__icon"
           Googleでログイン
       .log__main__container__form
