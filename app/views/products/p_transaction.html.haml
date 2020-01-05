@@ -11,18 +11,30 @@
           .pmain__top
             出品した商品
           .pmain__center
-            = link_to "", class: "pmain__center--left3" do
+            = link_to p_exhibiting_products_path, class: "pmain__center--left3" do
               出品中
-            = link_to "", class: "pmain__center--center3" do
+            = link_to "#", class: "pmain__center--center3" do
               取引中
-            = link_to "", class: "pmain__center--right3" do
+            = link_to p_soldout_products_path, class: "pmain__center--right3" do
               売却済み
           -if @products
             - @products.each do |product|
-              .main__bottom
-                = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
-                .main__bottom--text
-                  取引中の商品がありません
+              = link_to "/products/#{product.id}",class:"item_content" do
+                .item_content__image
+                  = image_tag product.product_images[0].image.to_s,size:"58x48"
+                .item_content__right
+                  .item_content__right--name
+                    =product.name
+                  .item_content__right__good
+                    .item_content__right__good--goods
+                      = icon("far","heart")
+                      0
+                    .item_content__right__good--comment
+                      = icon("far","comment-alt")
+                      0
+                    .item_content__right__good--exhibition
+                      取引中
+                = icon('fas', 'angle-right', class: 'item_content__icon')
           - else
             .main__bottom
               = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
