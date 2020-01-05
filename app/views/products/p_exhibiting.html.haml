@@ -39,11 +39,12 @@
               = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
               .main__bottom--text
                 出品中の商品がありません
-        .foot
-          = link_to "", class: "foot__left" do
-            = icon('fas', 'angle-left', class: 'foot__left----text')
-          = link_to "", class: "foot__right" do
-            = icon('fas', 'angle-right', class: 'foot__right--icon')
+                
+        .product_foot
+          = link_to "", class: "product_foot__left" do
+            = icon('fas', 'angle-left', class: 'product_foot__left--text')
+          = link_to "", class: "product_foot__right" do
+            = icon('fas', 'angle-right', class: 'product_foot__right--icon')
 
 = render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
 
