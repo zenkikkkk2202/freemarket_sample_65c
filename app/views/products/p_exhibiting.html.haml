@@ -11,15 +11,15 @@
           .pmain__top
             出品した商品
           .pmain__center
-            = link_to "", class: "pmain__center--left1" do
+            = link_to "#", class: "pmain__center--left1" do
               出品中
-            = link_to "", class: "pmain__center--center1" do
+            = link_to p_transaction_products_path, class: "pmain__center--center1" do
               取引中
-            = link_to "", class: "pmain__center--right1" do
+            = link_to p_soldout_products_path, class: "pmain__center--right1" do
               売却済み
           -if @products
             - @products.each do |product|
-              .item_content
+              = link_to "/products/#{product.id}",class:"item_content" do
                 .item_content__image
                   = image_tag product.product_images[0].image.to_s,size:"58x48"
                 .item_content__right
@@ -34,6 +34,7 @@
                       0
                     .item_content__right__good--exhibition
                       出品中
+                = icon('fas', 'angle-right', class: 'item_content__icon')
           - else
             .main__bottom
               = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"

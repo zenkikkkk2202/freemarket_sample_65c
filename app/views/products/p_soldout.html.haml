@@ -12,18 +12,31 @@
           .pmain__top
             出品した商品
           .pmain__center
-            = link_to "", class: "pmain__center--left2" do
+            = link_to p_exhibiting_products_path, class: "pmain__center--left2" do
               出品中
-            = link_to "", class: "pmain__center--center2" do
+            = link_to p_transaction_products_path, class: "pmain__center--center2" do
               取引中
-            = link_to "", class: "pmain__center--right2" do
+            = link_to "#", class: "pmain__center--right2" do
               売却済み
           -if @products
             - @products.each do |product|
-              .main__bottom
-                = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
-                .main__bottom--text
-                  売却済みの商品がありません
+              = link_to "/products/#{product.id}",class:"item_content" do
+                .item_content__image
+                  = image_tag product.product_images[0].image.to_s,size:"58x48"
+                .item_content__right
+                  .item_content__right--name
+                    =product.name
+                  .item_content__right__good
+                    .item_content__right__good--goods
+                      = icon("far","heart")
+                      0
+                    .item_content__right__good--comment
+                      = icon("far","comment-alt")
+                      0
+                    .item_content__right__good--exhibition
+                      売却済み
+                = icon('fas', 'angle-right', class: 'item_content__icon')
+                  
           - else
             .main__bottom
               = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
