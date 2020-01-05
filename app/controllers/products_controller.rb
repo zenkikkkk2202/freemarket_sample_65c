@@ -24,10 +24,11 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @image = Product_images.all(params[:id])
+    @product.product_images.find(params[:id])
   end
 
   def update
+
   end
 
   def destroy
