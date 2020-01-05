@@ -87,3 +87,39 @@
     }
   }
 }
+
+// transaction,soldoutのfootと共通
+.product_foot{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  cursor: pointer;
+  &__left{
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px #D3D3D3 solid;
+    &--text{
+      font-size: 20px;
+      color: #333;
+      font-weight: 400;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    }
+  }
+  &__right{
+    padding: 10px 15px;
+    display: block;
+    color: #333;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 1px #D3D3D3 solid;
+    &--icon{
+      font-size: 20px;
+      color: #333;
+      font-weight: 400;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    }
+  }
+}
