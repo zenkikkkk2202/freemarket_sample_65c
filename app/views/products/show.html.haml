@@ -94,7 +94,7 @@
       .box__container__current_user--p
         or
       = link_to "出品を一旦停止する","#",class:"box__container__current_user--stop"
-      = link_to "この商品を削除する","/product/#{@product.id}",class:"box__container__current_user--delete"
+      = link_to "この商品を削除する","/products/#{@product.id}",method:"delete",class:"box__container__current_user--delete"
 
   - else
     = link_to "購入画面に進む",root_path,class:"box__container__price__btn"

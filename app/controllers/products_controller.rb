@@ -24,10 +24,16 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    # @image = Product_images.all(params[:id])
+    @image = Product_images.all(params[:id])
   end
 
   def update
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to("/")
   end
 
   def user_credit
