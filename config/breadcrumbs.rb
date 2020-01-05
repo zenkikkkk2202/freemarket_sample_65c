@@ -50,6 +50,12 @@ crumb :p_soldout do
   parent :user_page
 end
 
+# 出品商品画面
+crumb :show do
+  link "商品出品画面", "/products/show"
+  parent :user_page
+  parent :p_exhibiting
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
