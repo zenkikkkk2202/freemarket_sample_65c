@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
   end
 
   def p_exhibiting
-    @products = Product.all.includes(:saler,:buyer,:auction)  
+    @products = Product.all.includes(:saler,:buyer,:auction,:product_images)  
   end
 
   def purchase_transaction
@@ -88,6 +88,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name,:description,:category,:condition,:charge,:prefecture_id,:day,:price,:fee,:profit, product_images_attributes: [:image, :_destroy])#.merge(saler_id: current_user.id)
+    params.require(:product).permit(:name,:description,:category,:condition,:charge,:prefecture_id,:day,:price,:fee,:profit, product_images_attributes: [:image, :_destroy]).merge(saler_id: current_user.id)
   end
 end

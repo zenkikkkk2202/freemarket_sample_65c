@@ -21,15 +21,17 @@
             - @products.each do |product|
               .item_content
                 .item_content__image
-                  -# = product.product_images.image
+                  -# = image_tag product.product_images[0].image.to_s,size:"100×100"
                 .item_content__right
                   .item_content__right--name
                     =product.name
                   .item_content__right__good
                     .item_content__right__good--goods
-
+                      = icon("far","heart")
+                      0
                     .item_content__right__good--comment
-
+                      = icon("far","comment-alt")
+                      0
                     .item_content__right__good--exhibition
                       出品中
           - else
