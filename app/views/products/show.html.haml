@@ -31,7 +31,7 @@
           %tr
             %th 出品者
             %td
-              = link_to "name",root_path, class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
+              = link_to "#{current_user.nickname}", class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
               .box__container__main__table__body__list
                 .box__container__main__table__body__list__face
                   %i.far.fa-smile
