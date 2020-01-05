@@ -21,3 +21,44 @@
     }
   }
 }
+
+.item_content{
+  display: flex;
+  padding: 16px;
+  background-color: white;
+  &__image{
+
+  }
+  &__right{
+    &--name{
+      font-size: 14px;
+      font-weight: 400;
+      color: black;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      margin-bottom: 8px;
+    }
+    &__good{
+      display: flex;
+      &--goods{
+        font-size: 14px;
+        color: #cccccc;
+        font-weight: 400;
+        margin-right: 6px;
+      }
+      &--comment{
+        font-size: 14px;
+        color: #cccccc;
+        font-weight: 400;
+        margin-right: 6px;
+      }
+      &--exhibition{
+        font-size: 11px;
+        font-weight: 600;
+        color: #ffffff;
+        border-radius: 2px;
+        background-color: #0099E8;
+        padding: 2px 6px;
+      }
+    }
+  }
+}
