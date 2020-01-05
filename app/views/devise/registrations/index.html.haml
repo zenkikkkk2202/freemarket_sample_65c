@@ -12,7 +12,6 @@
         .cellphone__main__container__form__inside
           = link_to new_user_registration_path, class: 'cellphone__main__container__form__inside__btn' do
             = icon 'far', 'envelope', class:"cellphone__main__container__form__inside__btn__icon"
-            -# %fa.far.fa-envelope
             メールアドレスで登録する
           = link_to user_facebook_omniauth_authorize_path, class: 'cellphone__main__container__form__facebook' do
             Facebookで登録する
