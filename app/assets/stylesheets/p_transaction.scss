@@ -3,20 +3,31 @@
   .main{
     &__center{
       &--left1{
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
         color: #333333;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
         background-color: #EEEEEE;
-        width : calc(100% / 3);
+        width: calc(100% / 3);
       }
       &--center1{
-        border-top: 2px solid #ea352d;
-        background-color: #ffffff;
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
         color: #333333;
-        width : calc(100% / 3);
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        background-color: #EEEEEE;
+        width: calc(100% / 3);
       }
       &--right1{
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
         color: #333333;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
         background-color: #EEEEEE;
-        width : calc(100% / 3);
+        width: calc(100% / 3);
       }
     }
   }

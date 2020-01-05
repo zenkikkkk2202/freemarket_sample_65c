@@ -17,10 +17,26 @@
               取引中
             = link_to "", class: "main__center--right" do
               売却済み
-          .main__bottom
-            = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
-            .main__bottom--text
-              出品中の商品がありません
+          -if @products
+            - @products.each do |product|
+              .item_content
+                .item_content__image
+                  -# = product.product_images.image
+                .item_content__right
+                  .item_content__right--name
+                    =product.name
+                  .item_content__right__good
+                    .item_content__right__good--goods
+
+                    .item_content__right__good--comment
+
+                    .item_content__right__good--exhibition
+                      出品中
+          - else
+            .main__bottom
+              = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
+              .main__bottom--text
+                出品中の商品がありません
         .foot
           = link_to "", class: "foot__left" do
             = icon('fas', 'angle-left', class: 'foot__left----text')
