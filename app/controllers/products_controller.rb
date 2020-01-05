@@ -23,7 +23,8 @@ class ProductsController < ApplicationController
   end
 
   def edit
-
+    @product = Product.find(params[:id])
+    @image = Product_images.all(params[:id])
   end
 
   def update
@@ -51,9 +52,6 @@ class ProductsController < ApplicationController
 
   def p_transaction
     @products = Product.all.includes(:saler,:buyer,:auction)  
-  end
-
-  def things_to_do
   end
 
   def like

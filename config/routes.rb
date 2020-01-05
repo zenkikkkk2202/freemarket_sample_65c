@@ -25,7 +25,7 @@ Rails.application.routes.draw do
       get 'user_profile_edit'
       get 'user-page'
       get 'p_transaction'
-      get 'things_to_do'
+      get 'edit'
       get 'like'
       get 'exhibiting'
       get 'transaction'
