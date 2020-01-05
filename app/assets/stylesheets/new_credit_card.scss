@@ -268,20 +268,17 @@
         }
       }
       &__btn{
-        display: block;
-        margin: 32px auto;
-        width: 343px;
-        background-color: red;
-        max-width: 343px;
-        line-height: 48px;
-        font-size: 14px;
-        transition: all ease-out .3s;
-        cursor: pointer;
-        color: white;
-        border: solid 1px red;
         &__inside{
+          display: block;
           text-align: center;
+          margin: 32px auto;
           align-items: center;
+          width: 343px;
+          background-color: red;
+          max-width: 343px;
+          line-height: 48px;
+          font-size: 14px;
+          color: white;
         }
       }
     }
