@@ -1,8 +1,8 @@
 // 出品ページの取引中ののscssです。
 .u-products{
-  .main{
+  .pmain{
     &__center{
-      &--left1{
+      &--left3{
         line-height: 72px;
         font-size: 16px;
         font-weight: 700;
@@ -11,16 +11,17 @@
         background-color: #EEEEEE;
         width: calc(100% / 3);
       }
-      &--center1{
+      &--center3{
         line-height: 72px;
         font-size: 16px;
         font-weight: 700;
         color: #333333;
         font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-        background-color: #EEEEEE;
+        background-color: #ffffff;
+        border-top: 2px solid #ea352d;
         width: calc(100% / 3);
       }
-      &--right1{
+      &--right3{
         line-height: 72px;
         font-size: 16px;
         font-weight: 700;
