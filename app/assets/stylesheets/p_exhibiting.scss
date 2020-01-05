@@ -1,22 +1,47 @@
 // 出品ページの出品中のscssです。
 .u-products{
-  .main{
+  .pmain{
+    width: calc(100vw - 620px);
+    background: #fafafa;
+    font-size: 16px;
+    line-height: 72px;
+    &__top{
+      padding: 0px 16px;
+      font-size: 16px;font-weight: 700;
+      color: #333333;
+      font-family: "Source Sans Pro", Helvetica, Arial, æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“, YuGothic, ãƒ¡ã‚¤ãƒªã‚ª, Meiryo, sans-serif;
+    }
     &__center{
+      display: flex;
+      text-align: center;
       &--left1{
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
         color: #333333;
-        background-color: #EEEEEE;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        background-color: #ffffff;
+        border-top: 2px solid #ea352d;
         width : calc(100% / 3);
+        display: block;
       }
       &--center1{
-        border-top: 2px solid #ea352d;
-        background-color: #ffffff;
+        background-color: #EEEEEE;
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
         color: #333333;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
         width : calc(100% / 3);
       }
       &--right1{
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
         color: #333333;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
         background-color: #EEEEEE;
-        width : calc(100% / 3);
+        width: calc(100% / 3);
       }
     }
   }
@@ -27,7 +52,7 @@
   padding: 16px;
   background-color: white;
   &__image{
-
+    margin-right: 8px;
   }
   &__right{
     &--name{

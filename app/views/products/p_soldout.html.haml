@@ -8,15 +8,15 @@
     .container-center
       = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
       .u-products
-        .main
-          .main__top
+        .pmain
+          .pmain__top
             出品した商品
-          .main__center
-            = link_to "", class: "main__center--left2" do
+          .pmain__center
+            = link_to "", class: "pmain__center--left2" do
               出品中
-            = link_to "", class: "main__center--center2" do
+            = link_to "", class: "pmain__center--center2" do
               取引中
-            = link_to "", class: "main__center--right2" do
+            = link_to "", class: "pmain__center--right2" do
               売却済み
           -if @products
             - @products.each do |product|
