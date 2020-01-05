@@ -43,7 +43,7 @@
             %label.cmain__box__form__limit__list__label 有効期限
             .cmain__box__form__limit__list__must 必須
           .cmain__box__form__limit__month
-          %select#exp_month{name: "exp_month", type: "text"}
+          %select#exp_month{name: "exp_month", type: "text",class:"cmain__box__form__limit__month--form"}
             %option{value: "1"}01
             %option{value: "2"}02
             %option{value: "3"}03
@@ -60,8 +60,7 @@
             = icon 'fa', 'chevron-down', class:"cmain__box__form__limit__month__icon"
             .cmain__box__form__limit__month__text 月
           .cmain__box__form__limit__year
-            %select#exp_year{name: "exp_year", type: "text"}
-              %option{value: "2019"}19
+            %select#exp_year{name: "exp_year", type: "text",class:"cmain__box__form__limit__year--form"}
               %option{value: "2020"}20
               %option{value: "2021"}21
               %option{value: "2022"}22
@@ -84,7 +83,7 @@
             %i.fas.fa-question-circle
             .cmain__box__form__sequrity__blue__text
               カード裏面の番号とは？
-        %button.cmain__box__form__btn
+        .cmain__box__form__btn
           -# .cmain__box__form__btn__inside
           -#   次へ進む
           #card_token

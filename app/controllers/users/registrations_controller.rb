@@ -205,7 +205,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def done
     unless session[:id]
-      redirect_to signup_index_path 
+      redirect_to root_path 
       return
     end
     # deviseのメソッドを使ってログイン
