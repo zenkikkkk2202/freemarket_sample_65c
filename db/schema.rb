@@ -87,11 +87,14 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
     t.integer "fee", null: false
     t.integer "profit", null: false
     t.bigint "user_id"
-    t.integer "saler_id", comment: "user"
-    t.integer "buyer_id", comment: "user"
-    t.integer "auction_id", comment: "user"
+    t.bigint "saler_id"
+    t.bigint "buyer_id"
+    t.bigint "auction_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["auction_id"], name: "index_products_on_auction_id"
+    t.index ["buyer_id"], name: "index_products_on_buyer_id"
+    t.index ["saler_id"], name: "index_products_on_saler_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -113,9 +116,6 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
     t.integer "birthday_y", null: false
     t.integer "birthday_m", null: false
     t.integer "birthday_d", null: false
-    t.string "saling_item"
-    t.string "sold_item"
-    t.string "auction_item"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -134,5 +134,8 @@ ActiveRecord::Schema.define(version: 2020_01_04_054746) do
   add_foreign_key "googles", "users"
   add_foreign_key "product_images", "products"
   add_foreign_key "products", "users"
+  add_foreign_key "products", "users", column: "auction_id"
+  add_foreign_key "products", "users", column: "buyer_id"
+  add_foreign_key "products", "users", column: "saler_id"
   add_foreign_key "sns_credentials", "users"
 end
