@@ -24,7 +24,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @image = Product_images.all(params[:id])
+    # @image = Product_images.all(params[:id])
   end
 
   def update
