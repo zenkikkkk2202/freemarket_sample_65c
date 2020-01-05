@@ -1,80 +1,21 @@
-// 出品ページ出品中のscssです
+.exhibitcontent_main__third__right--category{
+  width: 345px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  margin-bottom:35px;
+  cursor: pointer;
+}
 
-.u-products{
-  width: 700px;
-  .main{
-    &__top{
-      @include font16_u1;
-      height: 72px;
-      padding: 0 16px;
-      background-color: #FAFAFA;
-    }
-    &__center{
-      display: flex;
-      height: 72px;
-      text-align: center;
-      &--left{
-        @include font16_u1;
-        border-top: 2px solid #ea352d;
-        background-color: #ffffff;
-        width : calc(100% / 3);
-      }
-      &--center{
-        @include font16_u1;
-        background-color: #EEEEEE;
-        width : calc(100% / 3);
-      }
-      &--right{
-        @include font16_u1;
-        background-color: #EEEEEE;
-        width : calc(100% / 3);
-      }
-    }
-    &__bottom{
-      background-color: #ffffff;
-      color: #cccccc;
-      text-align: center;
-      &--img{
-        text-align: center;
-        margin: auto;
-        padding: 40px 0 15px 0;
-      }
-      &--text{
-        padding-bottom: 60px;
-        font-weight: 600;
-        font-size: 16px;
-      }
-    }
-  }
-  .foot{
-    margin: 40px 0 0;
-    display: flex;
-    justify-content: space-between;
-    color: #333333;
-    font-size: 14px;
-    &__left{
-      width: 42px;
-      height: 42px;
-      border-radius: 4px;
-      border: solid 1px #ccc;
-      background-color: #ffffff;
-      color: #333333;
-      line-height: 42px;
-      text-align: center;
-      &--icon{
-      }
-    }
-    &__right{
-      background-color: #ffffff;
-      width: 42px;
-      height: 42px;
-      border-radius: 4px;
-      border: solid 1px #ccc;
-      color: #333333;
-      line-height: 42px;
-      text-align: center;
-      &--icon{
-      }
-    }
-  }
+.exhibitcontent_main__third__right--condition{
+  width: 345px;
+  height: 40px;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-top: 8px;
+  margin-bottom:35px;
+  cursor: pointer;
 }
