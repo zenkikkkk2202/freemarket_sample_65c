@@ -110,6 +110,20 @@
   cursor: pointer;  
 }
 
+@mixin delete{
+  width: 100%;
+  display: block;
+  line-height: 48px;
+  background-color: #AAAAAA;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  color: #FFFFFF;
+  text-align: center;
+  border: 1px solid #AAAAAA;  
+  cursor: pointer;  
+}
+
 // marginは設定してください
 @mixin btn_red {
   content: "";
