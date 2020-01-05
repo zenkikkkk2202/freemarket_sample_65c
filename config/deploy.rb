@@ -32,5 +32,3 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
-
-set :linked_files, fetch(:linked_files, []).push("config/master.key")

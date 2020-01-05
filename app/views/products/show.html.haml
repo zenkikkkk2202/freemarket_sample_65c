@@ -88,7 +88,14 @@
         =@product.price
       %span.box__container__price__tax ＜税込＞
       %span.box__container__price__fee 送料込み
-    -# - if user_signed_in? && current_user.id == @product.buyer_id
+  - if user_signed_in? && @product.saler_id.present? && @product.buyer_id.nil?
+    .box__container__current_user
+      = link_to "商品の編集",edit_product_path,class:"box__container__current_user--edit"
+      %p or
+      = link_to "出品を一旦停止する","#",class:"box__container__current_user--stop"
+      = link_to "この商品を削除する","/product/#{@product.id}",class:"box__container__current_user--delete"
+
+  - else
     = link_to "購入画面に進む",root_path,class:"box__container__price__btn"
     .box__container__explanation
       %p.box__container__explanation__content
