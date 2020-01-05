@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   root "products#index"
 
-  resources :products, only: [:index,:new,:create,:show] do
+  resources :products do
     collection do
       get 'user_credit'
       get 'user_profile_information'

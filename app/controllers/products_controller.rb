@@ -22,6 +22,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def edit
+
+  end
+
+  def update
+  end
+
   def user_credit
   end
 
@@ -79,6 +86,7 @@ class ProductsController < ApplicationController
   end
 
   def buy_confirm
+    @product = Product.find(params[:id])
   end
 
   private
