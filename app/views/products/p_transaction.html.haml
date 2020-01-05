@@ -17,10 +17,17 @@
               取引中
             = link_to "", class: "main__center--right1" do
               売却済み
-          .main__bottom
-            = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
-            .main__bottom--text
-              取引中の商品がありません
+          -if @products
+            - @products.each do |product|
+              .main__bottom
+                = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
+                .main__bottom--text
+                  取引中の商品がありません
+          - else
+            .main__bottom
+              = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
+              .main__bottom--text
+                取引中の商品がありません
         .foot
           = link_to "", class: "foot__left" do
             = icon('fas', 'angle-left', class: 'foot__left----text')
