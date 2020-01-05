@@ -1,7 +1,9 @@
 .all_show
   .header
     = render "header"
-
+    .u-main
+      - breadcrumb :show
+      = render "layouts/breadcrumbs"
   .box__container
     .item_name 
       =@product.name
@@ -86,6 +88,7 @@
         =@product.price
       %span.box__container__price__tax ＜税込＞
       %span.box__container__price__fee 送料込み
+    -# - if user_signed_in? && current_user.id == @product.buyer_id
     = link_to "購入画面に進む",root_path,class:"box__container__price__btn"
     .box__container__explanation
       %p.box__container__explanation__content
