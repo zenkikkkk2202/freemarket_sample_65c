@@ -10,7 +10,7 @@
     .imain__main
       .imain__main__link
         = link_to ""
-        .imain__main__link__image{id: "icon"}
+        .imain__main__link__image#icon
           %ul.imain__main__link__image__ulist
             %li
               = image_tag "6cbf10cdf0a7a15ce0c0615f66a499bb_m.jpg",class: "imain__main__link__image__ulist__gazo",id: "gazo1"
@@ -78,8 +78,7 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
+            
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
                 =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
@@ -99,8 +98,7 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
+           
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
                 =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
@@ -120,8 +118,7 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
+           
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
                 =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
@@ -141,8 +138,7 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
+            
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
                 =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
@@ -162,8 +158,7 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
+            
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
                 =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
@@ -183,8 +178,7 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link" 
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
+            
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
                 =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
@@ -204,8 +198,7 @@
           =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -# -if @products
-            -#   - @products.each do |p|
+           
             %li.imain__main__product__box__item__list__data
               .imain__main__product__box__item__list__data__size
                 =link_to "",class: "imain__main__product__box__item__list__data__size__link" do
