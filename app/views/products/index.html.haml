@@ -61,7 +61,7 @@
               - @products.each do |product|
                 %li.imain__main__product__box__item__list__data
                   .imain__main__product__box__item__list__data__size
-                    =link_to "/products/#{product.id}",class: "imain__main__product__box__item__list__data__size__link" do
+                    =link_to product_path(product.id),class: "imain__main__product__box__item__list__data__size__link" do
                       %figure.imain__main__product__box__item__list__data__size__link__figure
                         %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
                           =product.name
