@@ -2,7 +2,7 @@
 
 .side
   .mypage-ul
-    = link_to "", class: "mypage-ul__list" do
+    = link_to "/products/user-page", class: "mypage-ul__list" do
       マイページ 
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
     = link_to "", class: "mypage-ul__list" do
@@ -53,19 +53,19 @@
   .setting-heading
     設定
   .setting-ul
-    = link_to "", class: "setting-ul__list" do
+    = link_to "/products/user_profile_edit", class: "setting-ul__list" do
       プロフィール
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
     = link_to "", class: "setting-ul__list" do
       発送元・お届け先住所変更
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
-    = link_to "", class: "setting-ul__list" do
+    = link_to "/products/user_credit", class: "setting-ul__list" do
       支払い方法
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
     = link_to "", class: "setting-ul__list" do
       メール/パスワード
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
-    = link_to "", class: "setting-ul__list" do
+    = link_to "/products/user_profile_information", class: "setting-ul__list" do
       本人情報
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
     = link_to "", class: "setting-ul__list" do

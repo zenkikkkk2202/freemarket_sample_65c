@@ -15,7 +15,7 @@
             .contents__user__icon__figures
               = link_to image_tag"https://static.mercdn.net/images/member_photo_noimage_thumb.png", class: "contents__user__icon__figure"
             .contents__user__icon__name
-              人間
+              = current_user.nickname
             .contents__user__icon-numbers
               .contents__user__icon__numbers__number
                 評価
