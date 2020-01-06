@@ -158,15 +158,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
       birthday_m: session[:birthday_m],
       birthday_d: session[:birthday_d]
     )
-    unless @user.save 
+    if @user.save 
+      render action: :create_credit_card
+    else 
       redirect_to root_path
-      
+    end
+
     @cellphone = Cellphone.new(
       user: @user,
       cellphone_number: session[:cellphone_number]
     )
-    unless @cellphone.save
+    if @cellphone.save
+      render action: :create_credit_card
+    else
       redirect_to root_path
+    end
 
     @address = Address.new(
       user: @user,
@@ -178,9 +184,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       build: session[:build],
       phone_number: session[:phone_number]
     )
-    unless @address.save 
+    if @address.save 
+      render action: :create_credit_card
+    else
       redirect_to root_path
-    
+    end
     # @credit_card = Credit_card.new(
     #   card_number: session[:card_number],
     #   exp_month: session[:exp_month],
