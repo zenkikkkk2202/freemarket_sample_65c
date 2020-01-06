@@ -16,19 +16,18 @@
         = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'log__main__container__sns__google' do
           = icon 'fab', 'google', class:"log__main__container__sns__google__icon"
           Googleでログイン
-      .log__main__container__form
-        .log__main__container__form__inner
-          .log__main__container__form__inner__blank
-            %input.log__main__container__form__inner__blank__input{placeholder:"メールアドレス"}
-          .log__main__container__form__inner__blank
-            %input.log__main__container__form__inner__blank__input{placeholder:"パスワード"}
-          .log__main__container__form__inner__robot
-            .log__main__container__form__inner__robot__inside
-              =image_tag("https://i.gyazo.com/f5f78f5492629b66f2618a42def37030.png")
-          %button.log__main__container__form__inner__red
-            ログイン
-          = link_to "パスワードをお忘れの方",root_path,class:"log__main__container__form__inner__pass"
 
-
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .log__main__container__form
+          .log__main__container__form__inner
+            .log__main__container__form__inner__blank
+              = f.email_field :email, autofocus: true,class: "log__main__container__form__inner__blank__input",placeholder: "メールアドレス"
+            .log__main__container__form__inner__blank
+              = f.password_field :password, autocomplete: "off",class:"log__main__container__form__inner__blank__input",placeholder: "パスワード"
+            .log__main__container__form__inner__robot
+              .log__main__container__form__inner__robot__inside
+                =image_tag("https://i.gyazo.com/f5f78f5492629b66f2618a42def37030.png")
+            = f.submit "ログイン", class: 'log__main__container__form__inner__red'
+              
   .exhibitcontent_down
     = render 'products/show_footer'
