@@ -1,6 +1,5 @@
 
 
-
 $(function(){
   var submit = document.getElementById("token_submit");
   if (submit != null){
@@ -37,4 +36,3 @@ $(function(){
     });
   }
 });
-
