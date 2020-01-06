@@ -158,13 +158,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       birthday_m: session[:birthday_m],
       birthday_d: session[:birthday_d]
     )
-    @user.save
-    
+    unless @user.save 
+      redirect_to root_path
+      
     @cellphone = Cellphone.new(
       user: @user,
       cellphone_number: session[:cellphone_number]
     )
-    @cellphone.save
+    unless @cellphone.save
+      redirect_to root_path
 
     @address = Address.new(
       user: @user,
@@ -176,7 +178,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       build: session[:build],
       phone_number: session[:phone_number]
     )
-    @address.save
+    unless @address.save 
+      redirect_to root_path
     
     # @credit_card = Credit_card.new(
     #   card_number: session[:card_number],
@@ -185,7 +188,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #   cvc: session[:cvc]
     # )
     # @credit_card.save
-    Payjp.api_key = "sk_test_62cd291a7c9df2d7ce3d50f5"
+    Payjp.api_key = ENV["TEST_PAYJP_SECRET"]
     customer = Payjp::Customer.create(card: params["payjp-token"])
     @credit_card = CreditCard.new(user: @user,customer_id: customer.id,card_id: customer.default_card)
     

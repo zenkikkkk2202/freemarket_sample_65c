@@ -5,7 +5,7 @@ $(function(){
   if (submit != null){
   submit.addEventListener('click', function(e){  // 追加するボタンが押されたらイベント発火
     e.preventDefault();  // ボタンを一旦無効化
-    Payjp.setPublicKey("pk_test_4e0f1919aad9f79a0cda291d");// 秘密鍵（テスト）
+    Payjp.setPublicKey(ENV["TEST_PAYJP_OPEN"]);// 秘密鍵（テスト）
     var card = {  // 入力されたカード情報を取得
       number: document.getElementById("card_number").value, // ビューのidによって指定されたcard_numberの数字を持ってきている
       exp_month: document.getElementById("exp_month").value,
@@ -36,4 +36,3 @@ $(function(){
     });
   }
 });
-
