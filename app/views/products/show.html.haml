@@ -31,7 +31,7 @@
           %tr
             %th 出品者
             %td
-              = link_to "#{current_user.nickname}", class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
+              = link_to @product.saler_id, class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
               .box__container__main__table__body__list
                 .box__container__main__table__body__list__face
                   %i.far.fa-smile
@@ -76,7 +76,7 @@
           %tr
             %th 発送元地域
             %td
-              = link_to "東京都",root_path,class:"box__container__main__table__body__area"
+              = link_to @product.prefecture_id,root_path,class:"box__container__main__table__body__area"
           %tr
             %th 発送日の目安
             %td
@@ -97,23 +97,24 @@
       = link_to "この商品を削除する",product_path(@product),method:"delete",class:"box__container__current_user--delete"
 
   - else
-    = link_to "購入画面に進む",root_path,class:"box__container__price__btn"
-    .box__container__explanation
-      %p.box__container__explanation__content
-        説明説明説明説明
-    .box__container__good
-      .box__container__good__left
-        = link_to root_path, class:"box__container__good__left__iine" do
-          %i.far.fa-heart
-          %span いいね
-          %span 0
-        = link_to root_path, class:"box__container__good__left__bad" do
-          %i.far.fa-flag
-          %span 不適切な商品の報告
-      .box__container__good__right
-        = link_to root_path class:"box__container__good__right__safe" do
-          %i.fas.fa-lock
-          %span あんしん・あんぜんへの取り組み
+    .box__container__current_buyer
+      = link_to "購入画面に進む",buy_confirm_products_path(@product.id),class:"box__container__price__btn"
+      .box__container__explanation
+        %p.box__container__explanation__content
+          =@product.description
+      .box__container__good
+        .box__container__good__left
+          = link_to root_path, class:"box__container__good__left__iine" do
+            %i.far.fa-heart
+            %span いいね
+            %span 0
+          = link_to root_path, class:"box__container__good__left__bad" do
+            %i.far.fa-flag
+            %span 不適切な商品の報告
+        .box__container__good__right
+          = link_to root_path class:"box__container__good__right__safe" do
+            %i.fas.fa-lock
+            %span あんしん・あんぜんへの取り組み
   .box__comment
     .box__comment__content
       .box__comment__content__main
