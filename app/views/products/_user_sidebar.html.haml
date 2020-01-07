@@ -20,11 +20,14 @@
     = link_to p_exhibiting_products_path, class: "mypage-ul__list" do
       出品した商品 - 出品中
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
+    = link_to p_transaction_products_path, class: "mypage-ul__list" do
+      出品した商品 - 取引中
+      = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
     = link_to p_soldout_products_path, class: "mypage-ul__list" do
       出品した商品 - 売却済み
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
-    = link_to p_transaction_products_path, class: "mypage-ul__list" do
-      購入した商品 - 取引中　
+    = link_to "", class: "mypage-ul__list" do
+      購入した商品 - 取引中
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
     = link_to "", class: "mypage-ul__list" do
       購入した商品 - 過去の取引
