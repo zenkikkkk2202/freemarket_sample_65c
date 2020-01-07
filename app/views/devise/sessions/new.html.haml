@@ -26,7 +26,8 @@
               = f.password_field :password, autocomplete: "off",class:"log__main__container__form__inner__blank__input",placeholder: "パスワード"
             .log__main__container__form__inner__robot
               .log__main__container__form__inner__robot__inside
-                =image_tag("https://i.gyazo.com/f5f78f5492629b66f2618a42def37030.png")
+                = flash[:recaptcha_error]
+                = recaptcha_tags
             = f.submit "ログイン", class: 'log__main__container__form__inner__red'
               
   .exhibitcontent_down
