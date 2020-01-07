@@ -77,8 +77,10 @@ class ProductsController < ApplicationController
   end
 
   def p_exhibiting
-    @products = Product.all.includes(:saler,:buyer,:auction,:product_images) 
-    @products = Product.where("buyer_id is NULL && saler_id is not NULL && auction_id is NULL") 
+    if @products.saler_id == current_user.id
+      @products = Product.all.includes(:saler,:buyer,:auction,:product_images) 
+      @products = Product.where("buyer_id is NULL && saler_id is not NULL && auction_id is NULL") 
+    end
   end
 
   def purchase_transaction
@@ -106,6 +108,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name,:description,:category,:condition,:charge,:prefecture_id,:day,:price,:fee,:profit, product_images_attributes: [:image, :_destroy]).merge(saler_id: current_user.id)
+    params.require(:product).permit(:name,:description,:category,:condition,:charge,:prefecture_id,:day,:price,:fee,:profit, product_images_attributes: [:image, :_destroy]).merge(user_id:current_user.id,saler_id: current_user.id)
   end
 end
