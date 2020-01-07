@@ -32,9 +32,14 @@
           flex-wrap: wrap;
           &__list{
             position: static;
+            display: flex;
             &__image{
               display: block;
               margin-right: 0;
+              opacity: 0.5;
+              &:hover{
+                opacity: 1.0;
+              }
             }
           }
         }
