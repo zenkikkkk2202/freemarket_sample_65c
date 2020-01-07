@@ -4,8 +4,8 @@ class User < ApplicationRecord
   has_many :sns_credentials, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: %i[facebook google_oauth2]
+           :recoverable, :rememberable, :validatable,
+           :omniauthable, omniauth_providers: %i[facebook google_oauth2]
 
 
   def self.without_sns_data(auth)
@@ -30,7 +30,7 @@ class User < ApplicationRecord
       return { user: user ,sns: sns}
     end
 
-    def self.with_sns_data(auth, snscredential)
+  def self.with_sns_data(auth, snscredential)
     user = User.where(id: snscredential.user_id).first
     unless user.present?
       user = User.new(
@@ -39,9 +39,9 @@ class User < ApplicationRecord
       )
     end
     return {user: user}
-    end
+  end
 
-    def self.find_oauth(auth)
+  def self.find_oauth(auth)
     uid = auth.uid
     provider = auth.provider
     snscredential = SnsCredential.where(uid: uid, provider: provider).first
