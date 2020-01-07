@@ -131,3 +131,19 @@
     }
   }
 }
+
+.pmain__bottom{
+  background-color: #FFFFFF;
+  text-align: center;
+  &--img{
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  &--text{
+    font-size: 16px;
+    font-weight: 600;
+    color: #cccccc;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    padding-bottom: 50px;
+  }
+}
