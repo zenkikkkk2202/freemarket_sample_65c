@@ -53,3 +53,4 @@ app/models/product.rb
 db/schema.rb
 .env
 *.haml
+.env
