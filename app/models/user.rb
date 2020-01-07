@@ -55,7 +55,7 @@ class User < ApplicationRecord
     return { user: user ,sns: sns}
   end
 
-  # has_many :products
+  has_many :products
   
   has_many :credit_cards, dependent: :destroy
   has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Product"
