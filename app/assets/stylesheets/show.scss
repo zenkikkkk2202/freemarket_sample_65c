@@ -28,14 +28,13 @@
           padding: 0;
           line-height: 0;
           box-sizing: border-box;
+          display: flex;
+          flex-wrap: wrap;
           &__list{
             position: static;
-            display: flex;
-            flex-wrap: wrap;
             &__image{
               display: block;
               margin-right: 0;
-              width: 20%;
             }
           }
         }
