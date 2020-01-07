@@ -185,7 +185,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
     #   cvc: session[:cvc]
     # )
     # @credit_card.save
-    Payjp.api_key = "sk_test_62cd291a7c9df2d7ce3d50f5"
+    # Payjp.setPublicKey = Rails.application.credentials[:payjp][:test_open_key]
+    
+    Payjp.api_key = Rails.application.credentials[:payjp][:test_secret_key]
     customer = Payjp::Customer.create(card: params["payjp-token"])
     @credit_card = CreditCard.new(user: @user,customer_id: customer.id,card_id: customer.default_card)
     
