@@ -18,7 +18,7 @@
               取引中
             = link_to "#", class: "pmain__center--right2" do
               売却済み
-          -if @products
+          -if @products.to_a[0].saler_id == current_user.id && @products.to_a[0].buyer_id.present?
             - @products.each do |product|
               = link_to "/products/#{product.id}",class:"item_content" do
                 .item_content__image
@@ -38,9 +38,9 @@
                 = icon('fas', 'angle-right', class: 'item_content__icon')
                   
           - else
-            .main__bottom
-              = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
-              .main__bottom--text
+            .pmain__bottom
+              = image_tag "logo_gray.svg", class: "pmain__bottom--img", size: "100x100"
+              .pmain__bottom--text
                 売却済みの商品がありません
         .product_foot
           = link_to "", class: "product_foot__left" do
