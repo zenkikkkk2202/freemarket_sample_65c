@@ -81,7 +81,7 @@
         =@product.price
       %span.box__container__price__tax ＜税込＞
       %span.box__container__price__fee 送料込み
-  - if user_signed_in? && @product.saler_id.present? && @product.buyer_id.nil?
+  - if @product.saler_id == current_user.id
     .box__container__current_user
       = link_to "商品の編集",edit_product_path,class:"box__container__current_user--edit"
       .box__container__current_user--p
