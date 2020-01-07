@@ -15,17 +15,10 @@
 
 
           .box__container__main__photo__all__small
-            .box__container__main__photo__all__small__list
+            - @product.product_images.each do |product|
+              .box__container__main__photo__all__small__list
+                = image_tag product.image.to_s,size:"60x60",class:"box__container__main__photo__all__small__list__image"
 
-              = image_tag @product.product_images[0].image.to_s,size:"60x60",class:"box__container__main__photo__all__small__list__image"
-          -# = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"60x60",class:"box__container__main__photo__all__small__list__image"
-          -# = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"60x60",class:"box__container__main__photo__all__small__list__image"
-          -# = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"60x60",class:"box__container__main__photo__all__small__list__image"
-          -# = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"60x60",class:"box__container__main__photo__all__small__list__image"
-          -# = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"60x60",class:"box__container__main__photo__all__small__list__image"
-          -# = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"60x60",class:"box__container__main__photo__all__small__list__image"
-          -# = image_tag "https://cdn.pixabay.com/photo/2019/12/06/19/06/gifts-4678018_1280.jpg",size:"60x60",class:"box__container__main__photo__all__small__list__image"
-  
       %table.box__container__main__table
         %tbody.box__container__main__table__body
           %tr
@@ -143,10 +136,12 @@
       %li
         = link_to root_path, class:"social__media__box__pinterest" do
           %i.fab.fa-pinterest-square
+          
   .item__profile
     %section.item__profile__user
       %h2.item__profile__user__name
-        = link_to "@user.nameのその他の商品",root_path,class:"item__profile__user__name__link"
+        = link_to root_path,class:"item__profile__user__name__link" do
+          ="#{@product.name}のその他の商品"
       .item__profile__user__list
         %section.item__profile__user__list__box
           = link_to root_path, class:"item__profile__user__list__box__link" do
@@ -234,7 +229,8 @@
 
     %section.item__profile__bland
       %h2.item__profile__bland__name
-        = link_to "@blandのその他の商品",root_path, class:"item__profile__bland__name__link"
+        = link_to root_path, class:"item__profile__bland__name__link" do
+          = "#{@bland}のその他の商品"
       .item__profile__user__list
         %section.item__profile__user__list__box
           = link_to root_path, class:"item__profile__user__list__box__link" do

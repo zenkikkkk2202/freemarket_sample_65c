@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all.includes(:product_images)
+    @products = Product.all.includes(:product_images).limit(10)
   end
 
   def new
@@ -20,6 +20,8 @@ class ProductsController < ApplicationController
   
   def show
     @product = Product.find(params[:id])
+    @user_products = Product.where(saler_id: @saler_id).limit(6)
+    @category_products = Product.where(category: @product.category).limit(6)
   end
 
   def edit
