@@ -74,7 +74,7 @@
         display: flex;
         margin-left: -3px;
         &__category{
-          margin-right: 15px;
+          margin-right: 25px;
           &:hover + .mheader__main__bottom__left__category__submenu{
             display: block;
           }
@@ -911,14 +911,13 @@
           }
           position: relative;
           &__inside{
-            
             color: red;
             display: block;
             font-size: 14px;
             font-weight: 600;
             line-height: 36px;
             white-space: nowrap;
-            }
+          }
           
           
           &__submenu{
@@ -954,7 +953,7 @@
         position: relative;
         
         &__list{
-          padding: 0px 24px;
+          padding-left: 24px;
           
           &__good{
             color: rgb(204,204,204);
