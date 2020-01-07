@@ -141,7 +141,7 @@
     %section.item__profile__user
       %h2.item__profile__user__name
         = link_to root_path,class:"item__profile__user__name__link" do
-          ="#{@product.name}のその他の商品"
+          -# ="#{@product.user.nickname}のその他の商品"
       .item__profile__user__list
         %section.item__profile__user__list__box
           = link_to root_path, class:"item__profile__user__list__box__link" do
