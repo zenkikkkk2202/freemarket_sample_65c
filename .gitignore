@@ -23,6 +23,8 @@
 /public/assets
 .byebug_history
 
+ /public/uploads/
+
 # Ignore master key for decrypting credentials and more.
 Gemfile
 Gemfile
@@ -54,3 +56,4 @@ db/schema.rb
 .env
 *.haml
 .env
+
