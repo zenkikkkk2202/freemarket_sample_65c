@@ -54,3 +54,4 @@ db/schema.rb
 .env
 *.haml
 .env
+app/controllers/products_controller.rb

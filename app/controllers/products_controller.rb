@@ -61,6 +61,7 @@ class ProductsController < ApplicationController
 
   def p_transaction
     @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
+    # @products = current_user.products.where("buyer_id is NULL && saler_id is not NULL && auction_id is not NULL")
   end
 
   def like
@@ -77,6 +78,7 @@ class ProductsController < ApplicationController
 
   def p_exhibiting
     @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
+    # @products = current_user.products.where("buyer_id is NULL && saler_id is not NULL && auction_id is NULL") 
   end
 
   def purchase_transaction
@@ -84,6 +86,7 @@ class ProductsController < ApplicationController
 
   def p_soldout
     @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
+    # @products = current_user.products.where("buyer_id is not NULL && saler_id is not NULL && auction_id is NULL")
   end
 
   def evaluation
