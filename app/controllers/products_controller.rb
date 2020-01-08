@@ -3,7 +3,19 @@ class ProductsController < ApplicationController
   before_action :set_current_user_products,only:[:edit,:p_transaction,:p_exhibiting,:p_soldout]
   before_action :set_cards,only:[:buy_confirm,:buy]
   def index
-    @products = Product.all.includes(:product_images).limit(10)
+    @products_m = Product.where(category: "メンズ").includes(:product_images).limit(10).order('created_at DESC')
+    @products_l = Product.where(category: "レディース").includes(:product_images).limit(10).order('created_at DESC')
+    @products_k = Product.where(category: "ベビー・キッズ").includes(:product_images).limit(10).order('created_at DESC')
+    @products_i = Product.where(category: "インテリア・住まい・小物").includes(:product_images).limit(10).order('created_at DESC')
+    @products_b = Product.where(category: "本・音楽・ゲーム").includes(:product_images).limit(10).order('created_at DESC')
+    @products_h = Product.where(category: "おもちゃ・ホビー・グッズ").includes(:product_images).limit(10).order('created_at DESC')
+    @products_c = Product.where(category: "コスメ・香水・美容").includes(:product_images).limit(10).order('created_at DESC')
+    @products_d = Product.where(category: "家電・スマホ・カメラ").includes(:product_images).limit(10).order('created_at DESC')
+    @products_s = Product.where(category: "スポーツ・レジャー").includes(:product_images).limit(10).order('created_at DESC')
+    @products_h = Product.where(category: "ハンドメイド").includes(:product_images).limit(10).order('created_at DESC')
+    @products_t = Product.where(category: "チケット").includes(:product_images).limit(10).order('created_at DESC')
+    @products_a = Product.where(category: "自動車・オートバイ").includes(:product_images).limit(10).order('created_at DESC')
+    @products_o = Product.where(category: "その他").includes(:product_images).limit(10).order('created_at DESC')
   end
 
   def new
