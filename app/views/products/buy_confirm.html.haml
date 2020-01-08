@@ -9,9 +9,10 @@
             .confirm__main__image__box__gazo__file
               =image_tag"37efefdc5861611849e8a26e53bedb8f_m.jpg",class:"confirm__main__image__box__gazo__file__product"
             .confirm__main__image__box__gazo__item
-              %p.confirm__main__image__box__gazo__item__name 中村まさき
+              %p.confirm__main__image__box__gazo__item__name 
+                = @product.name
               %p.confirm__main__image__box__gazo__item__price 
-                %span ¥.5600
+                = "¥#{@product.price}"
                 %span.confirm__main__image__box__gazo__item__price__send (税込み)送料込み
                 
       .confirm__main__image
@@ -21,7 +22,7 @@
               %li.confirm__main__image__box__form__table__money
                 .confirm__main__image__box__form__table__money__text 支払い金額
                 .confirm__main__image__box__form__table__money__price
-                  %span ¥.5600
+                  ="¥#{@product.price}"
                   
             %ul.confirm__main__image__box__form__point
               %li.confirm__main__image__box__form__point__have
@@ -33,6 +34,15 @@
             .confirm__main__image__box__form__pattern
               .confirm__main__image__box__form__pattern__text
                 %h3#pattern_text お支払い方法
+                クレジットカード
+                .confirm__main__image__box__form__pattern__text__ca
+                = "**** **** **** " + @customer_card.last4
+                .confirm__main__image__box__form__pattern__text__limit
+                - exp_month = @customer_card.exp_month.to_s
+                - exp_year = @customer_card.exp_year.to_s.slice(2,3)
+                = exp_month + " / " + exp_year
+                %p
+                  = image_tag "#{@card_src}", width: '26', height: '20', alt: @card_brand, id: "card_image"
                 = link_to "",id:"link" do
                   %p.confirm__main__image__box__form__pattern__text__link
                     %i.fa.fa-plus-circle
@@ -41,14 +51,16 @@
             .confirm__main__image__box__form__pattern
               .confirm__main__image__box__form__pattern__text
                 %h3#pattern_text 配送先
+                ロンドン
                 = link_to "",id:"link" do
                   %p.confirm__main__image__box__form__pattern__text__link
                     %i.fa.fa-plus-circle
                     %span.confirm__main__image__box__form__pattern__text__link__message 登録してください
 
             .confirm__main__image__box__form__pattern
-              %button.confirm__main__image__box__form__pattern__button{type: "submit"} 購入する
-              %input.confirm__main__image__box__form__pattern__hidden{type: "hidden"}
+              = form_tag(controller: :products,action: :buy, method: :post) do
+                %button.confirm__main__image__box__form__pattern__button{type: "submit"} 購入する
+                %input.confirm__main__image__box__form__pattern__hidden{type: "hidden"}
 
 
 
