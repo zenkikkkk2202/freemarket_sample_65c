@@ -19,7 +19,7 @@
               売却済み
           -if @products.to_a[0].saler_id == current_user.id && @products.to_a[0].auction_id.present?
             - @products.each do |product|
-              = link_to "/products/#{product.id}",class:"item_content" do
+              = link_to product_path(product),class:"item_content" do
                 .item_content__image
                   = image_tag product.product_images[0].image.to_s,size:"58x48"
                 .item_content__right
