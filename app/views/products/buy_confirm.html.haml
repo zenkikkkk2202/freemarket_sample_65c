@@ -51,7 +51,14 @@
             .confirm__main__image__box__form__pattern
               .confirm__main__image__box__form__pattern__text
                 %h3#pattern_text 配送先
-                ロンドン
+                = "〒#{current_user.address.post_code}"
+                %p
+                = current_user.address.prefecture.name
+                = current_user.address.city
+                = current_user.address.address
+                %p
+                = current_user.name_family
+                = current_user.name_last
                 = link_to "",id:"link" do
                   %p.confirm__main__image__box__form__pattern__text__link
                     %i.fa.fa-plus-circle
