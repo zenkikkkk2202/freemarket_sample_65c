@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :set_params,only:[:show,:edit,:destroy,:buy_confirm]
+  before_action :set_mypage,only:[:p_transaction,:p_exhibiting,:p_soldout]
+
   def index
     @products = Product.all.includes(:product_images).limit(10)
   end
@@ -19,13 +22,11 @@ class ProductsController < ApplicationController
   
   
   def show
-    @product = Product.find(params[:id])
     @saler_products = Product.where(saler_id: @saler_id).limit(6)
     @category_products = Product.where(category: @product.category).limit(6)
   end
 
   def edit
-    @product = Product.find(params[:id])
     @product.product_images.find(params[:id])
   end
 
@@ -34,7 +35,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
     redirect_to(root_path)
   end
@@ -60,7 +60,6 @@ class ProductsController < ApplicationController
   end
 
   def p_transaction
-    @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
   end
 
   def like
@@ -76,14 +75,12 @@ class ProductsController < ApplicationController
   end
 
   def p_exhibiting
-    @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
   end
 
   def purchase_transaction
   end
 
   def p_soldout
-    @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
   end
 
   def evaluation
@@ -93,10 +90,18 @@ class ProductsController < ApplicationController
   end
 
   def buy_confirm
-    @product = Product.find(params[:id])
+    
   end
 
   private
+
+  def set_params
+    @product = Product.find(params[:id])
+  end
+
+  def set_mypage
+    @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
+  end
 
   def prefecture_params
     params.require(:product).permit(:prefecture)
