@@ -25,8 +25,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
-    @product.product_images.find(params[:id])
+    @product = Product.find(params[:id])    
+    @products = Product.all.includes(:product_images)
+    @product.product_images.pluck(:product_id)
+    
   end
 
   def update
@@ -61,7 +63,6 @@ class ProductsController < ApplicationController
 
   def p_transaction
     @products = Product.all.includes(:product_images)
-    @products = current_user.products.where("buyer_id is NULL && saler_id is not NULL && auction_id is not NULL")
   end
 
   def like
@@ -78,7 +79,6 @@ class ProductsController < ApplicationController
 
   def p_exhibiting
     @products = Product.all.includes(:user,:saler,:buyer,:auction,:product_images)
-    @products = current_user.products.where("buyer_id is NULL && saler_id is not NULL && auction_id is NULL") 
   end
 
   def purchase_transaction
@@ -86,7 +86,6 @@ class ProductsController < ApplicationController
 
   def p_soldout
     @products = Product.all.includes(:saler,:buyer,:auction)
-    @products = current_user.products.where("buyer_id is not NULL && saler_id is not NULL && auction_id is NULL")
   end
 
   def evaluation
