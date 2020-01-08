@@ -19,6 +19,7 @@ Rails.application.routes.draw do
 
   resources :products do
     collection do
+      get 'search'
       get 'user_credit'
       get 'user_profile_information'
       get 'user_logout'
