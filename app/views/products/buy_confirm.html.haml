@@ -7,7 +7,7 @@
         .confirm__main__image__box
           .confirm__main__image__box__gazo
             .confirm__main__image__box__gazo__file
-              =image_tag"37efefdc5861611849e8a26e53bedb8f_m.jpg",class:"confirm__main__image__box__gazo__file__product"
+              =image_tag @product.product_images[0].image.to_s,class:"confirm__main__image__box__gazo__file__product"
             .confirm__main__image__box__gazo__item
               %p.confirm__main__image__box__gazo__item__name 
                 = @product.name
