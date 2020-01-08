@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_params,only:[:show,:edit,:destroy,:buy_confirm]
-  before_action :set_mypage,only:[:p_transaction,:p_exhibiting,:p_soldout]
+  before_action :set_product,only:[:show,:edit,:destroy,:buy_confirm]
+  before_action :set_current_user_products,only:[:p_transaction,:p_exhibiting,:p_soldout]
 
   def index
     @products = Product.all.includes(:product_images).limit(10)
@@ -36,7 +36,6 @@ class ProductsController < ApplicationController
 
   def destroy
     if @product.destroy
-      @product.destroy
       redirect_to(root_path)
     else
       redirect_to :show
@@ -99,11 +98,11 @@ class ProductsController < ApplicationController
 
   private
 
-  def set_params
+  def set_product
     @product = Product.find(params[:id])
   end
 
-  def set_mypage
+  def set_current_user_products
     @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
   end
 
