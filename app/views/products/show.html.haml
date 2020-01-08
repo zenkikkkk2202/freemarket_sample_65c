@@ -90,7 +90,7 @@
 
   - else
     .box__container__current_buyer
-      = link_to "購入画面に進む",buy_confirm_products_path(@product.id),class:"box__container__price__btn"
+      = link_to "購入画面に進む", "/products/buy_confirm/#{@product.id}",class:"box__container__price__btn"
       .box__container__explanation
         %p.box__container__explanation__content
           =@product.description
