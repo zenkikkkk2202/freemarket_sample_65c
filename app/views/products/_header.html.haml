@@ -11,7 +11,7 @@
     .mheader__main__bottom
       .mheader__main__bottom__left
         .mheader__main__bottom__left__category
-          = link_to root_path, class:"mheader__main__bottom__left__bland__inside" do
+          = link_to root_path, class:"mheader__main__bottom__left__category__inside" do
             %i.fas.fa-list
               .icon-text__left カテゴリーから探す
         %ul.mheader__main__bottom__left__category__submenu
@@ -610,20 +610,78 @@
           %li
             = link_to "ブランド一覧", root_path, class:"mheader__main__bottom__left__bland__submenu__child"
 
-      %ul.mheader__main__bottom__right
-        %li.mheader__main__bottom__right__list
-          = link_to root_path, class:"mheader__main__bottom__right__list__good" do
+      .mheader__main__bottom__right
+        .mheader__main__bottom__right__list1
+          = link_to root_path, class:"mheader__main__bottom__right__list1__good" do
             %i.far.fa-heart
-              .icon-text__right いいね一覧
-        %li.mheader__main__bottom__right__list
-          = link_to root_path, class:"mheader__main__bottom__right__list__good" do
+              .icon-text__right いいね！一覧
+        .mheader__main__bottom__right__list2
+          = link_to root_path, class:"mheader__main__bottom__right__list2__notice" do
             %i.far.fa-bell
               .icon-text__right お知らせ
-        %li.mheader__main__bottom__right__list
-          = link_to root_path, class:"mheader__main__bottom__right__list__good" do
+        .mheader__main__bottom__right__list3
+          = link_to root_path, class:"mheader__main__bottom__right__list3__todo" do
             %i.fas.fa-check
               .icon-text__right やることリスト
-        %li.mheader__main__bottom__right__list
-          = link_to user_page_products_path, class:"mheader__main__bottom__right__list__good" do
+        .mheader__main__bottom__right__list4
+          = link_to user_page_products_path, class:"mheader__main__bottom__right__list4__person" do
             %i.far.fa-grin-stars
               .icon-text__right マイページ
+        %ul.mheader__main__bottom__right__list4__submenu
+          %li
+            .mheader__main__bottom__right__list4__submenu__top
+              = image_tag "mypage-background.jpg", class: "mheader__main__bottom__right__list4__submenu__top__user"
+              = image_tag"member_photo_noimage_thumb.jpg", class: "mheader__main__bottom__right__list4__submenu__top__figure"
+              .mheader__main__bottom__right__list4__submenu__top__name
+                = current_user.nickname
+              .mheader__main__bottom__right__list4__submenu__top__numbers
+                = link_to "", class: "mheader__main__bottom__right__list4__submenu__top__numbers__number1" do
+                  評価:
+                  .mheader__main__bottom__right__list4__submenu__top__user__icon__numbers__number1__count
+                    0
+                = link_to p_exhibiting_products_path, class: "mheader__main__bottom__right__list4__submenu__top__numbers__number2" do
+                  出品数:
+                  .mheader__main__bottom__right__list4__submenu__top__numbers__number2__count
+                    0
+          %li
+            %ul.mheader__main__bottom__right__list4__submenu__middle
+              %li
+                = link_to "", class: "mheader__main__bottom__right__list4__submenu__middle__money" do
+                  .mheader__main__bottom__right__list4__submenu__middle__money__text
+                    売上金
+                  .mheader__main__bottom__right__list4__submenu__middle__money__number
+                    ¥0
+                    = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__middle__money__number__icon")
+              %li
+                = link_to "", class: "mheader__main__bottom__right__list4__submenu__middle__point" do
+                  .mheader__main__bottom__right__list4__submenu__middle__money__text
+                    ポイント
+                  .mheader__main__bottom__right__list4__submenu__middle__money__number
+                    P0
+                    = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__middle__money__number__icon")
+          %li
+            %ul.mheader__main__bottom__right__list4__submenu__bottom
+              %li
+                = link_to "", class: "mheader__main__bottom__right__list4__submenu__bottom__list" do
+                  いいね！一覧
+                  = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__bottom__list__icon")
+              %li
+                = link_to p_exhibiting_products_path, class: "mheader__main__bottom__right__list4__submenu__bottom__list" do
+                  出品した商品 - 出品中
+                  = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__bottom__list__icon")
+              %li
+                = link_to p_transaction_products_path, class: "mheader__main__bottom__right__list4__submenu__bottom__list" do
+                  出品した商品 - 取引中
+                  = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__bottom__list__icon")
+              %li
+                = link_to p_soldout_products_path, class: "mheader__main__bottom__right__list4__submenu__bottom__list" do
+                  出品した商品 - 売却済み
+                  = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__bottom__list__icon")
+              %li
+                = link_to "", class: "mheader__main__bottom__right__list4__submenu__bottom__list" do
+                  購入した商品 - 取引中
+                  = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__bottom__list__icon")
+              %li
+                = link_to "", class: "mheader__main__bottom__right__list4__submenu__bottom__list" do
+                  購入した商品 - 過去の取引
+                  = icon('fas', 'angle-right', class: "mheader__main__bottom__right__list4__submenu__bottom__list__icon")
