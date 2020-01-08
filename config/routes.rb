@@ -36,7 +36,8 @@ Rails.application.routes.draw do
       get 'evaluation'
       get 'contact'
       get 'guide'
-      get 'buy_confirm'
+      get 'buy_confirm/:id',action: "buy_confirm"
+      post "buy/:id",action: "buy"
     end
   end
 end
