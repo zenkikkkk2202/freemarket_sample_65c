@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product,only:[:show,:edit,:destroy,:buy_confirm,:buy]
-  before_action :set_current_user_products,only:[:p_transaction,:p_exhibiting,:p_soldout]
+  before_action :set_current_user_products,only:[:edit,:p_transaction,:p_exhibiting,:p_soldout]
   before_action :set_cards,only:[:buy_confirm,:buy]
   def index
     @products = Product.all.includes(:product_images).limit(10)
