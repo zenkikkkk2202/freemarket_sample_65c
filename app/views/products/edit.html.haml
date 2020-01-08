@@ -14,8 +14,6 @@
         最大10枚までアップロードできます。
       #image-box
         .item-num-0#image-box__container
-          - @products.each do |product|
-            = image_tag product.product_images[0].image.to_s
           = f.fields_for :product_images do |i|
             .exhibitcontent_main__first--image
               = i.file_field :image, type: 'file', name: "product[product_images_attributes][][image]", value:"", style: "display:none", id:"img-file"
