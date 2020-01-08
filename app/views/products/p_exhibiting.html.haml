@@ -1,0 +1,54 @@
+-# 出品ページの出品中
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :p_exhibiting
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      .u-products
+        .pmain
+          .pmain__top
+            出品した商品
+          .pmain__center
+            = link_to "#", class: "pmain__center--left1" do
+              出品中
+            = link_to p_transaction_products_path, class: "pmain__center--center1" do
+              取引中
+            = link_to p_soldout_products_path, class: "pmain__center--right1" do
+              売却済み
+          - if @products.to_a[0].saler_id ==current_user.id
+            - @products.each do |product|
+              = link_to "/products/#{product.id}",class:"item_content" do
+                .item_content__image
+                  = image_tag product.product_images[0].image.to_s,size:"58x48"
+                .item_content__right
+                  .item_content__right--name
+                    =product.name
+                  .item_content__right__good
+                    .item_content__right__good--goods
+                      = icon("far","heart")
+                      0
+                    .item_content__right__good--comment
+                      = icon("far","comment-alt")
+                      0
+                    .item_content__right__good--exhibition
+                      出品中
+                = icon('fas', 'angle-right', class: 'item_content__icon')
+          - else
+            .pmain__bottom
+              = image_tag "logo_gray.svg", class: "pmain__bottom--img", size: "100x100"
+              .pmain__bottom--text
+                出品中の商品がありません
+                
+        .product_foot
+          = link_to "", class: "product_foot__left" do
+            = icon('fas', 'angle-left', class: 'product_foot__left--text')
+          = link_to "", class: "product_foot__right" do
+            = icon('fas', 'angle-right', class: 'product_foot__right--icon')
+
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し

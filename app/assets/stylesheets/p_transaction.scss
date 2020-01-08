@@ -1,0 +1,35 @@
+// 出品ページの取引中ののscssです。
+.u-products{
+  .pmain{
+    &__center{
+      &--left3{
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #333333;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        background-color: #EEEEEE;
+        width: calc(100% / 3);
+      }
+      &--center3{
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #333333;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        background-color: #ffffff;
+        border-top: 2px solid #ea352d;
+        width: calc(100% / 3);
+      }
+      &--right3{
+        line-height: 72px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #333333;
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        background-color: #EEEEEE;
+        width: calc(100% / 3);
+      }
+    }
+  }
+}
