@@ -14,44 +14,17 @@
           必須
       .exhibitcontent_main__first--description
         最大10枚までアップロードできます。
-        = f.fields_for :product_images, @product.product_images.first do |image|
-          .item__img__dropzone.clearfix
-            #preview
-            -# １〜５枚目プレビュー表示
-            .item__img__dropzone__input
-              = image.label :image, for: "upload-image" do
-                .input-area
-                  = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
-                
-                .item__img__dropzone__input__description
-                  .item__img__dropzone__input__description__text
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード
-                
-          .item__img__dropzone2.clearfix
-            #preview2
-            -# ６〜１０枚目プレビュー表示
-            .item__img__dropzone2__input2
-              = image.label :image, for: "upload-image" do
-                .input-area
-                  = image.file_field :image_url, id: "upload-image", class: "upload-image", 'data-image': 0
-                .item__img__dropzone2__input2__description
-                  .item__img__dropzone2__input2__description__text
-                    ドラッグアンドドロップ
-                    %br
-                    またはクリックしてファイルをアップロード
-      -#  - @products.each do |product|
-      -# #image-box
-      -#   .item-num-0#image-box__container
-      -#     = f.fields_for :product_images do |i|
-      -#        = image_tag @product.product_image.image.url(:thumb)
-      -#       .exhibitcontent_main__first--image
-      -#         = i.file_field :image, type: 'file', name: "product[product_images_attributes][][image]", value:"", style: "display:none", id:"img-file"
-      -#         %label{for: "img-file"}
-      -#           %pre
-      -#             ドロッグアンドドロップ
-      -#             またはクリックしてファイルをアップロード
+      -# - @products.each do |product|
+      #image-box
+        .item-num-0#image-box__container
+          = f.fields_for :product_images do |i|
+            -# = image_tag @product.product_image.image.url(:thumb)
+            .exhibitcontent_main__first--image
+              = i.file_field :image, type: 'file', name: "product[product_images_attributes][][image]", value:"", style: "display:none", id:"img-file"
+              %label{for: "img-file"}
+                %pre
+                  ドロッグアンドドロップ
+                  またはクリックしてファイルをアップロード
 
     .exhibitcontent_main__second
       .exhibitcontent_main__second__top
