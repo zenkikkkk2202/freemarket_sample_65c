@@ -54,6 +54,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  def search
+  end
+
   def user_credit
   end
 
