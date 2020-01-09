@@ -48,7 +48,7 @@
             カテゴリー
           .exhibitcontent_main__third__right__top--required4
             必須
-        = f.select :category, [["---","---" ],["レディース", "レディース"],["メンズ", "メンズ"],["ベビー・キッズ","ベビー・キッズ"],["インテリア・住まい・小物","インテリア・住まい・小物"],["本・音楽・ゲーム","本・音楽・ゲーム"],["おもちゃ・ホビー・グッズ","おもちゃ・ホビー・グッズ"],["コスメ・香水・美容","コスメ・香水・美容"],["家電・スマホ・カメラ","家電・スマホ・カメラ"],["スポーツ・レジャー","スポーツ・レジャー"],["ハンドメイド","ハンドメイド"],["チケット","チケット"],["自動車・オートバイ","自動車・オートバイ"],["その他","その他"]]
+        = f.select :category, Product.categories.keys, {}, {class: 'hoge'}
         = icon 'fa', 'chevron-down', class: "exhibitcontent_main__third__right--icon"
         .exhibitcontent_main__third__right__bottom
           .exhibitcontent_main__third__right__bottom--status 
