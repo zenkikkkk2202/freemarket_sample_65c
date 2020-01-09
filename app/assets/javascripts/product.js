@@ -27,7 +27,14 @@ $(function(){
     $('html, body').animate({scrollTop:3750});
   })
   $('#scroll_btn6').click(function(){
-    $('html, body').animate({scrollTop:3750});
+    $('html, body').animate({scrollTop:4500});
   })
+  $('#scroll_btn7').click(function(){
+    $('html, body').animate({scrollTop:5250});
+  })
+  $('#scroll_btn8').click(function(){
+    $('html, body').animate({scrollTop:5950});
+  })
+
 
 });
