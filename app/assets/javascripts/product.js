@@ -10,4 +10,17 @@ $(function(){
     prevArrow: '<i class="fa fa-angle-left arrow arrow-left"id="left__icon"></i>',
     nextArrow: '<i class="fa fa-angle-right arrow arrow-right"id="right__icon"></i>'
   });  
+
+  $('#scroll_btn1').click(function(){
+    $('html, body').animate({scrollTop:650});
+  })
+  $('#scroll_btn2').click(function(){
+    $('html, body').animate({scrollTop:1400});
+  })
+  $('#scroll_btn3').click(function(){
+    $('html, body').animate({scrollTop:2150});
+  })
+  $('#scroll_btn4').click(function(){
+    $('html, body').animate({scrollTop:2850});
+  })
 });
