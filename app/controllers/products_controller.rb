@@ -34,13 +34,15 @@ class ProductsController < ApplicationController
   
   
   def show
-    @saler_products = Product.where(saler_id: @saler_id).limit(6)
+    @saler_products = Product.where(saler_id: @product.saler.id).limit(6)
     @category_products = Product.where(category: @product.category).limit(6)
   end
 
   def edit
-    @product.product_images.pluck(params[:id])
+    gon.product = @product
+    gon.product_images = @product.product_images
   end
+
 
   def update
 
@@ -157,6 +159,12 @@ class ProductsController < ApplicationController
       end
      #↑この辺はこちら側のテーブル設計どうりに色々しています
     end
+  end
+
+  def category_search
+    @category_products = Product.where(category: params[:category]) 
+    category = params[:category]
+    @category = category.to_i
   end
   private
 

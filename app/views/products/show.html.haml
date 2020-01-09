@@ -23,7 +23,7 @@
           %tr
             %th 出品者
             %td
-              = link_to @product.user.nickname, class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
+              = link_to @product.user.nickname,root_path, class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
               .box__container__main__table__body__list
                 .box__container__main__table__body__list__face
                   %i.far.fa-smile
@@ -68,7 +68,7 @@
           %tr
             %th 発送元地域
             %td
-              = link_to @product.prefecture_id,root_path,class:"box__container__main__table__body__area"
+              = link_to @product.prefecture.name,root_path,class:"box__container__main__table__body__area"
           %tr
             %th 発送日の目安
             %td
@@ -104,9 +104,9 @@
             %i.far.fa-flag
             %span 不適切な商品の報告
         .box__container__good__right
-          = link_to root_path class:"box__container__good__right__safe" do
-            %i.fas.fa-lock
-            %span あんしん・あんぜんへの取り組み
+          = link_to root_path do
+            %i.fas.fa-lock{class:"box__container__good__right__safe"}
+            %span.box__container__good__right__safe__text あんしん・あんぜんへの取り組み
   .box__comment
     .box__comment__content
       .box__comment__content__main
@@ -141,90 +141,26 @@
       %h2.item__profile__user__name
         = link_to root_path,class:"item__profile__user__name__link" do
           ="#{@product.user.nickname}のその他の商品"
-      .item__profile__user__list
-        %section.item__profile__user__list__box
-          = link_to root_path, class:"item__profile__user__list__box__link" do
-            .item__profile__user__list__box__link__picture
-              = image_tag "https://images.unsplash.com/photo-1577046848400-481714c13218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
-            .item__profile__user__list__box__link__body
-              %h3.item__profile__user__list__box__link__body__name
-                products name
-              .item__profile__user__list__box__link__body__price
-                .item__profile__user__list__box__link__body__price__left
-                  ¥3,800
-                .item__profile__user__list__box__link__body__price__right
-                  %i.far.fa-heart
-                  %span 0
+          
+      
+        .item__profile__user__list
+          - @saler_products.each do |product|
+            %section.item__profile__user__list__box
+              = link_to product_path(product.id), class:"item__profile__user__list__box__link" do
+                .item__profile__user__list__box__link__picture
+                  = image_tag product.product_images[0].image.to_s,size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
+                .item__profile__user__list__box__link__body
+                  %h3.item__profile__user__list__box__link__body__name
+                    =product.name
+                  .item__profile__user__list__box__link__body__price
+                    .item__profile__user__list__box__link__body__price__left
+                      ¥
+                      =product.price
+                    .item__profile__user__list__box__link__body__price__right
+                      %i.far.fa-heart
+                      %span 0
 
-        %section.item__profile__user__list__box
-          = link_to root_path, class:"item__profile__user__list__box__link" do
-            .item__profile__user__list__box__link__picture
-              = image_tag "https://images.unsplash.com/photo-1577046848400-481714c13218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
-            .item__profile__user__list__box__link__body
-              %h3.item__profile__user__list__box__link__body__name
-                products name
-              .item__profile__user__list__box__link__body__price
-                .item__profile__user__list__box__link__body__price__left
-                  ¥3,800
-                .item__profile__user__list__box__link__body__price__right
-                  %i.far.fa-heart
-                  %span 0
-        
-        %section.item__profile__user__list__box__last
-          = link_to root_path, class:"item__profile__user__list__box__link" do
-            .item__profile__user__list__box__link__picture
-              = image_tag "https://images.unsplash.com/photo-1577046848400-481714c13218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
-            .item__profile__user__list__box__link__body
-              %h3.item__profile__user__list__box__link__body__name
-                products name
-              .item__profile__user__list__box__link__body__price
-                .item__profile__user__list__box__link__body__price__left
-                  ¥3,800
-                .item__profile__user__list__box__link__body__price__right
-                  %i.far.fa-heart
-                  %span 0
-        
-        %section.item__profile__user__list__box
-          = link_to root_path, class:"item__profile__user__list__box__link" do
-            .item__profile__user__list__box__link__picture
-              = image_tag "https://images.unsplash.com/photo-1577046848400-481714c13218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
-            .item__profile__user__list__box__link__body
-              %h3.item__profile__user__list__box__link__body__name
-                products name
-              .item__profile__user__list__box__link__body__price
-                .item__profile__user__list__box__link__body__price__left
-                  ¥3,800
-                .item__profile__user__list__box__link__body__price__right
-                  %i.far.fa-heart
-                  %span 0
 
-        %section.item__profile__user__list__box
-          = link_to root_path, class:"item__profile__user__list__box__link" do
-            .item__profile__user__list__box__link__picture
-              = image_tag "https://images.unsplash.com/photo-1577046848400-481714c13218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
-            .item__profile__user__list__box__link__body
-              %h3.item__profile__user__list__box__link__body__name
-                products name
-              .item__profile__user__list__box__link__body__price
-                .item__profile__user__list__box__link__body__price__left
-                  ¥3,800
-                .item__profile__user__list__box__link__body__price__right
-                  %i.far.fa-heart
-                  %span 0
-
-        %section.item__profile__user__list__box__last
-          = link_to root_path, class:"item__profile__user__list__box__link" do
-            .item__profile__user__list__box__link__picture
-              = image_tag "https://images.unsplash.com/photo-1577046848400-481714c13218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
-            .item__profile__user__list__box__link__body
-              %h3.item__profile__user__list__box__link__body__name
-                products name
-              .item__profile__user__list__box__link__body__price
-                .item__profile__user__list__box__link__body__price__left
-                  ¥3,800
-                .item__profile__user__list__box__link__body__price__right
-                  %i.far.fa-heart
-                  %span 0
 
     %section.item__profile__bland
       %h2.item__profile__bland__name
@@ -322,7 +258,8 @@
           %span メルカリ
         %i.fas.fa-chevron-right
       %li
-        %span productname
+        %span 
+        =@product.name
 
   .banner
     = render "banner"

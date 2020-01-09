@@ -19,7 +19,6 @@ Rails.application.routes.draw do
 
   resources :products do
     collection do
-      get 'search'
       get 'user_credit'
       get 'user_profile_information'
       get 'user_logout'
@@ -39,6 +38,7 @@ Rails.application.routes.draw do
       get 'guide'
       get 'buy_confirm/:id',action: "buy_confirm"
       post "buy/:id",action: "buy"
+      get "category_search/:category", action: "category_search"
     end
   end
 end
