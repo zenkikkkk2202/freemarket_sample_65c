@@ -23,4 +23,11 @@ $(function(){
   $('#scroll_btn4').click(function(){
     $('html, body').animate({scrollTop:2850});
   })
+  $('#scroll_btn5').click(function(){
+    $('html, body').animate({scrollTop:3750});
+  })
+  $('#scroll_btn6').click(function(){
+    $('html, body').animate({scrollTop:3750});
+  })
+
 });
