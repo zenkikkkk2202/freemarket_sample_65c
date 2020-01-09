@@ -53,7 +53,6 @@ db/schema.rb
 app/models/product.rb
 db/schema.rb
 .env
-*.haml
 .env
 app/controllers/products_controller.rb
 app/assets/javascripts/product_edit.js
