@@ -1,4 +1,3 @@
-
 = render "header"
 = render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
 
@@ -114,6 +113,14 @@
 
 
     .s-content
+      .result
+        .result__search
+          yamanaka
+        .result__text
+          の検索結果
+      .number
+        1 - 1件表示
+      .products
 
 
 
@@ -127,3 +134,7 @@
         メルカリ
       = icon('fas', 'angle-right', class: "s-footer__body__list-icon")
       検索したワード
+.banner
+  = render "banner"
+.footer
+  = render "footer"

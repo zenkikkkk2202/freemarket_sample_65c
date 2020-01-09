@@ -1,7 +1,7 @@
 .s-main {
   background-color: #F5F5F5;
   .s-contents {
-    position: relative;
+    display: flex;
     padding: 40px 0;
     margin: 0px auto;
     width: 1020px;
@@ -177,6 +177,31 @@
       }
     }
     .s-content{
+      width: 700px;
+      .result{
+        font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+        display: flex;
+        margin: 0 0 8px;
+        &__search{
+          font-size: 22px;
+          line-height: 31px;
+        }
+        &__text{
+          line-height: 31px;
+          font-size: 18px;
+          margin: 0 0 0 4px;
+        }
+      }
+      .number{
+        margin: 16px 0;
+        font-size: 14px;
+        color: #888;
+        font-weight: 400;
+
+      }
+      .products{
+
+      }
     }
   }
   .s-footer {
