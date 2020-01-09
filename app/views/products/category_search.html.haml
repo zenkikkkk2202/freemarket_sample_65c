@@ -1,0 +1,42 @@
+.header
+  - if user_signed_in?
+    = render "header"
+    = render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
+  - else
+    = render "new_header"
+    = render 'new_camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
+  
+  .amain
+    - breadcrumb :category_search
+    = render "layouts/breadcrumbs"
+    .imain__main__product
+      .imain__main__product__box
+        .imain__main__product__box__menu
+          .imain__main__product__box__menu__text 
+            = Product.categories.keys[@category]
+          =link_to "もっと見る ＞", "#", class: "imain__main__product__box__menu__link"
+        .imain__main__product__box__item
+          %ul.imain__main__product__box__item__list
+            -if @category_products
+              - @category_products.each do |product|
+                %li.imain__main__product__box__item__list__data
+                  .imain__main__product__box__item__list__data__size
+                    =link_to product_path(product.id),class: "imain__main__product__box__item__list__data__size__link" do
+                      %figure.imain__main__product__box__item__list__data__size__link__figure
+                        %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
+                          =product.name
+                        .imain__main__product__box__item__list__data__size__link__figure__information
+                          %label.imain__main__product__box__item__list__data__size__link__figure__information__label
+                            ¥
+                            =product.price
+                          = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+    .amain__category__search
+      .amain__category__search__red
+        %h3= Product.categories.keys[@category]
+      .amain__category__search__white
+        説明文
+
+.banner
+  = render "banner"
+.footer
+  = render "footer"

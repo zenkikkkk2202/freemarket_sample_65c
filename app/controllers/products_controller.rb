@@ -158,6 +158,12 @@ class ProductsController < ApplicationController
      #↑この辺はこちら側のテーブル設計どうりに色々しています
     end
   end
+
+  def category_search
+    @category_products = Product.where(category: params[:category]) 
+    category = params[:category]
+    @category = category.to_i
+  end
   private
 
   def set_product
