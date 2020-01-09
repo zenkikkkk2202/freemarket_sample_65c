@@ -23,7 +23,7 @@
           %tr
             %th 出品者
             %td
-              = link_to @product.user.nickname, class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
+              = link_to @product.user.nickname,root_path, class:"box__container__main__table__body__data"  #出品者情報を呼ぶ
               .box__container__main__table__body__list
                 .box__container__main__table__body__list__face
                   %i.far.fa-smile
@@ -146,7 +146,7 @@
         .item__profile__user__list
           - @saler_products.each do |product|
             %section.item__profile__user__list__box
-              = link_to root_path, class:"item__profile__user__list__box__link" do
+              = link_to product_path(product.id), class:"item__profile__user__list__box__link" do
                 .item__profile__user__list__box__link__picture
                   = image_tag product.product_images[0].image.to_s,size:"220x220",class:"item__profile__user__list__box__link__picture__inside"
                 .item__profile__user__list__box__link__body
@@ -258,7 +258,8 @@
           %span メルカリ
         %i.fas.fa-chevron-right
       %li
-        %span productname
+        %span 
+        =@product.name
 
   .banner
     = render "banner"
