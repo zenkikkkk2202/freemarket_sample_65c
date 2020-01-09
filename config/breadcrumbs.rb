@@ -56,6 +56,13 @@ crumb :show do
   parent :user_page
   parent :p_exhibiting
 end
+
+# カテゴリページ
+crumb :category_search do
+  category = params[:category]
+  @category = category.to_i
+  link Product.categories.keys[@category], "/products/category_search/:category"
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end
