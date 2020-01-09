@@ -39,8 +39,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product.product_images.pluck(params[:id])
+    gon.product = @product
+    gon.product_images = @product.product_images
   end
+
 
   def update
 
