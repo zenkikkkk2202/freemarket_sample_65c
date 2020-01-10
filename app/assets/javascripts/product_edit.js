@@ -112,7 +112,7 @@ $( function() {
       var file = $(this).prop("files")[0];
       new_image_files.push(file)
       var reader = new FileReader();
-      var img = $(`<div class= "img_view "><div class="img_area"><img class="image" width ="70" height="114" ></div></div>`);
+      var img = $(`<div class= "img_view "><div class="img_area"><img class="image" ></div></div>`);
   
       reader.onload = function(e) {
         var btn_wrapper = $('<div class="btn_wrapper"><a class="btn_edit">編集</a><a class="btn_delete">削除</a></div>');
@@ -267,14 +267,15 @@ $( function() {
   
         // ６枚目以降の画像を抽出
         var pickup_images2 = images.slice(5);
+        var num = $(".img_view").length
   
         // ６枚目以降を２段目に表示
         $.each(pickup_images2, function(index, image) {
           image.data('image', index + 5);
-          preview2.append(image);
+          $(".img_view").append(image);
           dropzone2.css({
             'display': 'block',
-            'width': `calc(100% - (20% * ${images.length - 5}))`
+            'width': `calc(100% - (20% * ${num - 5}))`
           })
         })
       }

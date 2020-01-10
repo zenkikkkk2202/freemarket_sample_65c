@@ -22,9 +22,10 @@
           = f.label :image, for: "upload-image" do
             .input_area
               = f.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
-              ドロッグアンドドロップ
-              %br
-              またはクリックしてファイルをアップロード
+              .input_area__text
+                ドロッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
               
       .item__img__dropzone2
         #preview2-edit
@@ -32,9 +33,10 @@
         .item__img__dropzone2__input2
           = f.label :image, for: "upload-image" do
             .input_area
-              ドロッグアンドドロップ
-              %br
-              またはクリックしてファイルをアップロード
+              .input_area__text
+                ドロッグアンドドロップ
+                %br
+                またはクリックしてファイルをアップロード
       %input.upload-image{ multiple: true, type: "hidden", name: "images[image][]"}/
       %input.hidden{ multiple: true, type: "number", name: "destroy[ids][]"}/
 
