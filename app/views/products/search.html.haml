@@ -115,19 +115,14 @@
     .s-content
       .result
         .result__search
-          yamanaka
+          @keyword
         .result__text
           の検索結果
       .number
         1 - 1件表示
       .products
-
-
-
-
-
-
-
+        - @products.each do |product|
+          = render partial: "index", locals: { product: product }
   .s-footer
     .s-footer__body
       = link_to root_path, class: "s-footer__body__list" do

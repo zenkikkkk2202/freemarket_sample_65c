@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product,only:[:show,:edit,:destroy,:buy_confirm,:buy]
   before_action :set_current_user_products,only:[:edit,:p_transaction,:p_exhibiting,:p_soldout]
   before_action :set_cards,only:[:buy_confirm,:buy]
+  before_action :move_to_index, except: [:index, :show, :search]
   def index
     @products_m = Product.where(category: "メンズ").includes(:product_images).limit(10).order('created_at DESC')
     @products_l = Product.where(category: "レディース").includes(:product_images).limit(10).order('created_at DESC')
@@ -57,7 +58,9 @@ class ProductsController < ApplicationController
   end
 
   def search
+      @products = Product.search(params[:keyword])
   end
+
 
   def user_credit
   end
@@ -187,4 +190,9 @@ class ProductsController < ApplicationController
   def set_cards
     @card = current_user.credit_cards
   end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+  
 end
