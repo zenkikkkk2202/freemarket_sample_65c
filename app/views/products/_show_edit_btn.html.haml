@@ -1,0 +1,6 @@
+.box__container__current_user
+  = link_to "商品の編集",edit_product_path,class:"box__container__current_user--edit"
+  .box__container__current_user--p
+    or
+  = link_to "出品を一旦停止する","#",class:"box__container__current_user--stop"
+  = link_to "この商品を削除する",product_path(@product),method:"delete",class:"box__container__current_user--delete"

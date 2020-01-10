@@ -85,52 +85,14 @@
         =@product.price
       %span.box__container__price__tax ＜税込＞
       %span.box__container__price__fee 送料込み
-  - if @product.saler_id == current_user.id
-    .box__container__current_user
-      = link_to "商品の編集",edit_product_path,class:"box__container__current_user--edit"
-      .box__container__current_user--p
-        or
-      = link_to "出品を一旦停止する","#",class:"box__container__current_user--stop"
-      = link_to "この商品を削除する",product_path(@product),method:"delete",class:"box__container__current_user--delete"
+  - if user_signed_in? && @product.saler_id == current_user.id
+    = render "show_edit_btn" # 編集・削除ボタンのビューの呼び出し
   - elsif @product.buyer_id 
-    .box__container__current_buyer
-      = link_to "売り切れました", "#",class:"box__container__price__btn1"
-      .box__container__explanation
-        %p.box__container__explanation__content
-          =@product.description
-      .box__container__good
-        .box__container__good__left
-          = link_to root_path, class:"box__container__good__left__iine" do
-            %i.far.fa-heart
-            %span いいね
-            %span 0
-          = link_to root_path, class:"box__container__good__left__bad" do
-            %i.far.fa-flag
-            %span 不適切な商品の報告
-        .box__container__good__right
-          = link_to root_path do
-            %i.fas.fa-lock{class:"box__container__good__right__safe"}
-            %span.box__container__good__right__safe__text あんしん・あんぜんへの取り組み
-    
+    = render "show_sold_btn" # 売り切れボタンのビューの呼び出し
+  - elsif user_signed_in? && current_user.id.nil?
+    = render "show_buy_btn"  # 購入ボタンのビューの呼び出し
   - else
-    .box__container__current_buyer
-      = link_to "購入画面に進む", "/products/buy_confirm/#{@product.id}",class:"box__container__price__btn"
-      .box__container__explanation
-        %p.box__container__explanation__content
-          =@product.description
-      .box__container__good
-        .box__container__good__left
-          = link_to root_path, class:"box__container__good__left__iine" do
-            %i.far.fa-heart
-            %span いいね
-            %span 0
-          = link_to root_path, class:"box__container__good__left__bad" do
-            %i.far.fa-flag
-            %span 不適切な商品の報告
-        .box__container__good__right
-          = link_to root_path do
-            %i.fas.fa-lock{class:"box__container__good__right__safe"}
-            %span.box__container__good__right__safe__text あんしん・あんぜんへの取り組み
+    = render "show_buy_btn"  # 購入ボタンのビューの呼び出し
   .box__comment
     .box__comment__content
       .box__comment__content__main
