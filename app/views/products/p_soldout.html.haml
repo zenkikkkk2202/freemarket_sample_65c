@@ -18,7 +18,7 @@
               取引中
             = link_to "#", class: "pmain__center--right2" do
               売却済み
-          -if @products.to_a[0].saler_id == current_user.id && @products.to_a[0].buyer_id.present?
+          -if @products.present? && @products.to_a[0].saler_id == current_user.id && @products.to_a[0].buyer_id.present?
             - @products.each do |product|
               = link_to product_path(product),class:"item_content" do
                 .item_content__image
