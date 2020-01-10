@@ -8,4 +8,14 @@
           %label.imain__main__product__box__item__list__data__size__link__figure__information__label
             ¥
             =product.price
-          = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+          - if product.buyer_id 
+            = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image" 
+            .imain__main__product__box__item__list__data__size__link__figure__information__sold
+              %span.imain__main__product__box__item__list__data__size__link__figure__information__sold__text SOLD
+          - else
+            = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image" 
+            
+              
+              
+              
+            

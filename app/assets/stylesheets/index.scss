@@ -225,6 +225,41 @@
                           width: 100%;
                           z-index: 1;
                         }
+                        &__sold{
+                          height: 60px;
+                          width: 60px;
+                          position: relative;
+                          display: inline-block;
+                          margin: 0;
+                          vertical-align: top;
+                          left: 0;
+                          top: 0;
+                          &__text{
+                            font-size: 14px;
+                            left: 3px;
+                            top: 14px;
+                            color: #fff;
+                            font-weight: 600;
+                            position: absolute;
+                            transform: rotate(-45deg);
+                            z-index: 2;
+                          }
+                            &:after{
+                              content: "";
+                              border-color: #ff0211 transparent transparent;
+                              border-width: 60px 60px 0 0;
+                              position: absolute;
+                              border-style: solid;
+                              display: block;
+                              z-index: 1;
+                              width: 0;
+                              height: 0;
+                              top: 0px;
+                              left:0px;
+
+                            }
+                          
+                        }
                       }
                     }
                   }
