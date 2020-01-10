@@ -645,13 +645,51 @@ pre{
 //edit.jsのscss
 
 .input_area{
-  height: 137px;
+  height: 135px;
   width: 100%;
   background-color: #f5f5f5;
   border:dotted 1px gray;
   text-align: center;
   cursor: pointer;
   margin-bottom: 10px;
+  position: relative;
+  &__text{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform : translateY(-50%);
+    transform : translateY(-50%);
+  }
+}
+.img_area{
+  img {
+    height: 100px;
+    width: 100px;
+    padding-top: 20px;
+  }
+}
+.btn_wrapper{
+  display: flex;
+  text-align: center;
+}
+.btn_edit{
+  color: #0099e8;
+  display: inline-block;
+  padding: 5px 10px;
+  border-right: 1px solid #eee;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  cursor: pointer;
+}
+.btn_delete{
+  color: #0099e8;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  display: inline-block;
+  padding: 5px 8px;
+  cursor: pointer;
 }
 .upload-image{
   display: none;
@@ -662,9 +700,6 @@ pre{
   margin-bottom: 5px;
   display: inline-block;
 }
-.dropzone-container{
-  display: flex;
-}
 .dropzone-area{
   width: 100%;
   display: inline-block;
@@ -672,37 +707,10 @@ pre{
 .dropzone-area2{
   display: none;
 }
-.btn_wrapper{
-  display: flex;
-  color: #0099e8;
-  text-align: center;
-}
-.btn_edit{
-  display: inline-block;
-  padding: 5px 10px;
-  border-right: 1px solid #eee;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  cursor: pointer;
-}
-.btn_delete{
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-  display: inline-block;
-  padding: 5px 8px;
-  cursor: pointer;
-}
 .hidden{
   display: none;
 }
 
-img {
-  height: 100px;
-  width: 100px;
-  padding-top: 20px;
-}
 
 .item__img__dropzone {
   display: flex;
