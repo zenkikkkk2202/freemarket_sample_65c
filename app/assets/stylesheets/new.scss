@@ -652,14 +652,9 @@ pre{
   text-align: center;
   cursor: pointer;
   margin-bottom: 10px;
-  position: relative;
-  &__text{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    -webkit-transform : translateY(-50%);
-    transform : translateY(-50%);
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .img_area{
   img {
