@@ -11,7 +11,9 @@
       .box__container__main__photo
         .box__container__main__photo__all
           .box__container__main__photo__all__big
-            = image_tag @product.product_images[0].image.to_s,size:"300x300",id:"mainphoto"
+            = image_tag @product.product_images[0].image.to_s,size:"300x300",id:"mainphoto" 
+          .box__container__main__photo__all__badge
+            .box__container__main__photo__all__badge__text SOLD
 
           .box__container__main__photo__all__small
             .box__container__main__photo__all__small__list
