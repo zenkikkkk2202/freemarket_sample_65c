@@ -300,3 +300,29 @@
   content: "";
 }
 
+@mixin show_sold_text {
+  top: 36px;
+  font-size: 28px;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  color: #fff;
+  transform: rotate(-45deg);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+@mixin show_sold_text_after {
+  content: "";
+  border-width: 120px 120px 0 0;
+  border-color: #ea352d transparent transparent transparent;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+}
+
