@@ -3,11 +3,11 @@
     =link_to product_path(product.id),class: "imain__main__product__box__item__list__data__size__link" do
       %figure.imain__main__product__box__item__list__data__size__link__figure
         %figcaption.imain__main__product__box__item__list__data__size__link__figure__figcaption
-          =product.name
+          = product.name
         .imain__main__product__box__item__list__data__size__link__figure__information
           %label.imain__main__product__box__item__list__data__size__link__figure__information__label
             ¥
-            =product.price
+            = product.price
           - if product.buyer_id 
             = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image" 
             = render "index_sold_badge"

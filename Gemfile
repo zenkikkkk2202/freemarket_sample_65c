@@ -89,3 +89,4 @@ gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'gon'
+gem 'ransack'
