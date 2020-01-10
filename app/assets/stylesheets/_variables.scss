@@ -264,6 +264,65 @@
   font-weight: 400;
   font-family: Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
 
-  
+}
+@mixin index_sold_badge {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  left: 0;
+  top: 0;
+}
+@mixin index_sold_text {
+  font-size: 14px;
+  left: 3px;
+  top: 14px;
+  color: #fff;
+  font-weight: 600;
+  position: absolute;
+  transform: rotate(-45deg);
+  z-index: 2;
+}
+
+@mixin index_sold_text_after{
+  border-color: #ff0211 transparent transparent;
+  border-width: 60px 60px 0 0;
+  border-style: solid;
+  z-index: 1;
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  top: 0px;
+  left:0px;
+  content: "";
+}
+
+@mixin show_sold_text {
+  top: 36px;
+  font-size: 28px;
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  color: #fff;
+  transform: rotate(-45deg);
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+@mixin show_sold_text_after {
+  content: "";
+  border-width: 120px 120px 0 0;
+  border-color: #ea352d transparent transparent transparent;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
 }
 
