@@ -1,5 +1,5 @@
 $(function(){
-  $('#price').change(function(){
+  $('#price').on('input',function(){
     var value = $(this).val();
     if(value > 9999999){
       $('#fee').val('-');
@@ -11,7 +11,7 @@ $(function(){
     }
   });
 
-  $('#price').change(function(){
+  $('#price').on('input',function(){
     var value = $(this).val();
     if(value > 9999999){
       $('#profit').val('-');

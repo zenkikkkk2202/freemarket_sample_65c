@@ -86,7 +86,7 @@ $( function() {
         'display': 'none'
       })
       appendzone.css({
-        'display': 'block'
+        'display': 'flex'
       })
       dropzone2.css({
         'display': 'block',
