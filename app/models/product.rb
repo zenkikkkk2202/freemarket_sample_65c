@@ -13,4 +13,11 @@ class Product < ApplicationRecord
     'コスメ•香水•美容':7,'家電•スマホ•カメラ':8,'スポーツ•レジャー':9,ハンドメイド:10,チケット:11,'自転車•オートバイ':12,
     その他:13,カテゴリ一覧:14
   }
+  def self.search(search)
+    if search
+      Product.where('name LIKE(?)', "%#{search}%")
+    else
+      Product.all
+    end
+  end
 end
