@@ -1,9 +1,13 @@
 .all_show
   .header
-    = render "header"
-    .u-main
-      - breadcrumb :show
-      = render "layouts/breadcrumbs"
+    - if user_signed_in?
+      = render "header"
+      .u-main
+        - breadcrumb :show
+        = render "layouts/breadcrumbs"
+    - else 
+      = render "new_header"
+    
   .box__container
     .item_name 
       =@product.name
