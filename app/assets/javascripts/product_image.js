@@ -29,7 +29,7 @@ $(function(){
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
                         <input type="file" name="product[product_images_attributes][][image]" value="" style="display:none"></input>
-                        <img src=${src} width="100" height="80" >
+                        <img src=${src} width="120" height="100" >
                       </div>
                     </div>
                     <div class='item-image__operetion'>
