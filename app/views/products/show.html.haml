@@ -13,8 +13,7 @@
           - if @product.buyer_id 
             .box__container__main__photo__all__big
               = image_tag @product.product_images[0].image.to_s,size:"300x300",id:"mainphoto" 
-            .box__container__main__photo__all__badge
-              .box__container__main__photo__all__badge__text SOLD
+            = render "show_sold_badge" 
           - else
             .box__container__main__photo__all__big
               = image_tag @product.product_images[0].image.to_s,size:"300x300",id:"mainphoto" 
