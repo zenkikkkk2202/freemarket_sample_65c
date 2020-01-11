@@ -1,4 +1,4 @@
-$( function() {
+$(window).on("turbolinks:load", function() {
   if (document.location.href.match(/\/products\/\d+\/edit/)){
     var dropzone = $(".item__img__dropzone__input");
     var dropzone2 = $(".item__img__dropzone2__input2");
@@ -282,7 +282,7 @@ $( function() {
       
     })
   }
-  $('.exhibitcontent_main').on('submit', function(e){
+  $('#edit-exhibitcontent').on('submit', function(e){
     // 通常のsubmitイベントを止める
     e.preventDefault();
     // images以外のform情報をformDataに追加

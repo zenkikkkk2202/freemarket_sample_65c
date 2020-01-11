@@ -1,4 +1,4 @@
-$(function() {
+$(window).on("turbolinks:load", function() {
   $(function() {
     $('img.box__container__main__photo__all__small__list__image').click(function(){
       var ImgSrc = $(this).attr("src");

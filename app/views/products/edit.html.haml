@@ -3,7 +3,7 @@
 .exhibitcontent
   = render "show_header"
 
-  = form_with model: @product,class:"exhibitcontent_main", local: true do |f|
+  = form_with model: @product,class:"exhibitcontent_main",id:"edit-exhibitcontent", local: true do |f|
     .exhibitcontent_main__title
       商品の情報を入力
     .exhibitcontent_main__first

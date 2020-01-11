@@ -1,4 +1,4 @@
-$(function(){
+$(window).on("turbolinks:load", function(){
   $('.imain__main__link__image__ulist').slick({
     autoplay:true,
     autoplaySpeed:5000,

@@ -1,4 +1,4 @@
-$(function() {
+$(window).on("turbolinks:load", function() {
   var password  = '#js-password';
   var passcheck = '#js-passcheck';
   
