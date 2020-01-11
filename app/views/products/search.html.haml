@@ -122,7 +122,7 @@
         1 - 1件表示
       .products
         - @products.each do |product|
-          = render partial: "index", locals: { product: product }
+          = render partial: "products-search", locals: { product: product }
   .s-footer
     .s-footer__body
       = link_to root_path, class: "s-footer__body__list" do
