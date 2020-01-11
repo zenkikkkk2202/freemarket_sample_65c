@@ -71,7 +71,7 @@ class ProductsController < ApplicationController
         end
       end
 
-      redirect_to product_path(@product), data: {turbolinks: false}
+      redirect_to product_path(@product)
 
     else
       redirect_back(fallback_location: root_path)
