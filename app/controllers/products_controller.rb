@@ -143,12 +143,12 @@ class ProductsController < ApplicationController
   end
 
   def buy_confirm
-    if @card.blank?
+    if @cards.blank?
       redirect_to action: "new" 
     else
       Payjp.api_key = Rails.application.credentials[:payjp][:test_secret_key]
-      customer = Payjp::Customer.retrieve(@card[0].customer_id)
-      @customer_card = customer.cards.retrieve(@card[0].card_id)
+      customer = Payjp::Customer.retrieve(@cards[0].customer_id)
+      @customer_card = customer.cards.retrieve(@cards[0].card_id)
 
       @card_brand = @customer_card.brand      
       case @card_brand
@@ -169,7 +169,7 @@ class ProductsController < ApplicationController
   end
 
   def buy #クレジット購入 
-    if @card.blank?
+    if @cards.blank?
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
@@ -179,7 +179,7 @@ class ProductsController < ApplicationController
      # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
       amount: @product.price, #支払金額
-      customer: @card[0].customer_id, #顧客ID
+      customer: @cards[0].customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
      # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
@@ -218,7 +218,7 @@ class ProductsController < ApplicationController
   end
 
   def set_cards
-    @card = current_user.credit_cards
+    @cards = current_user.credit_cards
   end
 
   def move_to_index
