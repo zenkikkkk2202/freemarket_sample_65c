@@ -282,4 +282,38 @@ $( function() {
       
     })
   }
+  $('.exhibitcontent_main').on('submit', function(e){
+    // 通常のsubmitイベントを止める
+    e.preventDefault();
+    // images以外のform情報をformDataに追加
+    var formData = new FormData($(this).get(0));
+
+    // 登録済画像が残っていない場合は便宜的に0を入れる
+    if (registered_images_ids.length == 0) {
+      formData.append("registered_images_ids[ids][]", 0)
+    // 登録済画像で、まだ残っている画像があればidをformDataに追加していく
+    } else {
+      registered_images_ids.forEach(function(registered_image){
+        formData.append("registered_images_ids[ids][]", registered_image)
+      });
+    }
+
+    // 新しく追加したimagesがない場合は便宜的に空の文字列を入れる
+    if (new_image_files.length == 0) {
+      formData.append("new_images[images][]", " ")
+    // 新しく追加したimagesがある場合はformDataに追加する
+    } else {
+      new_image_files.forEach(function(file){
+        formData.append("new_images[images][]", file)
+      });
+    }
+
+    $.ajax({
+      url:         '/products/' + gon.product.id,
+      type:        "PATCH",
+      data:        formData,
+      contentType: false,
+      processData: false,
+    })
+  });
 });
