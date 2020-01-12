@@ -29,7 +29,11 @@
                           %label.imain__main__product__box__item__list__data__size__link__figure__information__label
                             ¥
                             =product.price
-                          = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
+                          - if product.buyer_id 
+                            = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image" 
+                            = render "index_sold_badge"
+                          - else
+                            = image_tag product.product_images[0].image.to_s, class: "imain__main__product__box__item__list__data__size__link__figure__information__image"
     .amain__category__search
       .amain__category__search__red
         %h3= Product.categories.keys[@category]
