@@ -10,8 +10,10 @@
       .contents
         .setting-logout
           .setting-logout__content
-            %button.setting-logout__content__btn{type: "submit"}
-              = link_to "ログアウト",destroy_user_session_path, method: :delete
+            = link_to destroy_user_session_path, method: :delete do
+              %button.setting-logout__content__btn{type: "submit"}
+                ログアウト
+              
 = render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
 
 = render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
