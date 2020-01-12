@@ -88,7 +88,8 @@ class ProductsController < ApplicationController
   end
 
   def search
-      @products = Product.search(params[:keyword])
+    @search_params = params[:keyword]
+    @products = Product.search(@search_params).order("created_at DESC")
   end
 
 
@@ -143,12 +144,12 @@ class ProductsController < ApplicationController
   end
 
   def buy_confirm
-    if @cards.blank?
+    if @card.blank?
       redirect_to action: "new" 
     else
       Payjp.api_key = Rails.application.credentials[:payjp][:test_secret_key]
-      customer = Payjp::Customer.retrieve(@cards[0].customer_id)
-      @customer_card = customer.cards.retrieve(@cards[0].card_id)
+      customer = Payjp::Customer.retrieve(@card[0].customer_id)
+      @customer_card = customer.cards.retrieve(@card[0].card_id)
 
       @card_brand = @customer_card.brand      
       case @card_brand
@@ -169,7 +170,7 @@ class ProductsController < ApplicationController
   end
 
   def buy #クレジット購入 
-    if @cards.blank?
+    if @card.blank?
       redirect_to action: "new"
       flash[:alert] = '購入にはクレジットカード登録が必要です'
     else
@@ -179,7 +180,7 @@ class ProductsController < ApplicationController
      # キーをセットする(環境変数においても良い)
       Payjp::Charge.create(
       amount: @product.price, #支払金額
-      customer: @cards[0].customer_id, #顧客ID
+      customer: @card[0].customer_id, #顧客ID
       currency: 'jpy', #日本円
       )
      # ↑商品の金額をamountへ、cardの顧客idをcustomerへ、currencyをjpyへ入れる
@@ -190,7 +191,7 @@ class ProductsController < ApplicationController
         flash[:alert] = '購入に失敗しました。'
         redirect_to controller: "products", action: 'show'
       end
-     #↑この辺はこちら側のテーブル設計どうりに色々しています
+     #↑この辺はこちら側のテーブル設計どおりに色々しています
     end
   end
 
@@ -218,11 +219,15 @@ class ProductsController < ApplicationController
   end
 
   def set_cards
+
     if user_signed_in? && current_user.id != @product.saler_id && @product.buyer_id.nil? 
       @cards = current_user.credit_cards
     else
       redirect_to new_user_session_path
     end
+
+    
+
   end
 
   def move_to_index
