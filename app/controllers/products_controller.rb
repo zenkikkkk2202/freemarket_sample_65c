@@ -218,7 +218,7 @@ class ProductsController < ApplicationController
   end
 
   def set_cards
-    if user_signed_in? && current_user.id
+    if user_signed_in? && current_user.id != @product.saler_id && @product.buyer_id.nil? 
       @cards = current_user.credit_cards
     else
       redirect_to new_user_session_path
