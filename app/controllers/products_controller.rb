@@ -218,7 +218,11 @@ class ProductsController < ApplicationController
   end
 
   def set_cards
-    @cards = current_user.credit_cards
+    if user_signed_in? && current_user.id
+      @cards = current_user.credit_cards
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def move_to_index
@@ -236,5 +240,5 @@ class ProductsController < ApplicationController
   def new_image_params
     params.require(:new_images).permit({images: []})
   end
-  
+
 end
