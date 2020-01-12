@@ -4,8 +4,8 @@
       .mheader__main__upper__logo
         .mheader__main__upper__logo__image
           = link_to image_tag("fmarket_logo_red.svg",size:"134x36"), root_path
-      = form_with(url: search_products_path, local: true,method: :get, class: "mheader__main__upper__search") do |f|
-        = f.text_field :keyword, placeholder: " 何かお探しですか？", class: "mheader__main__upper__search__blank"
+      = form_with(url: search_products_path, local: true, method: :get, class: "mheader__main__upper__search") do |f|
+        = f.text_field :keyword, value: @search_params, placeholder: " 何かお探しですか？", class: "mheader__main__upper__search__blank"
         %button.mheader__main__upper__search__button
           %i.fas.fa-search
     .mheader__main__bottom

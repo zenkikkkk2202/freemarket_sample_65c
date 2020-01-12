@@ -22,9 +22,9 @@
           .s-sidebar__details__title
             詳細検索
           .s-sidebar__details__label
-            = icon('fas', 'plus', class: 's-sidebar__details__label__icon1')
+            = icon('fas', 'plus', class: 's-sidebar__details__label__icon1',)
             キーワードを追加する
-            = f.text_field :name, placeholder:"例) 値下げ", class:  's-sidebar__details__label__text'
+            = f.text_field :name, placeholder:"例) 値下げ", class:  's-sidebar__details__label__text', value: @search_params
           .s-sidebar__details__label
             = icon('fas', 'list', class: 's-sidebar__details__label__icon1')
             カテゴリーから探す
@@ -113,12 +113,12 @@
     .s-content
       .result
         .result__search
-          
+          = @search_params
         .result__text
           の検索結果
       .number
         1 - 1件表示
-      .products
+      %ul.products
         - @products.each do |product|
           = render partial: "products-search", locals: { product: product }
   .s-footer
@@ -126,7 +126,7 @@
       = link_to root_path, class: "s-footer__body__list" do
         メルカリ
       = icon('fas', 'angle-right', class: "s-footer__body__list-icon")
-      検索したワード
+      = @search_params
 .banner
   = render "banner"
 .footer
