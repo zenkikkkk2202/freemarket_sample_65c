@@ -90,3 +90,5 @@ gem 'dotenv-rails'
 gem 'recaptcha', require: "recaptcha/rails"
 gem 'gon'
 gem 'ransack'
+gem 'kaminari', '~> 0.17.0'
+gem 'kaminari-bootstrap', '~> 3.0.1'
