@@ -94,6 +94,7 @@ class ProductsController < ApplicationController
     @search_params = params[:keyword]
     @products = Product.search(@search_params).order("created_at DESC")
     @count = @products.count
+    @products = Product.all if @products.count == 0
   end
 
 
