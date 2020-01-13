@@ -111,29 +111,48 @@
             .s-sidebar__details__button__complete
               完了
     .s-content
-    
-      .result
-        .result__search
-          = @search_params
-        .result__text
-          の検索結果
-      .number
-        .number__page
-          1 -
-        .number__count
-          = @count 
-          件表示
-      %ul.products
-        - @products.each do |product|
-          = render partial: "products-search", locals: { product: product }
+      - if @search_params.empty?
+        .new-result
+          新着商品
+        %ul.products
+          - @products.each do |product|
+            = render partial: "products-search", locals: { product: product }
+      - elsif @search_params.present? && @count == 0
+        .result
+          .result__search
+            = @search_params
+          .result__text
+            の検索結果
+        .text-result
+          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+        .new-result
+          新着商品
+        %ul.products
+          - @products.each do |product|
+            = render partial: "products-search", locals: { product: product }
+      - else
+        .result
+          .result__search
+            = @search_params
+          .result__text
+            の検索結果
+        .number
+          .number__page
+            1 -
+          .number__count
+            = @count 
+            件表示
+        %ul.products
+          - @products.each do |product|
+            = render partial: "products-search", locals: { product: product }
   .s-footer
     .s-footer__body
       = link_to root_path, class: "s-footer__body__list" do
         メルカリ
-      - if @search_params.nil?
+      - if @search_params.empty?
+      - else
         = icon('fas', 'angle-right', class: "s-footer__body__list-icon")
         = @search_params
-      - else
 .banner
   = render "banner"
 .footer
