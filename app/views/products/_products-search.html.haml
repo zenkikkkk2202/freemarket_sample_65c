@@ -1,3 +1,21 @@
 
+%li.data1
+  =link_to product_path(product.id),class: "data1__box" do
+    .data1__box__information
+      .data1__box__information__text
+        .data1__box__information__text__label
+          ¥
+        .data1__box__information__text__price
+          = product.price
+      - if product.buyer_id 
+        = image_tag product.product_images[0].image.to_s, class: "data1__box__information__image" 
+        .data1__box__information__sold
+          %span.data1__box__information__sold__text SOLD
+      - else
+        = image_tag product.product_images[0].image.to_s, class: "data1__box__information__image" 
+    .data1__box__name
+      = product.name
+
+
 
 
