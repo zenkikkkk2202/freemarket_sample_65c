@@ -117,7 +117,11 @@
         .result__text
           の検索結果
       .number
-        1 - 1件表示
+        .number__page
+          1 -
+        .number__count
+          = @count 
+          件表示
       %ul.products
         - @products.each do |product|
           = render partial: "products-search", locals: { product: product }
