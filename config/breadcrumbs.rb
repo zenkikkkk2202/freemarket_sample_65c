@@ -34,27 +34,27 @@ end
 
 # 出品中
 crumb :p_exhibiting do
-  link "出品した商品 - 出品中", "/products/notice"
+  link "出品した商品 - 出品中", "/products/exhibiting"
   parent :user_page
 end
 
 # 取引中
 crumb :p_transaction do
-  link "出品した商品 - 取引中", "/products/purchase_exhibit"
+  link "出品した商品 - 取引中", "/products/p_transaction"
   parent :user_page
 end
 
 # 売却済み
 crumb :p_soldout do
-  link "出品した商品 - 売却済み", "/products/news"
+  link "出品した商品 - 売却済み", "/products/p_soldout"
   parent :user_page
 end
 
 # 出品商品画面
 crumb :show do
-  link "商品出品画面", "/products/show"
+  link "出品した商品 - 出品中", "/products/p_exhibiting"
+  link "商品出品画面"
   parent :user_page
-  parent :p_exhibiting
 end
 
 # カテゴリページ

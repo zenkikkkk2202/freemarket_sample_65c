@@ -24,17 +24,23 @@
               .chapter-container__form__group__question
                 お名前
               .chapter-container__form__group__register
-                日本 太郎
+                = current_user.name_family
+                = current_user.name_last
             .chapter-container__form__group
               .chapter-container__form__group__question
                 お名前カナ
               .chapter-container__form__group__register
-                ニホン タロウ
+                = current_user.name_kana_f
+                = current_user.name_kana_l
             .chapter-container__form__group
               .chapter-container__form__group__question
                 生年月日
               .chapter-container__form__group__register
-                1999/12/30
+                = current_user.birthday_y 
+                %span /
+                = current_user.birthday_m
+                %span /
+                = current_user.birthday_d
             .chapter-container__form__group
               .chapter-container__form__group__question
                 郵便番号
