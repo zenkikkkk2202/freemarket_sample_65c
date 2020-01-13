@@ -198,6 +198,11 @@
         font-size: 14px;
         color: #888;
         font-weight: 400;
+        display: flex;
+        line-height: 21px;
+        &__count{
+          margin-left: 5px;
+        }
       }
       .products{
         width: 100%;
