@@ -130,7 +130,6 @@
         %ul.products
           - @products.each do |product|
             = render partial: "products-search", locals: { product: product }
-        = paginate @products
       - else
         .result
           .result__search
@@ -146,7 +145,7 @@
         %ul.products
           - @products.each do |product|
             = render partial: "products-search", locals: { product: product }
-        = paginate @products
+        = paginate @products, left: 5, window: 0
   .s-footer
     .s-footer__body
       = link_to root_path, class: "s-footer__body__list" do

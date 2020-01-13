@@ -2,8 +2,10 @@
   margin: 40px 0 0;
   text-align: center;
   width: 700px;
+  position: relative;
 }
 .page{
+  margin: 0 -2px;
   display: inline-block;
   width: 44px;
   height: 44px;
@@ -13,8 +15,14 @@
   font-size: 14px;
   line-height: 42px;
   vertical-align: top;
+  &:hover{
+    background-color: #F5F5F5;
+  }
+
 }
 .first{
+  position: absolute;
+  left: 0;
   display: inline-block;
   width: 44px;
   height: 44px;
@@ -23,8 +31,13 @@
   border: 1px solid #ccc;
   font-size: 30px;
   line-height: 42px;
+  &:hover{
+    background-color: #F5F5F5;
+  }
 }
 .prev{
+  position: absolute;
+  left: 46px;
   display: inline-block;
   width: 44px;
   height: 44px;
@@ -33,8 +46,13 @@
   border: 1px solid #ccc;
   font-size: 30px;
   line-height: 42px;
+  &:hover{
+    background-color: #F5F5F5;
+  }
 }
 .next{
+  position: absolute;
+  right: 46px;
   display: inline-block;
   width: 44px;
   height: 44px;
@@ -43,8 +61,13 @@
   border: 1px solid #ccc;
   font-size: 30px;
   line-height: 42px;
+  &:hover{
+    background-color: #F5F5F5;
+  }
 }
 .last{
+  position: absolute;
+  right: 0;
   display: inline-block;
   width: 44px;
   height: 44px;
@@ -53,5 +76,16 @@
   border: 1px solid #ccc;
   font-size: 30px;
   line-height: 42px;
+  &:hover{
+    background-color: #F5F5F5;
+  }
 }
+.current{
+  background-color: #EA352D;
+  color: #fff;
+  &:hover{
+    background-color: #EA352D;
+  }
+}
+
 
