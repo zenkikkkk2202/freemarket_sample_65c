@@ -111,6 +111,7 @@
             .s-sidebar__details__button__complete
               完了
     .s-content
+    
       .result
         .result__search
           = @search_params
@@ -129,8 +130,10 @@
     .s-footer__body
       = link_to root_path, class: "s-footer__body__list" do
         メルカリ
-      = icon('fas', 'angle-right', class: "s-footer__body__list-icon")
-      = @search_params
+      - if @search_params.nil?
+        = icon('fas', 'angle-right', class: "s-footer__body__list-icon")
+        = @search_params
+      - else
 .banner
   = render "banner"
 .footer
