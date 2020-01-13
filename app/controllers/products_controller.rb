@@ -5,8 +5,8 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
   before_action :redirect_index, only: :edit
   def index
-    @products_m = Product.where(category: "1").includes(:product_images).limit(10).order('created_at DESC')
-    @products_l = Product.where(category: "2").includes(:product_images).limit(10).order('created_at DESC')
+    @products_l = Product.where(category: "1").includes(:product_images).limit(10).order('created_at DESC')
+    @products_m = Product.where(category: "2").includes(:product_images).limit(10).order('created_at DESC')
     @products_w = Product.where(category: "3").includes(:product_images).limit(10).order('created_at DESC')
     @products_i = Product.where(category: "4").includes(:product_images).limit(10).order('created_at DESC')
     @products_b = Product.where(category: "5").includes(:product_images).limit(10).order('created_at DESC')
