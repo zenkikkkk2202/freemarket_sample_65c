@@ -92,9 +92,9 @@ class ProductsController < ApplicationController
 
   def search
     @search_params = params[:keyword]
-    @products = Product.search(@search_params).order("created_at DESC")
+    @products = Product.search(@search_params).order("created_at DESC").page(params[:page]).per(1)
     @count = @products.count
-    @products = Product.all if @products.count == 0
+    @products = Product.all.limit(24).order("created_at DESC").page(params[:page]).per(1) if @products.count == 0
   end
 
 

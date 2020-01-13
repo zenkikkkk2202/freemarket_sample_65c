@@ -115,7 +115,7 @@
         .new-result
           新着商品
         %ul.products
-          - @products.each do |product|
+          - @products.take(24).each do |product|
             = render partial: "products-search", locals: { product: product }
       - elsif @search_params.present? && @count == 0
         .result
@@ -130,6 +130,7 @@
         %ul.products
           - @products.each do |product|
             = render partial: "products-search", locals: { product: product }
+        = paginate @products
       - else
         .result
           .result__search
@@ -145,6 +146,7 @@
         %ul.products
           - @products.each do |product|
             = render partial: "products-search", locals: { product: product }
+        = paginate @products
   .s-footer
     .s-footer__body
       = link_to root_path, class: "s-footer__body__list" do
