@@ -22,5 +22,12 @@ class Product < ApplicationRecord
     end
   end
 
-
+  validates_associated :product_images
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :category, exclusion: { in: ['------'] }
+  validates :condition,:charge,:prefecture_id,:day,exclusion: { in: ['---'] }
+  validates :prefecture_id,exclusion: { in: ['0'] }
+  validates :price, presence: true
+  validates :product_images, presence: true
 end
