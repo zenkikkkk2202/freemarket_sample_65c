@@ -88,10 +88,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  def search
-    @search_params = params[:keyword]
-    @products = Product.search(@search_params).order("created_at DESC")
-  end
+
 
 
   def user_credit
