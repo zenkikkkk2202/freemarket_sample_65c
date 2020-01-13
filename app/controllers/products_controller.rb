@@ -38,6 +38,8 @@ class ProductsController < ApplicationController
   def show
     @saler_products = Product.where(saler_id: @product.saler.id).limit(6)
     @category_products = Product.where(category: @product.category).limit(6)
+    category = params[:category]
+    @category = category.to_i
   end
 
   def edit

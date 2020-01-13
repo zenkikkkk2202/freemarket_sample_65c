@@ -7,6 +7,7 @@ class Product < ApplicationRecord
   belongs_to :auction, class_name: "User", optional: true,foreign_key: "auction_id"
   has_many :product_images, dependent: :destroy
   accepts_nested_attributes_for :product_images, allow_destroy: true
+  attribute :category, ActiveRecord::Type::Integer.new
   enum category:{
     "------":0,
     レディース:1,メンズ:2,'ベビー•キッズ':3,'インテリア•住まい•小物':4,'本•音楽•ゲーム':5,'おもちゃ•ホビー•グッズ':6,
