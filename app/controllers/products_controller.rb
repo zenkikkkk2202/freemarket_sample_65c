@@ -5,19 +5,19 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
   before_action :redirect_index, only: :edit
   def index
-    @products_m = Product.where(category: "メンズ").includes(:product_images).limit(10).order('created_at DESC')
-    @products_l = Product.where(category: "レディース").includes(:product_images).limit(10).order('created_at DESC')
-    @products_k = Product.where(category: "ベビー•キッズ").includes(:product_images).limit(10).order('created_at DESC')
-    @products_i = Product.where(category: "インテリア•住まい•小物").includes(:product_images).limit(10).order('created_at DESC')
-    @products_b = Product.where(category: "本•音楽•ゲーム").includes(:product_images).limit(10).order('created_at DESC')
-    @products_h = Product.where(category: "おもちゃ•ホビー•グッズ").includes(:product_images).limit(10).order('created_at DESC')
-    @products_c = Product.where(category: "コスメ•香水•美容").includes(:product_images).limit(10).order('created_at DESC')
-    @products_d = Product.where(category: "家電•スマホ•カメラ").includes(:product_images).limit(10).order('created_at DESC')
-    @products_s = Product.where(category: "スポーツ•レジャー").includes(:product_images).limit(10).order('created_at DESC')
-    @products_h = Product.where(category: "ハンドメイド").includes(:product_images).limit(10).order('created_at DESC')
-    @products_t = Product.where(category: "チケット").includes(:product_images).limit(10).order('created_at DESC')
-    @products_a = Product.where(category: "自動車•オートバイ").includes(:product_images).limit(10).order('created_at DESC')
-    @products_o = Product.where(category: "その他").includes(:product_images).limit(10).order('created_at DESC')
+    @products_m = Product.where(category: "1").includes(:product_images).limit(10).order('created_at DESC')
+    @products_l = Product.where(category: "2").includes(:product_images).limit(10).order('created_at DESC')
+    @products_w = Product.where(category: "3").includes(:product_images).limit(10).order('created_at DESC')
+    @products_i = Product.where(category: "4").includes(:product_images).limit(10).order('created_at DESC')
+    @products_b = Product.where(category: "5").includes(:product_images).limit(10).order('created_at DESC')
+    @products_g = Product.where(category: "6").includes(:product_images).limit(10).order('created_at DESC')
+    @products_c = Product.where(category: "7").includes(:product_images).limit(10).order('created_at DESC')
+    @products_d = Product.where(category: "8").includes(:product_images).limit(10).order('created_at DESC')
+    @products_s = Product.where(category: "9").includes(:product_images).limit(10).order('created_at DESC')
+    @products_h = Product.where(category: "10").includes(:product_images).limit(10).order('created_at DESC')
+    @products_t = Product.where(category: "11").includes(:product_images).limit(10).order('created_at DESC')
+    @products_a = Product.where(category: "12").includes(:product_images).limit(10).order('created_at DESC')
+    @products_o = Product.where(category: "13").includes(:product_images).limit(10).order('created_at DESC')
   end
 
   def new

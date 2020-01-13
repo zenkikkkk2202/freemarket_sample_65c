@@ -63,7 +63,7 @@
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
-          .imain__main__product__box__menu__text メンズ
+          .imain__main__product__box__menu__text メンズ新着アイテム
           =link_to "もっと見る ＞", "/products/category_search/2", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
@@ -74,7 +74,7 @@
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
-          .imain__main__product__box__menu__text 家電・スマホ・カメラ
+          .imain__main__product__box__menu__text 家電・スマホ・カメラ新着アイテム
           =link_to "もっと見る ＞", "/products/category_search/8", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
@@ -85,12 +85,12 @@
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
-          .imain__main__product__box__menu__text おもちゃ・ホビー・グッズ
+          .imain__main__product__box__menu__text おもちゃ・ホビー・グッズ新着アイテム
           =link_to "もっと見る ＞", "/products/category_search/6", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -if @products_h
-              - @products_h.each do |product|
+            -if @products_g
+              - @products_g.each do |product|
                 =render "index", product: product
     .imain__main__content
       .imain__main__content__text 人気のブランド
@@ -108,18 +108,18 @@
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
-          .imain__main__product__box__menu__text ベビー・キッズ
+          .imain__main__product__box__menu__text ベビー・キッズ新着アイテム
           =link_to "もっと見る ＞", "/products/category_search/3", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
-            -if @products_k
-              - @products_k.each do |product|
+            -if @products_w
+              - @products_w.each do |product|
                 =render "index", product: product
 
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
-          .imain__main__product__box__menu__text スポーツ・レジャー
+          .imain__main__product__box__menu__text スポーツ・レジャー新着アイテム
           =link_to "もっと見る ＞", "/products/category_search/9", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
@@ -129,7 +129,7 @@
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
-          .imain__main__product__box__menu__text 本・音楽・ゲーム
+          .imain__main__product__box__menu__text 本・音楽・ゲーム新着アイテム
           =link_to "もっと見る ＞", "/products/category_search/5", class: "imain__main__product__box__menu__link" 
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
@@ -140,7 +140,7 @@
     .imain__main__product
       .imain__main__product__box
         .imain__main__product__box__menu
-          .imain__main__product__box__menu__text コスメ・香水・美容
+          .imain__main__product__box__menu__text コスメ・香水・美容新着アイテム
           =link_to "もっと見る ＞", "/products/category_search/7", class: "imain__main__product__box__menu__link"
         .imain__main__product__box__item
           %ul.imain__main__product__box__item__list
