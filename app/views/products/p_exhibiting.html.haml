@@ -17,8 +17,8 @@
               取引中
             = link_to p_soldout_products_path, class: "pmain__center--right1" do
               売却済み
-          - if @products.present? && @products.to_a[0].saler_id == current_user.id && @products.to_a[0].buyer_id.nil? && @products.to_a[0].auction_id.nil?
-            - @products.each do |product|
+          - if @user.saling_items.present?
+            - @user.saling_items.each do |product|
               = link_to product_path(product),class:"item_content" do
                 .item_content__image
                   = image_tag product.product_images[0].image.to_s,size:"58x48"
