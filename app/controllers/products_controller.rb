@@ -119,6 +119,7 @@ class ProductsController < ApplicationController
   end
 
   def p_transaction
+    @user = User.find(current_user.id)
   end
 
   def like
@@ -134,12 +135,14 @@ class ProductsController < ApplicationController
   end
 
   def p_exhibiting
+    @user = User.find(current_user.id)
   end
 
   def purchase_transaction
   end
 
   def p_soldout
+    @user = User.find(current_user.id)
   end
 
   def evaluation
