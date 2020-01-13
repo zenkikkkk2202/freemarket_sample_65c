@@ -197,7 +197,7 @@ class ProductsController < ApplicationController
   end
 
   def category_search
-    @category_products = Product.where(category: params[:category]) 
+    @category_products = Product.where(category: params[:category]).order('created_at DESC')
     category = params[:category]
     @category = category.to_i
   end
@@ -208,7 +208,11 @@ class ProductsController < ApplicationController
   end
 
   def set_current_user_products
-    @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
+    if user_signed_in? 
+      @products = current_user.products.includes(:user,:saler,:buyer,:auction,:product_images)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def prefecture_params
