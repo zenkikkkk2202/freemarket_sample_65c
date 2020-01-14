@@ -13,15 +13,8 @@
 @import "guide";
 @import "p_transaction";
 @import "edit";
-@import "like";
-@import "exhibiting";
-@import "transaction";
-@import "sale";
 @import "p_exhibiting";
-@import "purchase_transaction";
 @import "p_soldout";
-@import "evaluation";
-@import "contact";
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "user_mypage";
@@ -31,9 +24,7 @@
 @import "new_cellphone";
 @import "new_address";
 @import "new_credit_card";
-@import "create";
 @import "create_address";
-@import "create_credit_card";
 @import "create_credit_card";
 @import "user_profile_edit";
 @import "user_logout";
@@ -43,18 +34,24 @@
 @import "category_search";
 @import "products_search";
 @import "kaminari";
-@import "./merupay";
-@import "./merupay1";
-@import "./merupay_sellpast";
-@import "./merupay_selldeadline";
-@import "./merupay_transfer";
-@import "./merupay_transferpast";
-@import "./merupay1_expiration_date";
-@import "./merupay_receive_cash";
+@import "merupay";
+@import "merupay1";
+@import "merupay_sellpast";
+@import "merupay_selldeadline";
+@import "merupay_transfer";
+@import "merupay_transferpast";
+@import "merupay1_expiration_date";
+@import "merupay_receive_cash";
 @import "user_callnumber";
 @import "user_change_address";
 @import "user_mail_password";
 @import "user_newslist";
+@import "evaluation_all";
+@import "evaluation_good";
+@import "evaluation_normal";
+@import "evaluation_bad";
+@import "like1";
+
 
 
 

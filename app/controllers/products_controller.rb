@@ -173,7 +173,16 @@ class ProductsController < ApplicationController
   def like
   end
 
-  def exhibiting
+  def evaluation_all
+  end
+
+  def evaluation_good
+  end
+
+  def evaluation_normal
+  end
+
+  def evaluation_bad
   end
 
   def transaction
