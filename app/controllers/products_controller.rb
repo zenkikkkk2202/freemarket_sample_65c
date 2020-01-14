@@ -257,7 +257,7 @@ class ProductsController < ApplicationController
   end
 
   def redirect_index
-    redirect_to action: :index if user_signed_in? && current_user.id != @product.saler_id && @product.buyer_id
+    redirect_to action: :index if user_signed_in? && current_user.id != @product.saler_id = @product.buyer_id
   end
 
 end
