@@ -56,6 +56,7 @@
         }
         .merupay-heading{
           @include u-heading;
+          margin-bottom: 5px;
         }
         .merupay-ul{
           background-color: #ffffff;
@@ -78,6 +79,7 @@
         }
         .setting-heading{
           @include u-heading;
+          margin-bottom: 5px;
         }
         .setting-ul{
           background-color:#ffffff;
