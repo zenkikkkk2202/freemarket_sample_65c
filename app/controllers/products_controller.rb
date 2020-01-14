@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product,only:[:show,:edit,:destroy,:buy_confirm,:buy]
   before_action :set_current_user_products,only:[:edit,:p_transaction,:p_exhibiting,:p_soldout]
   before_action :set_cards,only:[:buy_confirm,:buy]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search, :category_search]
   before_action :redirect_index, only: :edit
   def index
     @products_l = Product.where(category: "1").includes(:product_images).limit(10).order('created_at DESC')
