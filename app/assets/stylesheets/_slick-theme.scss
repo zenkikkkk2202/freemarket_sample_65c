@@ -178,17 +178,17 @@
 .slick-dots li button:before
 {
     font-family: 'slick';
-    font-size: 6px;
+    font-size: 12px;
     line-height: 20px;
 
     position: absolute;
     top: 0;
     left: 0;
 
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 
-    content: '🎄';
+    content: '⚫️';
     text-align: center;
 
     opacity: .25;
