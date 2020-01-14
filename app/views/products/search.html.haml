@@ -1,4 +1,7 @@
-= render "header"
+- if user_signed_in?
+  = render "header"
+- else 
+  = render "new_header"
 = render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
 
 .s-main
