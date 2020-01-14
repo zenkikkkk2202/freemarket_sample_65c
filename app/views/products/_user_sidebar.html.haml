@@ -14,7 +14,7 @@
     = link_to "", class: "mypage-ul__list" do
       いいね！一覧
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
-    = link_to new_product_path, class: "mypage-ul__list" do
+    = link_to new_product_path,data: { turbolinks: false }, class: "mypage-ul__list" do
       出品する
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
     = link_to p_exhibiting_products_path, class: "mypage-ul__list" do

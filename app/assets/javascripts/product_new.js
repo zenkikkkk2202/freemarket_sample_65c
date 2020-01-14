@@ -1,4 +1,4 @@
-$(window).on("turbolinks:load", function(){
+$(function(){
   $('#price').on('input',function(){
     var value = $(this).val();
     if(value > 9999999){
