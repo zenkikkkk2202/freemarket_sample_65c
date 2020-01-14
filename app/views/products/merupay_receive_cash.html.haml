@@ -34,13 +34,14 @@
               .chapter-container__change__content__form__question
                 上記にない場合はこちらへ入力し、お探しください
               %input{type: "text", placeholder: "銀行名を入力し、選択してください", class: "chapter-container__change__content__form__answer"}
+            .chapter-container__change__content__form
               .chapter-container__change__content__form__question
                 口座種別
               .chapter-container__change__content__form__require
                 必須
               .chapter-container__change__content__form__input
                 = icon 'fas', 'angle-down', class: "chapter-container__change__content__form__input__icon"
-                %select.chapter-container__content__form__input__pulldown
+                %select.chapter-container__change__content__form__input__pulldown
                   %option{disabled: "disabled", selected: "selected", value: ""} 選択してください
                   %option{value: "普通預金"} 普通預金
                   %option{value: "当座預金"} 当座預金
@@ -70,7 +71,7 @@
                 必須
               %input{type: "text", placeholder: "例)　アヤ", class: "chapter-container__change__content__form__answer"}
             .chapter-container__change__content__form
-              .chapter-container__change__content__form__question
+              .chapter-container__change__content__form__question1
                 ※口座番号が7桁未満の場合は先頭に0をつけてください
                 %br/
                 ※振込先が間違っている場合、再度振込手数料が発生します
@@ -89,10 +90,10 @@
                 編集
             %button.chapter-container__change__content__button{type: "submit"} 
               次へ
-        .chapter-container__form__rights
-          本人情報の登録について
-          = icon 'fas', 'angle-right'
-          = link_to ""
+            .chapter-container__change__content__right
+              = link_to "", class: "chapter-container__change__content__right--text" do
+                本人情報の登録について
+                = icon 'fas', 'angle-right'
 = render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
 
 = render 'footer'  # 全体のフッターの部分テンプレートの呼び出し

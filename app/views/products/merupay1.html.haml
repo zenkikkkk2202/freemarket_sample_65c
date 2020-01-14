@@ -16,10 +16,10 @@
               所持ポイント
               .merupay1__item1__list--price
                 P0
-            = link_to "", class: "merupay1__item1__list" do
+            = link_to merupay1_pointpast_products_path, class: "merupay1__item1__list" do
               ポイント履歴
               = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
-            = link_to "", class: "merupay1__item1__list" do
+            = link_to merupay1_expiration_date_products_path, class: "merupay1__item1__list" do
               ポイントの有効期限
               = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
             = link_to "", class: "merupay1__item2__list" do
