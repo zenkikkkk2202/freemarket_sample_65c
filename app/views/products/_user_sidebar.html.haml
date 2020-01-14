@@ -32,7 +32,7 @@
     = link_to "", class: "mypage-ul__list" do
       購入した商品 - 過去の取引
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
-    = link_to "", class: "mypage-ul__list" do
+    = link_to user_newslist_products_path, class: "mypage-ul__list" do
       ニュース一覧
       = icon('fas', 'angle-right', class: 'mypage-ul__list__icon')
     = link_to "", class: "mypage-ul__list" do
@@ -59,19 +59,19 @@
     = link_to user_profile_edit_products_path, class: "setting-ul__list" do
       プロフィール
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
-    = link_to "", class: "setting-ul__list" do
+    = link_to user_change_address_products_path, class: "setting-ul__list" do
       発送元・お届け先住所変更
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
     = link_to user_credit_products_path, class: "setting-ul__list" do
       支払い方法
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
-    = link_to "", class: "setting-ul__list" do
+    = link_to user_mailpassword_products_path, class: "setting-ul__list" do
       メール/パスワード
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
     = link_to user_profile_information_products_path, class: "setting-ul__list" do
       本人情報
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
-    = link_to "", class: "setting-ul__list" do
+    = link_to user_callnumber_products_path, class: "setting-ul__list" do
       電話番号の確認
       = icon('fas', 'angle-right', class: 'setting-ul__list__icon')
     = link_to user_logout_products_path, class: "setting-ul__list" do
