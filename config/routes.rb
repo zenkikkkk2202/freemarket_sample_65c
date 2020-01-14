@@ -37,6 +37,15 @@ Rails.application.routes.draw do
       get 'evaluation'
       get 'contact'
       get 'guide'
+      get 'merupay-receive-cash'
+      get 'merupay-selldeadline'
+      get 'merupay-sellpast'
+      get 'merupay1-expiration-date'
+      get 'merupay'
+      get 'merupay-transferpast'
+      get 'merupay-transfer'
+      get 'merupay1-pointpast'
+      get 'merupay1'
       get 'buy_confirm/:id',action: "buy_confirm"
       post "buy/:id",action: "buy"
       get "category_search/:category", action: "category_search"

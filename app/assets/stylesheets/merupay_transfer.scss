@@ -1,0 +1,63 @@
+// メルペイの振込申請して現金を受け取るページのscssです
+
+.merupay1{
+  &__edit-view{
+    background-color: #ffffff;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    padding: 64px;
+    color: #333333;
+    &__item{
+      margin: 0 auto;
+      width: 320px;
+      &__head{
+        width: 100%;
+        font-size: 22px;
+        font-weight: 700;
+        height: 22px;
+        line-height: 22px;
+        display: inline-block;
+        position: relative;
+        &--edit{
+          position: absolute;
+          top: 0;
+          right: 0;
+          color: #0099e8;
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+      &__body{
+        border-bottom: 1px solid #ccc;
+        padding-top: 16px;
+        font-weight: 400;
+        &--row{
+          font-size: 14px;
+          padding: 16px 0;
+          border-top: 1px solid #ccc;
+
+        }
+      }
+      &__btn{ 
+        padding: 0;
+        width: 320px;
+        text-decoration: none;
+        margin: 40px 0 40px;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        font-size: 14px;
+
+      }
+      &__foot{
+        font-size: 14px;
+        color: #888888;
+
+      }
+
+    }
+
+  }
+}

@@ -1,0 +1,52 @@
+// 売上・振込申請の振込申請履歴一覧のページのscssです
+
+.merupay1{
+  &__bottom{
+    background-color: #ffffff;
+    color: #cccccc;
+    text-align: center;
+    padding: 64px;
+    &--img{
+      text-align: center;
+      margin: auto;
+      padding: 40px 0 20px;
+    }
+    &--text{
+      padding-bottom: 60px;
+      font-weight: 600;
+      font-size: 16px;
+    }
+  }
+  .foot{
+    margin: 40px 0 0;
+    display: flex;
+    justify-content: space-between;
+    color: #333333;
+    font-size: 14px;
+    &__left{
+      width: 42px;
+      height: 42px;
+      border-radius: 4px;
+      border: solid 1px #ccc;
+      background-color: #ffffff;
+      color: #333333;
+      line-height: 42px;
+      text-align: center;
+
+      &--icon{
+      }
+    }
+    &__right{
+      background-color: #ffffff;
+      width: 42px;
+      height: 42px;
+      border-radius: 4px;
+      border: solid 1px #ccc;
+      color: #333333;
+      line-height: 42px;
+      text-align: center;
+      &--icon{
+      }
+    }
+  }
+}
