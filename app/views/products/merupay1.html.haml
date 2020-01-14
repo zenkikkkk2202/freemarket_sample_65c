@@ -1,20 +1,35 @@
 -# メルペイのポイント
 
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :user_profile_information
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar' # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      .contents
+        .merupay1
+          .merupay1__title
+            ポイント
+          .merupay1__item1
+            = link_to "", class: "merupay1__item1__list" do
+              所持ポイント
+              .merupay1__item1__list--price
+                P0
+            = link_to "", class: "merupay1__item1__list" do
+              ポイント履歴
+              = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
+            = link_to "", class: "merupay1__item1__list" do
+              ポイントの有効期限
+              = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
+            = link_to "", class: "merupay1__item2__list" do
+              ポイントとは？
+              = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
 
-.merupay1
-  .merupay1__title
-    ポイント
-  .merupay1__item1
-    = link_to "", class: "merupay1__item1__list" do
-      所持ポイント
-      .merupay1__item1__list--price
-        P0
-    = link_to "", class: "merupay1__item1__list" do
-      ポイント履歴
-      = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
-    = link_to "", class: "merupay1__item1__list" do
-      ポイントの有効期限
-      = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
-    = link_to "", class: "merupay1__item2__list" do
-      ポイントとは？
-      = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
+
+
