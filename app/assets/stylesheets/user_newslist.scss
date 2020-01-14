@@ -1,0 +1,36 @@
+// ニュース一覧のcss
+.chapter-container {
+  background-color: #fff;
+  color: #333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  &__head {
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    padding: 8px 24px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+}
+.news {
+  background-color: #fff;
+  &__list {
+    padding:40px;
+    text-decoration: none;
+    border-bottom: 1px solid #f5f5f5;
+    &__time {
+      color: #aaa;
+      font-size: 14px;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      &__icon {
+        float: left;
+        margin: 0 8px 0 0;
+        vertical-align: top;
+      }
+    }
+    &__title {
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      font-size: 16px;
+      margin: 8px 0 0;
+    }
+  }
+}

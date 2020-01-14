@@ -1,0 +1,21 @@
+// メルカリ>マイページ>電話番号の確認のhaml
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :user_callnumber
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar' # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      .contents
+        .chapter-container
+          .chapter-container__head
+            完了
+          .chapter-container__center
+            .chapter-container__center__text
+              確認済みです
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
+
