@@ -50,6 +50,10 @@ Rails.application.routes.draw do
       get 'user_mailpassword'
       get 'user_newslist'
       get 'user_callnumber'
+      get 'evaluation_all'
+      get 'evaluation_good'
+      get 'evaluation_normal'
+      get 'evaluation_bad'
       get 'buy_confirm/:id',action: "buy_confirm"
       post "buy/:id",action: "buy"
       get "category_search/:category", action: "category_search"

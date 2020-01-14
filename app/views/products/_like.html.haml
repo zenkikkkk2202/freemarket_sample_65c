@@ -1,0 +1,15 @@
+-# いいね一覧ページ何も投稿がない場合
+
+.u-products
+  .main
+    .main__top-like
+      いいね！一覧
+    .main__bottom
+      = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
+      .main__bottom--text
+        いいね！がありません
+  .foot
+    = link_to "", class: "foot__left" do
+      = icon('fas', 'angle-left', class: 'foot__left----text')
+    = link_to "", class: "foot__right" do
+      = icon('fas', 'angle-right', class: 'foot__right--icon')

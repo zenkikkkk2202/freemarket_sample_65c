@@ -1,0 +1,19 @@
+// 購入した商品ー過去の取引のページのscss
+
+.u-products{
+  .main{
+    &__center{
+      &--left4{
+        background-color: #EEEEEE;
+        color: #333333;
+        width : calc(100% / 2);
+      }
+      &--right4{
+        border-top: 2px solid #ea352d;
+        color: #333333;
+        background-color: #ffffff;
+        width : calc(100% / 2);
+      }
+    }
+  }
+}

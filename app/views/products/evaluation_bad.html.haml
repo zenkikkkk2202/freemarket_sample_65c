@@ -1,0 +1,39 @@
+-# 評価一覧のページ（悪い）
+
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :user_profile_edit
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのサイドバーの部分テンプレートの呼び出し
+      .u-products
+        .main
+          .main__top
+            評価一覧
+          .main__center
+            = link_to "", class: "main__center--left8" do
+              すべて
+            = link_to "", class: "main__center--centerA3" do
+              = icon('fas', 'laugh', class: 'main__center--centerA--icon')
+              良い
+            = link_to "", class: "main__center--centerB3" do
+              = icon('fas', 'meh', class: 'main__center--centerB--icon')
+              普通
+            = link_to "", class: "main__center--right8" do
+              = icon('fas', 'frown', class: 'main__center--right5--icon')
+              悪い
+          .main__bottom
+            = image_tag "logo_gray.svg", class: "main__bottom--img", size: "100x100"
+            .main__bottom--text
+              取引中の商品がありません
+        .foot
+          = link_to "", class: "foot__left" do
+            = icon('fas', 'angle-left', class: 'foot__left----text')
+          = link_to "", class: "foot__right" do
+            = icon('fas', 'angle-right', class: 'foot__right--icon')
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し

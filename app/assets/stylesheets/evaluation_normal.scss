@@ -1,0 +1,30 @@
+// 評価一覧のページ（普通）
+
+.u-products{
+  .main{
+    &__center{
+      &--left7{
+        @include list4-1;
+      }
+      &--centerA2{
+        @include list4-1;
+        &--icon{
+          color: #ef5185;
+        }
+      }
+      &--centerB2{
+        border-top: 2px solid #ea352d;
+        @include list4-2;
+        &--icon{
+          color: #fba933;
+        }
+      }
+      &--right7{
+        @include list4-1;
+        &--icon{
+          color: #6ab5d8;
+        }
+      }
+    }
+  }
+}
