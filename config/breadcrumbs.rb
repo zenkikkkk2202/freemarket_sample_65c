@@ -81,6 +81,47 @@ crumb :user_callnumber do
   parent :user_page
 end
 
+#  メルペイの売上・振込申請
+crumb :merupay do
+  link " 売上・振込申請", merupay_products_path
+  parent :user_page
+end
+
+#  メルペイの売上振込申請の売上履歴
+crumb :merupay_sellpast do
+  link " 売上・振込申請", merupay_products_path
+  link " 売上履歴",merupay_sellpast_products_path
+  parent :user_page
+end
+
+#  メルペイの売上金の振込申請制限
+crumb :merupay_selldeadline do
+  link " 売上・振込申請", merupay_products_path
+  link " 売上金の振込申請期限", merupay_selldeadline_products_path
+  parent :user_page
+end
+
+#  メルペイの振込申請して現金を受け取るページの口座情報のフォーム
+crumb :merupay_receive_cash do
+  link " 売上・振込申請", merupay_products_path
+  link "  振込先口座の指定", merupay_receive_cash_products_path
+  parent :user_page
+end
+
+#  メルペイの振込申請して現金を受け取るページの口座情報のフォーム
+crumb :merupay_transfer do
+  link " 売上・振込申請", merupay_products_path
+  link "  振込先口座の指定", merupay_receive_cash_products_path
+  parent :user_page
+end
+
+#  売上・振込申請の振込申請履歴一覧
+crumb :merupay_transferpast do
+  link " 売上・振込申請", merupay_products_path
+  link " 振込申請履歴一覧", merupay_transferpast_products_path
+  parent :user_page
+end
+
 # カテゴリページ
 crumb :category_search do
   category = params[:category]
