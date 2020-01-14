@@ -1,0 +1,26 @@
+// メルカリ>マイページ>電話番号の確認のscss
+
+.chapter-container {
+  background-color: #fff;
+  color: #333;
+  &__head {
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    padding: 8px 24px;
+    font-size: 24px;
+    font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+    font-weight: 700;
+  }
+  &__center {
+    padding: 64px;
+    border-top: 1px solid #f5f5f5;
+    text-align: center;
+    &__text {
+      margin: 8px 0 0;
+      font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+
+    }
+  }
+}

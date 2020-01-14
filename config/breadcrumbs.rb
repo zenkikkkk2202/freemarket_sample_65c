@@ -5,55 +5,79 @@ end
 
 # マイページ
 crumb :user_page do
-  link "マイページ", "/products/user-page"
+  link "マイページ", user_page_products_path
 end
 
 # プロフィール
 crumb :user_profile_edit do
-  link "プロフィール", "/products/user_profile_edit"
+  link "プロフィール", user_profile_edit_products_path
   parent :user_page
 end
 
 # 本人情報の登録
 crumb :user_profile_information do
-  link "本人情報の登録", "/products/user_profile_information"
+  link "本人情報の登録", user_profile_information_products_path
   parent :user_page
 end
 
 # ログアウト
 crumb :user_logout do
-  link "ログアウト", "/products/user_logout"
+  link "ログアウト", user_logout_products_path
   parent :user_page
 end
 
 # 支払い方法
 crumb :user_credit do
-  link "支払い方法", "/products/user_credit"
+  link "支払い方法", user_credit_products_path
   parent :user_page
 end
 
 # 出品中
 crumb :p_exhibiting do
-  link "出品した商品 - 出品中", "/products/exhibiting"
+  link "出品した商品 - 出品中", p_exhibiting_products_path
   parent :user_page
 end
 
 # 取引中
 crumb :p_transaction do
-  link "出品した商品 - 取引中", "/products/p_transaction"
+  link "出品した商品 - 取引中", p_transaction_products_path
   parent :user_page
 end
 
 # 売却済み
 crumb :p_soldout do
-  link "出品した商品 - 売却済み", "/products/p_soldout"
+  link "出品した商品 - 売却済み", p_soldout_products_path
   parent :user_page
 end
 
 # 出品商品画面
 crumb :show do
-  link "出品した商品 - 出品中", "/products/p_exhibiting"
+  link "出品した商品 - 出品中", p_exhibiting_products_path
   link "商品出品画面"
+  parent :user_page
+end
+
+# ニュース一覧
+crumb :user_newslist do
+  link "ニュース一覧", user_newslist_products_path
+  parent :user_page
+end
+
+# メール/パスワード
+crumb :user_mailpassword do
+  link "メール/パスワード", user_mailpassword_products_path
+  parent :user_page
+end
+
+# 発送元・お届け先住所変更
+crumb :user_change_address do
+  link "発送元・お届け先住所変更", user_change_address_products_path
+  parent :user_page
+end
+
+#  電話番号の確認
+crumb :user_callnumber do
+  link " 電話番号の確認", user_callnumber_products_path
   parent :user_page
 end
 
@@ -63,6 +87,7 @@ crumb :category_search do
   @category = category.to_i
   link Product.categories.keys[@category], "/products/category_search/:category"
 end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

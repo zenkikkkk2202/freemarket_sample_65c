@@ -46,6 +46,10 @@ Rails.application.routes.draw do
       get 'merupay_transfer'
       get 'merupay1_pointpast'
       get 'merupay1'
+      get 'user_change_address'
+      get 'user_mailpassword'
+      get 'user_newslist'
+      get 'user_callnumber'
       get 'buy_confirm/:id',action: "buy_confirm"
       post "buy/:id",action: "buy"
       get "category_search/:category", action: "category_search"

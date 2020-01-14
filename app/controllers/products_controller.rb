@@ -114,6 +114,18 @@ class ProductsController < ApplicationController
     
   end
 
+  def user_change_address
+  end
+
+  def user_mailpassword
+  end
+
+  def user_newslist
+  end
+
+  def user_callnumber
+  end
+
   def guide
     
   end
