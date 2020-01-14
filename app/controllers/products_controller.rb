@@ -118,6 +118,42 @@ class ProductsController < ApplicationController
     
   end
 
+  def merupay_receive_cash
+    
+  end
+
+  def merupay_selldeadline
+    
+  end
+
+  def merupay_sellpast
+    
+  end
+
+  def merupay1_expiration_date
+    
+  end
+
+  def merupay
+    
+  end
+
+  def merupay_transferpast
+    
+  end
+
+  def merupay_transfer
+    
+  end
+
+  def merupay1_pointpast
+    
+  end
+
+  def merupay1
+    
+  end
+
   def p_transaction
     @user = User.find(current_user.id)
   end

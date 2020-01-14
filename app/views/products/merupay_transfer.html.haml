@@ -1,0 +1,36 @@
+// メルペイの振込申請して現金を受け取るページ
+
+.merupay1
+  .merupay1__title
+    振込申請して現金を受け取る
+  .merupay1__edit-view
+    .merupay1__edit-view__item
+      .merupay1__edit-view__item__head
+        振込先
+        = link_to "", class: "merupay1__edit-view__item__head--edit" do
+          編集
+      .merupay1__edit-view__item__body
+        .merupay1__edit-view__item__body--row
+          銀行
+        .merupay1__edit-view__item__body--row
+          口座種別
+        .merupay1__edit-view__item__body--row
+          支店コード
+        .merupay1__edit-view__item__body--row
+          口座番号
+        .merupay1__edit-view__item__body--row
+          口座名義（セイ）
+        .merupay1__edit-view__item__body--row
+          口座名義（メイ）
+        .merupay1__edit-view__item__body--row
+          住所氏名
+      %button.merupay1__edit-view__item__btn{type: "submit"}
+        次へ
+      .merupay1__edit-view__item__foot
+        ※登録された住所氏名と売上金の振込口座名義が一致しない場合、振込申請をすることはできません。
+      .merupay1__edit-view__item__foot
+        ※振込先口座は、ご本人名義の口座のみご利用いただけます。口座名義が旧姓の場合は、名義変更のうえ、改めてお手続きをお願いします。
+
+
+
+   

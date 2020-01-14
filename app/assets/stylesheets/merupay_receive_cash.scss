@@ -1,0 +1,187 @@
+// メルペイの振込申請して現金を受け取るページの口座情報のフォームのページのscssです
+// メルカリ>マイページ>発送元・お届け先住所変更のhaml
+
+// 作らないやつ
+
+
+// angle-downの調整だけする
+.chapter-container {
+  background-color: #fff;
+  color: #333;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  &__head {
+    border-bottom: 1px solid #f5f5f5;
+    text-align: center;
+    padding: 8px 24px;
+    font-size: 24px;
+    font-weight: 700;
+  }
+  &__change {
+    padding: 40px 40px 64px;
+    &__content {
+      max-width: 343px;
+      margin: 0 auto;
+      &__forms {
+        &__question {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 14px;
+          display:inline-block;
+          vertical-align: middle;
+        }
+        
+        &__require {
+          display: inline;
+          vertical-align: middle;
+          background-color: #ea352d;
+          margin: 32px 0 0 8px;
+          padding: 2px 4px;
+          font-size: 12px;
+          border-radius: 2px;
+          color: #fff;
+          vertical-align: top;
+        }
+        &__answer {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          line-height: 24px;
+          font-size: 16px;
+          box-sizing: border-box;
+        }
+        &__answer:focus {
+          border: 1px solid #0299e8; 
+          z-index: 10;
+          outline: 0;
+        }
+      }
+      &__form {
+        margin-top: 32px;
+        &__question {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 14px;
+          display:inline-block;
+          vertical-align: middle;
+        }
+        &__input {
+          margin: 8px 0 0;
+          position: relative;
+          &__icon {
+            position: absolute;
+            right: 16px;
+            top: 35%;
+            z-index: 2;
+            color: #888;
+            font-size: 20px;
+          }
+          &__pulldown {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: #fff;
+          }
+          &__pulldown:focus {
+            border: 1px solid #0299e8; 
+            z-index: 10;
+            outline: 0;
+          }
+        }
+        &__require {
+          display: inline;
+          vertical-align: middle;
+          background-color: #ea352d;
+          margin: 32px 0 0 8px;
+          padding: 2px 4px;
+          font-size: 12px;
+          border-radius: 2px;
+          color: #fff;
+          vertical-align: top;
+        }
+        &__answer {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          line-height: 24px;
+          font-size: 16px;
+          box-sizing: border-box;
+        }
+        &__answer:focus {
+          border: 1px solid #0299e8; 
+          z-index: 10;
+          outline: 0;
+        }
+        &__any {
+          display: inline;
+          vertical-align: middle;
+          background-color: #ccc;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          font-size: 12px;
+          border-radius: 2px;
+          color: #fff;
+          vertical-align: top;
+        }
+        &__wrap {
+          margin: 8px 0 0;
+          position: relative;
+          &__icon {
+            position: absolute;
+            right: 16px;
+            top: 35%;
+            z-index: 2;
+            color: #888;
+            font-size: 20px;
+          }
+          &__select {
+            width: 100%;
+            height: 48px;
+            padding: 0 16px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: #fff;
+          }
+          &__select:focus {
+            border: 1px solid #0299e8; 
+            z-index: 10;
+            outline: 0;
+          }
+        }
+      }
+      &__button {
+        margin: 40px 0 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+        width: 100%;
+        line-height: 48px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+      }
+      &__button:focus {
+        outline: 0;
+      }
+    }
+  }
+}
