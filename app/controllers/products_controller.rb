@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
     if @product.save
       redirect_to root_path
     else
-      render :new
+      redirect_to new_product_path,data: { turbolinks: false }
     end
   end
   
