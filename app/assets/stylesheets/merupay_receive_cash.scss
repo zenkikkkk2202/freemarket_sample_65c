@@ -9,6 +9,7 @@
   background-color: #fff;
   color: #333;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  width: 700px;
   &__head {
     border-bottom: 1px solid #f5f5f5;
     text-align: center;
@@ -17,9 +18,8 @@
     font-weight: 700;
   }
   &__change {
-    padding: 40px 40px 64px;
+    padding: 40px 64px 64px;
     &__content {
-      max-width: 343px;
       margin: 0 auto;
       &__forms {
         &__question {
@@ -68,6 +68,14 @@
           display:inline-block;
           vertical-align: middle;
         }
+        &__question1 {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 14px;
+          display:inline-block;
+          vertical-align: middle;
+        }
+
         &__input {
           margin: 8px 0 0;
           position: relative;
@@ -181,6 +189,19 @@
       }
       &__button:focus {
         outline: 0;
+      }
+      &__right{
+        margin-top: 40px;
+        text-decoration: none;
+        line-height: 24px;
+        font-size: 14px;
+        text-align: end;
+        &:hover{
+          text-decoration: underline;
+        }
+        a {
+          color: #0299e8; 
+        }
       }
     }
   }

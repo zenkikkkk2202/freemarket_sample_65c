@@ -1,29 +1,40 @@
 -# メルペイの売上・振込申請
 
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :user_page
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのサイドバーの部分テンプレートの呼び出し
+      .merupay1
+        .merupay1__title
+          売上・振込申請
+        .merupay1__item1
+          = link_to "", class: "merupay1__item1__list" do
+            現在の売上金
+            .merupay1__item1__list--price
+              ¥0
+          = link_to merupay_sellpast_products_path, class: "merupay1__item1__list" do
+            売上履歴
+            = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
+          = link_to merupay_selldeadline_products_path, class: "merupay1__item1__list" do
+            売上金の振込申請期限
+            = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
+        .merupay1__item2
+          = link_to merupay_transfer_products_path, class: "merupay1__item2__list" do
+            振込申請して現金を受け取る
+            = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
+          = link_to merupay_transferpast_products_path, class: "merupay1__item2__list" do
+            振込申請履歴
+            = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
+          = link_to "", class: "merupay1__item2__list" do
+            振込申請スケジュール
+            = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
 
-.merupay1
-  .merupay1__title
-    売上・振込申請
-  .merupay1__item1
-    = link_to "", class: "merupay1__item1__list" do
-      現在の売上金
-      .merupay1__item1__list--price
-        ¥0
-    = link_to "", class: "merupay1__item1__list" do
-      売上履歴
-      = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
-    = link_to "", class: "merupay1__item1__list" do
-      売上金の振込申請期限
-      = icon('fas', 'angle-right', class: 'merupay1__item1__list__icon')
-  .merupay1__item2
-    = link_to "", class: "merupay1__item2__list" do
-      振込申請して現金を受け取る
-      = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
-    = link_to "", class: "merupay1__item2__list" do
-      振込申請履歴
-      = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
-    = link_to "", class: "merupay1__item2__list" do
-      振込申請スケジュール
-      = icon('fas', 'angle-right', class: 'merupay1__item2__list__icon')
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
 
   
