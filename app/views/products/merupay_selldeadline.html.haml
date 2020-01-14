@@ -1,9 +1,20 @@
 
 -# メルペイの売上金の振込申請制限のページです
 
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :user_page
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのサイドバーの部分テンプレートの呼び出し
+      .merupay1
+        .merupay1__title
+          売上金の振込申請期限
+        .merupay1__content2
+          所持している売上金はありません
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
 
-.merupay1
-  .merupay1__title
-    売上金の振込申請期限
-  .merupay1__content2
-    所持している売上金はありません
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
