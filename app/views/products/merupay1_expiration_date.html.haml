@@ -1,8 +1,21 @@
 -# メルペイのポイントのポイント有効期限のページ
 
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :user_profile_information
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar' # ユーザマイページのヘッダーの部分テンプレートの呼び出し
+      .contents
+        .merupay1
+          .merupay1__title
+            ポイントの有効期限
+          .merupay1__content1
+            所持しているポイントはありません
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
 
-.merupay1
-  .merupay1__title
-    ポイントの有効期限
-  .merupay1__content1
-    所持しているポイントはありません
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
+
