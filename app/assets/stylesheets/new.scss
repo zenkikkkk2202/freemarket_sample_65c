@@ -27,8 +27,12 @@
   background-color: #F5F5F5;
   margin-right: 10px;
   margin-bottom: 5px;
+  width: 18%;
   &__content{
     margin-top:15px;
+    &--img{
+      width: 100%;
+    }
   }
   &__operetion{
     display: flex;
@@ -147,7 +151,7 @@ pre{
 
 .exhibitcontent_main{
   background-color: #FFFFFF;
-  margin: 0px 330px;
+  margin: 0px 24%;
   &__title{
     @include font__title;
     font-size: 22px;
