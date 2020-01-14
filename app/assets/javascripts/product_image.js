@@ -29,7 +29,7 @@ $(window).on("turbolinks:load", function(){
                     <div class=' item-image__content'>
                       <div class='item-image__content--icon'>
                         <input type="file" name="product[product_images_attributes][][image]" value="" style="display:none"></input>
-                        <img src=${src} width="120" height="100" >
+                        <img src=${src} width="120" height="100" class='item-image__content--img' >
                       </div>
                     </div>
                     <div class='item-image__operetion'>
