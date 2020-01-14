@@ -19,7 +19,7 @@
               売却済み
           -if @user.auction_items.present?
             - @user.auction_items.each do |product|
-              = link_to product_path(product),class:"item_content" do
+              = link_to product_path(product),data: { turbolinks: false },class:"item_content" do
                 .item_content__image
                   = image_tag product.product_images[0].image.to_s,size:"58x48"
                 .item_content__right

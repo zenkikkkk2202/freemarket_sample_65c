@@ -1,5 +1,5 @@
 -# 赤色の出品アイコン
-= link_to new_product_path, class: 'icon-circle' do
+= link_to new_product_path,data: { turbolinks: false }, class: 'icon-circle' do
   .icon-circle__text
     出品
   = icon('fa','camera', class: 'icon-circle__icon')
