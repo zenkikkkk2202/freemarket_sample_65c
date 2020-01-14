@@ -1,88 +1,100 @@
 -#  メルペイの振込申請して現金を受け取るページの口座情報のフォームのページです
 
 // angle-downの調整だけする
-.chapter-container
-  .chapter-container__head
-    振込申請して現金を受け取る
-  .chapter-container__change
-    .chapter-container__change__content
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          銀行
-        .chapter-container__change__content__form__require
-          必須
-        .chapter-container__change__content__form__input
-          = icon 'fas', 'angle-down', class: "chapter-container__change__content__form__input__icon"
-          %select.chapter-container__change__content__form__input__pulldown
-            %option{value: "---"} ---
-            %option{value: "三菱UFJ銀行"} 三菱UFJ銀行
-            %option{value: "みずほ銀行"} みずほ銀行
-            %option{value: "りそな銀行"} りそな銀行
-            %option{value: "埼玉りそな銀行"} 埼玉りそな銀行
-            %option{value: "三井住友銀行"} 三井住友銀行
-            %option{value: "ジャパンネット銀行"} ジャパンネット銀行
-            %option{value: "楽天銀行"} 楽天銀行
-            %option{value: "ゆうちょ銀行"} ゆうちょ銀行
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          上記にない場合はこちらへ入力し、お探しください
-        %input{type: "text", placeholder: "銀行名を入力し、選択してください", class: "chapter-container__change__content__form__answer"}
-        .chapter-container__change__content__form__question
-          口座種別
-        .chapter-container__change__content__form__require
-          必須
-        .chapter-container__change__content__form__input
-          = icon 'fas', 'angle-down', class: "chapter-container__change__content__form__input__icon"
-          %select.chapter-container__content__form__input__pulldown
-            %option{disabled: "disabled", selected: "selected", value: ""} 選択してください
-            %option{value: "普通預金"} 普通預金
-            %option{value: "当座預金"} 当座預金
-            %option{value: "貯蓄預金"} 貯蓄預金
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          支店コード
-        .chapter-container__change__content__form__require
-          必須
-        %input{type: "text", placeholder: "例)　123（数字3桁）", class: "chapter-container__change__content__form__answer"}
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          口座番号
-        .chapter-container__change__content__form__require
-          必須
-        %input{type: "text", placeholder: "例)　1234567（数字7桁）", class: "chapter-container__change__content__form__answer"}
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          口座番号(セイ)
-        .chapter-container__change__content__form__require
-          必須
-        %input{type: "text", placeholder: "例)　ヤマダ", class: "chapter-container__change__content__form__answer"}
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          口座番号(メイ)
-        .chapter-container__change__content__form__require
-          必須
-        %input{type: "text", placeholder: "例)　アヤ", class: "chapter-container__change__content__form__answer"}
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          ※口座番号が7桁未満の場合は先頭に0をつけてください
-          %br/
-          ※振込先が間違っている場合、再度振込手数料が発生します
-          %br/
-          ※登録された住所氏名と売上金の振込口座名義が一致しない場合、振込申請をすることはできません。
-          %br/
-          ※振込先口座は、ご本人名義の口座のみご利用いただけます。口座名義が旧姓の場合は、名義変更のうえ、改めてお手続きをお願いします。
-      .chapter-container__change__content__form
-        .chapter-container__change__content__form__question
-          住所
-        .chapter-container__change__content__form__require
-          必須
-        .chapter-container__change__content__form__username
-          ユーザ名
-        .chapter-container__change__content__form__edit
-          編集
-      %button.chapter-container__change__content__button{type: "submit"} 
-        次へ
-  .chapter-container__form__rights
-    本人情報の登録について
-    = icon 'fas', 'angle-right'
-    = link_to ""
+= render 'header'  # 全体のヘッダーの部分テンプレートの呼び出し
+.u-main
+  - breadcrumb :user_page
+  = render "layouts/breadcrumbs"
+  .u-container
+    .container-center
+      = render 'user_sidebar'  # ユーザマイページのサイドバーの部分テンプレートの呼び出し
+      .chapter-container
+        .chapter-container__head
+          振込申請して現金を受け取る
+        .chapter-container__change
+          .chapter-container__change__content
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                銀行
+              .chapter-container__change__content__form__require
+                必須
+              .chapter-container__change__content__form__input
+                = icon 'fas', 'angle-down', class: "chapter-container__change__content__form__input__icon"
+                %select.chapter-container__change__content__form__input__pulldown
+                  %option{value: "---"} ---
+                  %option{value: "三菱UFJ銀行"} 三菱UFJ銀行
+                  %option{value: "みずほ銀行"} みずほ銀行
+                  %option{value: "りそな銀行"} りそな銀行
+                  %option{value: "埼玉りそな銀行"} 埼玉りそな銀行
+                  %option{value: "三井住友銀行"} 三井住友銀行
+                  %option{value: "ジャパンネット銀行"} ジャパンネット銀行
+                  %option{value: "楽天銀行"} 楽天銀行
+                  %option{value: "ゆうちょ銀行"} ゆうちょ銀行
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                上記にない場合はこちらへ入力し、お探しください
+              %input{type: "text", placeholder: "銀行名を入力し、選択してください", class: "chapter-container__change__content__form__answer"}
+              .chapter-container__change__content__form__question
+                口座種別
+              .chapter-container__change__content__form__require
+                必須
+              .chapter-container__change__content__form__input
+                = icon 'fas', 'angle-down', class: "chapter-container__change__content__form__input__icon"
+                %select.chapter-container__content__form__input__pulldown
+                  %option{disabled: "disabled", selected: "selected", value: ""} 選択してください
+                  %option{value: "普通預金"} 普通預金
+                  %option{value: "当座預金"} 当座預金
+                  %option{value: "貯蓄預金"} 貯蓄預金
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                支店コード
+              .chapter-container__change__content__form__require
+                必須
+              %input{type: "text", placeholder: "例)　123（数字3桁）", class: "chapter-container__change__content__form__answer"}
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                口座番号
+              .chapter-container__change__content__form__require
+                必須
+              %input{type: "text", placeholder: "例)　1234567（数字7桁）", class: "chapter-container__change__content__form__answer"}
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                口座番号(セイ)
+              .chapter-container__change__content__form__require
+                必須
+              %input{type: "text", placeholder: "例)　ヤマダ", class: "chapter-container__change__content__form__answer"}
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                口座番号(メイ)
+              .chapter-container__change__content__form__require
+                必須
+              %input{type: "text", placeholder: "例)　アヤ", class: "chapter-container__change__content__form__answer"}
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                ※口座番号が7桁未満の場合は先頭に0をつけてください
+                %br/
+                ※振込先が間違っている場合、再度振込手数料が発生します
+                %br/
+                ※登録された住所氏名と売上金の振込口座名義が一致しない場合、振込申請をすることはできません。
+                %br/
+                ※振込先口座は、ご本人名義の口座のみご利用いただけます。口座名義が旧姓の場合は、名義変更のうえ、改めてお手続きをお願いします。
+            .chapter-container__change__content__form
+              .chapter-container__change__content__form__question
+                住所
+              .chapter-container__change__content__form__require
+                必須
+              .chapter-container__change__content__form__username
+                ユーザ名
+              .chapter-container__change__content__form__edit
+                編集
+            %button.chapter-container__change__content__button{type: "submit"} 
+              次へ
+        .chapter-container__form__rights
+          本人情報の登録について
+          = icon 'fas', 'angle-right'
+          = link_to ""
+= render 'banner'  # 全体のバナーの部分テンプレートの呼び出し
+
+= render 'footer'  # 全体のフッターの部分テンプレートの呼び出し
+
+= render 'camera_icon'  # 右下に出るカメラアイコンの部分テンプレートの呼び出し
